@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'foamquant'
+copyright = '2022, Florian Schott'
+author = 'Florian Schott'
 
 release = '0.1'
 version = '0.1.0'
