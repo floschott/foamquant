@@ -5,3 +5,6 @@ API
    :toctree: generated
 
    foamquant
+   process
+   quantif
+   figure
