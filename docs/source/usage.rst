@@ -6,11 +6,11 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+To use foamquant, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install foamquant
 
 Creating recipes
 ----------------
@@ -28,7 +28,7 @@ will raise an exception.
 
 For example:
 
->>> import lumache
->>> lumache.get_random_ingredients()
+>>> import foamquant
+>>> foamquant.process()
 ['shells', 'gorgonzola', 'parsley']
 
