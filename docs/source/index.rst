@@ -25,3 +25,6 @@ Contents
 
    usage
    api
+   process
+   quantif
+   figure
