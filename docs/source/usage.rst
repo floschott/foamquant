@@ -12,7 +12,8 @@ To use foamquant, first install it using pip:
 
    (.venv) $ pip install foamquant
 
-Creating recipes
+
+Using foamquant
 ----------------
 
 To retrieve a list of random ingredients,
