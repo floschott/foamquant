@@ -16,20 +16,17 @@ To use foamquant, first install it using pip:
 Using foamquant
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+To create a random color map that can be loaded in Paraview or Tomviz,
+you can use the ``foamquant.json_rand_dictionary()`` function:
 
-.. autofunction:: lumache.get_random_ingredients
+.. autofunction:: foamquant.json_rand_dictionary
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
+The ``Ncolors`` parameter should be ``"int"``. Otherwise, :py:func:`foamquant.json_rand_dictionary`
+will raise an error.
 
 For example:
 
 >>> import foamquant
->>> foamquant.process()
-['shells', 'gorgonzola', 'parsley']
+>>> foamquant.json_rand_dictionary(5000, 'Random_ColorMap_5000colors',first_color_black=True)
+
 
