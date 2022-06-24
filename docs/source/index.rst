@@ -1,4 +1,4 @@
-Welcome to foamquant's documentation! (a beginning of it...)
+Welcome to foamquant's documentation! (beginning of it)
 ===================================
 
 **foamquant** FoamQuant is a toolbox specifically created for processing time series of large 3D images of evolving liquid foams. The toolbox is greatly based on open source libraries: scikit-image [1] and SPAM [2]. 
@@ -36,8 +36,10 @@ Tracking tools:
 
 1) Bubble traking (using ID-track [3])
 
-2) Films traking (using ID-track [3]
+2) Films traking (using ID-track [3])
 
+
+References:
 
 [1] Van der Walt et al, doi: https://doi.org/10.7717/peerj.453
 
@@ -52,12 +54,11 @@ Tracking tools:
 [6] Stamati et al, doi: https://doi.org/10.21105/joss.02286
 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Check the :doc:`functions` section for further information.
 
 .. note::
 
-   This project is under development. There is still some work for making this documentation clean and clear! Sorry for this.
+   This project is under development.
 
 Contents
 --------
