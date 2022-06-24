@@ -19,7 +19,7 @@ The objective is a greater accessibility of time-resolved liquid foam 3D analysi
 
 1) Flow field (using ID-track [3] or DVC SPAM-ddic [4])
 
-2) Elastic deformation field
+2) Elastic deformation field:
 
 - Shape field [5][6]
 
