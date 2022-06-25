@@ -3,6 +3,7 @@ API
 
 .. autosummary::
    :toctree: generated
-
-  Notebooks
-  Tools
+   
+  Introduction.rst
+  Notebooks.rst
+  Tools.rst
