@@ -1,4 +1,4 @@
-Welcome to foamquant's documentation! (beginning of it)
+Welcome to foamquant's documentation!
 ===================================
 
 **foamquant** FoamQuant is a toolbox specifically created for processing time series of 3D images of evolving liquid foams. The toolbox is greatly based on open source libraries: Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
