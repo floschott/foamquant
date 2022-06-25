@@ -17,7 +17,7 @@ How we can use Scikit-Image and SPAM tools for extracting:
 
 3) Coordination distribution (uing SPAM [Stamani2020]_)
 
-4) Foam flow field (using ID-track [Ando2013]_ or DVC SPAM-ddic [Hall2010]_[Ando2013]_)
+4) Foam flow field (inspired by ID-track in [Ando2013]_ or DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
 
 
 Elastic and plastic deformations quantification tools
@@ -35,8 +35,9 @@ Elastic and plastic deformations quantification tools
 
 6) Plastic deformation field (T1)
 
-Label traking by using ID-track [Ando2013]_
+Label traking 
 -----------------
+The tracking tool was inspired by ID-track presented in [Ando2013]_.
 
 1) Bubble traking
 
