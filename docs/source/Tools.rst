@@ -7,9 +7,3 @@ Here will be uploaded the functions for extracting the:
 - created / disappeared films
 - Plastic deformation field
 
-
-.. toctree::
-
-   index.rst
-   Notebooks.rst
-   Tools.rst
