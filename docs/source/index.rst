@@ -31,9 +31,9 @@ Elastic and plastic deformations quantification tools
 
 - Elastic internal strain field [Raufaste2015]_
 
-5) Detection of created / disappeared films (contacts)
+2) Detection of created / disappeared films (contacts)
 
-6) Plastic deformation field (T1)
+3) Plastic deformation field (T1)
 
 Label traking 
 -----------------
