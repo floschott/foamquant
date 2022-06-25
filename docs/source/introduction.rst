@@ -67,9 +67,3 @@ References
 
 Contents
 --------
-
-.. toctree::
-
-   index.rst
-   Notebooks.rst
-   Tools.rst
