@@ -1,32 +1,18 @@
-Usage
+Notebooks
 =====
 
-.. _installation:
+Here will be provided tutorials and jupyter notebooks for:
 
-Installation
-------------
+- preparing the images before segmentation (filtering)
 
-To use foamquant, first install it using pip:
+- performing the phase and bubble segmentations 
 
-.. code-block:: console
+- extracting the liquid fraction and size of the Plateau borders
 
-   (.venv) $ pip install foamquant
+- extracting the bubble volume distribution
 
+- extracting the coordination distribution
 
-Using foamquant
-----------------
-
-To create a random color map that can be loaded in Paraview or Tomviz,
-you can use the ``foamquant.json_rand_dictionary()`` function:
-
-.. autofunction:: foamquant.json_rand_dictionary
-
-The ``Ncolors`` parameter should be ``"int"``. Otherwise, :py:func:`foamquant.json_rand_dictionary`
-will raise an error.
-
-For example:
-
->>> import foamquant
->>> foamquant.json_rand_dictionary(5000, 'Random_ColorMap_5000colors',first_color_black=True)
+- extracting the flow field
 
 
