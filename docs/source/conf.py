@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'foamquant'
-copyright = '2022, Florian Schott'
+copyright = '-'
 author = 'Florian Schott'
 
 release = '0.1'
