@@ -9,7 +9,7 @@ We propose three sections: **Jupyter Notebooks**, **Elastic and plastic deformat
 
 Jupyter Notebooks
 -----------------
-We propose notebooks for showing how to use Scikit-Image and SPAM tools for extracting:
+We first propose notebooks for showing how to use Scikit-Image and SPAM for extracting:
 
 1) Liquid fraction and Plateau border size
 
