@@ -25,11 +25,11 @@ Elastic and plastic deformations quantification tools
 
 1) Elastic deformation field:
 
-- Shape field [Graner2008]_ [Raufaste2015]_
+   - Shape field [Graner2008]_ [Raufaste2015]_
 
-- Texture field [Graner2008]_ 
+   - Texture field [Graner2008]_ 
 
-- Elastic internal strain field [Raufaste2015]_
+   - Elastic internal strain field [Raufaste2015]_
 
 2) Detection of created / disappeared films (contacts)
 
