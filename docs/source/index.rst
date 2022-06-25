@@ -1,11 +1,11 @@
 Welcome to foamquant's documentation!
 ===================================
 
-**foamquant** FoamQuant is a toolbox specifically created for processing time series of 3D images of evolving liquid foams. The toolbox is greatly based on open source libraries: Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
+**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams. The toolbox is greatly based on open source libraries: Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
 
-The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools. It focus mainly on flow studies, but can also be used for coarsening and drainage studies.
+The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools. The tools focus mainly on flow studies, but can also be used for coarsening and drainage studies.
 
-
+We propose three sections: **Jupyter Notebooks**, **Elastic and plastic deformations quantification tools** and **Label traking**.
 
 Jupyter Notebooks
 -----------------
@@ -37,7 +37,7 @@ Elastic and plastic deformations quantification tools
 
 Label traking 
 -----------------
-The tracking tool was inspired by ID-track presented in [Ando2013]_.
+The tracking tool was inspired by ID-track presented in [Ando2013]_ and uses DVC SPAM-ddic [Hall2010]_ [Ando2013]_.
 
 1) Bubble traking
 
