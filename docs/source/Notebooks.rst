@@ -15,4 +15,10 @@ Here will be provided tutorials and jupyter notebooks for:
 
 - extracting the flow field
 
+.. toctree::
+
+   index.rst
+   Notebooks.rst
+   Tools.rst
+
 
