@@ -70,5 +70,5 @@ Contents
 
 .. toctree::
 
-   Notebooks
-   Tools
+   Notebooks.rst
+   Tools.rst
