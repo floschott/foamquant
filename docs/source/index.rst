@@ -32,12 +32,12 @@ Elastic and plastic deformations quantification tools
 .. figure:: shape_texture_2d.PNG
    :scale: 33%
    :align: center
-   Shape and texture in 2D
+Shape and texture in 2D
    
 .. figure:: shape_texture_3d.PNG
    :scale: 33%
    :align: center
-   Shape and texture in 3D
+Shape and texture in 3D
 
    - Elastic internal strain field, defined in [Graner2008]_ 
 
@@ -53,7 +53,7 @@ The tracking tool was inspired by ID-track presented in [Ando2013]_ and uses DVC
 
 .. figure:: tracking_3d.PNG
    :align: center
-   Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
+Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
 
 2) Film traking
 
