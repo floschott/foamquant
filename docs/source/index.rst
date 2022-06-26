@@ -52,7 +52,7 @@ The tracking tool was inspired by ID-track presented in [Ando2013]_ and uses DVC
 1) Bubble traking
 
 .. figure:: tracking_3d.PNG
-   :align: center
+
 Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
 
 2) Film traking
