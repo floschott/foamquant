@@ -30,9 +30,11 @@ Elastic and plastic deformations quantification tools
    - Texture field, defined in [Graner2008]_ 
    
 .. figure:: shape_texture_2d.PNG
+   :scale: 33%
    :align: center
    
 .. figure:: shape_texture_3d.PNG
+   :scale: 33%
    :align: center
 
    - Elastic internal strain field, defined in [Graner2008]_ 
