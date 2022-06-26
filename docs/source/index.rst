@@ -29,7 +29,10 @@ Elastic and plastic deformations quantification tools
 
    - Texture field, defined in [Graner2008]_ 
    
-.. figure:: foamquant/docs/source/shape_texture_2d.PNG
+.. figure:: shape_texture_2d.PNG
+   :align: center
+   
+.. figure:: shape_texture_3d.PNG
    :align: center
 
    - Elastic internal strain field, defined in [Graner2008]_ 
@@ -43,6 +46,9 @@ Label traking
 The tracking tool was inspired by ID-track presented in [Ando2013]_ and uses DVC SPAM-ddic [Hall2010]_ [Ando2013]_.
 
 1) Bubble traking
+
+.. figure:: tracking_3d.PNG
+   :align: center
 
 2) Film traking
 
