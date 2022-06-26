@@ -9,7 +9,7 @@ We propose three sections: **Jupyter Notebooks**, **Elastic and plastic deformat
 
 Jupyter Notebooks
 -----------------
-We first propose notebooks for showing how to use Scikit-Image and SPAM for extracting:
+Examples on how we can use Scikit-Image and SPAM for extracting:
 
 1) Liquid fraction and Plateau border size
 
@@ -25,11 +25,11 @@ Elastic and plastic deformations quantification tools
 
 1) Elastic deformation field:
 
-   - Shape field [Graner2008]_ [Raufaste2015]_
+   - Shape field, defined in [Graner2008]_ and first used in [Raufaste2015]_
 
-   - Texture field [Graner2008]_ 
+   - Texture field, defined in [Graner2008]_ 
 
-   - Elastic internal strain field [Raufaste2015]_
+   - Elastic internal strain field, defined in [Graner2008]_ 
 
 2) Detection of created / disappeared films (contacts)
 
