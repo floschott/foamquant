@@ -37,7 +37,7 @@ Elastic and plastic deformations quantification tools
 
 Label traking 
 -----------------
-The tracking tool was inspired by ID-track presented in [Ando2013]_ and uses DVC SPAM-ddic [Hall2010]_ [Ando2013]_.
+The tracking tool was inspired by ID-track presented in [Ando2013]_ and is using DVC SPAM-ddic [Hall2010]_ [Ando2013]_.
 
 1) Bubble traking
 
