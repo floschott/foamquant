@@ -6,11 +6,11 @@ API
    :show-inheritance:
    :undoc-members:
    
-   .. rubric:: **Functions:**
+.. rubric:: **Functions:**
    
-   .. autosummary::
-      :toctree: generated
-
-     Introduction.rst
-     Notebooks.rst
-     Tools.rst
+.. autosummary::
+   :toctree: generated
+   Introduction.rst  
+   Notebooks.rst
+   Tools.rst
+   Cut3D.py
