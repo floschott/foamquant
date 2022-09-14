@@ -7,7 +7,14 @@ PROJECT CURRENTLY IN PROGRESS
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
 
-We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks Examples**.  **Tutorials**
+We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples**. and  **Tutorials**
+
+.. figure:: Diagram.pdf
+   :scale: 50%
+
+
+
+
 
 Elastic and plastic fields quantification tools
 -----------------
@@ -18,11 +25,8 @@ Elastic and plastic fields quantification tools
 
    - Texture field, defined in [Graner2008]_ 
    
-.. figure:: shape_texture_2d.PNG
-
-Shape and texture in 2D
-   
 .. figure:: shape_texture_3d.PNG
+   :scale: 50%
 
 Shape and texture in 3D
 
@@ -39,6 +43,7 @@ The tracking method was inspired by ID-track presented in [Ando2013]_ and uses D
 1) Bubble traking
 
 .. figure:: tracking_3d.PNG
+
 
 Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
 
