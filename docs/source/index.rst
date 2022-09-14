@@ -9,7 +9,7 @@ The **objective** is a greater accessibility of time-resolved liquid foam 3D ana
 
 We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples**. and  **Tutorials**
 
-.. figure:: Diagram.pdf
+.. figure:: Diagram.PNG
    :scale: 50%
 
 
