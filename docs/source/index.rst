@@ -1,7 +1,7 @@
 Welcome to foamquant's documentation!
 ===================================
 
-PROJECT IN PROGRESS
+/!\ PROJECT IN PROGRESS /!\
 
 **foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
 
