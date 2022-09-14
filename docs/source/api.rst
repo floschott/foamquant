@@ -6,5 +6,5 @@ API
    :show-inheritance:
    
 .. toctree::
-   api/FoamQuant.Basic
-   api/tomopy.Figure
+   FoamQuant.Basic
+   FoamQuant.Figure
