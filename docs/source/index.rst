@@ -47,15 +47,17 @@ Tracking of five bubbles, showing various tracked properties: elastic internal s
 
 Jupyter Notebooks
 -----------------
-Examples on how we can use Scikit-Image and SPAM for extracting:
+Example of extracted properties:
 
 1) Liquid fraction and Plateau border radius
 
-2) Bubble volume distribution
+2) Bubble volume distribution and Volume image
 
-3) Coordination distribution (uing SPAM [Stamani2020]_)
+3) Coordination distribution and Coordination image
 
-4) Foam flow field (inspired by ID-track in [Ando2013]_ or DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
+4) Foam flow field (thanks to ID-track in [Ando2013]_ and DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
+
+5) Bubble tracking and time resolved visualization in ParaView
 
 
 References
