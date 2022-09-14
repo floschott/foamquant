@@ -19,12 +19,12 @@ Elastic and plastic deformations quantification tools
    - Texture field, defined in [Graner2008]_ 
    
 .. figure:: shape_texture_2d.PNG
-   :scale: 5%
+   :scale: 50%
    :align: center
 Shape and texture in 2D
    
 .. figure:: shape_texture_3d.PNG
-   :scale: 5%
+   :scale: 50%
    :align: center
 Shape and texture in 3D
 
