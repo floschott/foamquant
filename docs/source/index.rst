@@ -7,20 +7,7 @@ THIS IS A PROJECT CURRENTLY IN PROGRESS
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
 
-We propose three sections: **Jupyter Notebooks**, **Elastic and plastic deformations quantification tools** and **Label traking**.
-
-Jupyter Notebooks
------------------
-Examples on how we can use Scikit-Image and SPAM for extracting:
-
-1) Liquid fraction and Plateau border radius
-
-2) Bubble volume distribution
-
-3) Coordination distribution (uing SPAM [Stamani2020]_)
-
-4) Foam flow field (inspired by ID-track in [Ando2013]_ or DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
-
+We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks Examples**.  **Tutorials**
 
 Elastic and plastic deformations quantification tools
 -----------------
@@ -58,6 +45,19 @@ The tracking method was inspired by ID-track presented in [Ando2013]_ and uses D
 Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
 
 2) Film traking
+
+
+Jupyter Notebooks
+-----------------
+Examples on how we can use Scikit-Image and SPAM for extracting:
+
+1) Liquid fraction and Plateau border radius
+
+2) Bubble volume distribution
+
+3) Coordination distribution (uing SPAM [Stamani2020]_)
+
+4) Foam flow field (inspired by ID-track in [Ando2013]_ or DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
 
 
 References
