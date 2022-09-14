@@ -7,4 +7,4 @@ API
    
 .. toctree::
    FoamQuant.Basic
-   FoamQuant.Figure
+   tomopy.Figure
