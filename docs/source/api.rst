@@ -5,10 +5,12 @@ API
    :members:
    :show-inheritance:
    :undoc-members:
-
-.. autosummary::
-   :toctree: generated
    
-  Introduction.rst
-  Notebooks.rst
-  Tools.rst
+   .. rubric:: **Functions:**
+   
+   .. autosummary::
+      :toctree: generated
+
+     Introduction.rst
+     Notebooks.rst
+     Tools.rst
