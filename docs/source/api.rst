@@ -1,10 +1,15 @@
 API
 ===
-.. automodule:: FoamQuant
+
+label.ITKwatershed module
+-------------------------
+
+.. automodule:: FoamQuant.Basic.ReadRaw
    :members:
    :undoc-members:
    :show-inheritance:
    
-.. toctree::
-   FoamQuant.Basic
-   tomopy.Figure
+.. automodule:: FoamQuant.Basic
+   :members:
+   :undoc-members:
+   :show-inheritance:
