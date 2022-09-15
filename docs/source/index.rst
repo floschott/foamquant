@@ -91,7 +91,5 @@ References
 .. toctree::
 
    index
-   about
    api
-   examples
    
