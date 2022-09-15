@@ -98,5 +98,6 @@ References
 .. toctree::
    
    index
-   usage
+   about
    api
+   examples
