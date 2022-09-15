@@ -1,7 +1,7 @@
 API
 ===
 
-label.ITKwatershed module
+FoamQuant.Basic.ReadRaw module
 -------------------------
 
 .. automodule:: FoamQuant.Basic.ReadRaw
