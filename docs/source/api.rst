@@ -1,7 +1,7 @@
 API
 ===
 
-FoamQuant.Basic.ReadRaw module
+FoamQuant.Basic module
 -------------------------
 
 .. automodule:: FoamQuant.Basic.ReadRaw
