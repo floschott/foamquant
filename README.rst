@@ -1,13 +1,23 @@
 Welcome to foamquant's documentation!
 ===================================
 
-THIS IS A PROJECT CURRENTLY IN PROGRESS
+PROJECT CURRENTLY IN PROGRESS
 
 **foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
 
 We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks Examples**.  **Tutorials**
+
+
+Tools
+-----------------
+
+.. figure:: Diagram.PNG
+   :scale: 50%
+   
+Diagram showing the organisation of the python functions in the different sub-modules. The functions in red are not included in the package yet.
+
 
 Elastic and plastic deformations quantification tools
 -----------------
