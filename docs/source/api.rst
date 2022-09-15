@@ -9,11 +9,17 @@ FoamQuant.Basic.ReadRaw module
    :undoc-members:
    :show-inheritance:
    
-.. automodule:: FoamQuant.Basic
+
+.. automodule:: FoamQuant.Basic.RangeList
    :members:
    :undoc-members:
    :show-inheritance:
    
+
+.. automodule:: FoamQuant.Basic.RandomCmap_json
+   :members:
+   :undoc-members:
+   :show-inheritance:
    
 .. toctree::
    
