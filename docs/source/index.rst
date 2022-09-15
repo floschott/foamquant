@@ -90,6 +90,5 @@ References
 
 .. toctree::
 
-   index
    api
    
