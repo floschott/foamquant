@@ -88,4 +88,4 @@ References
 
 .. note::
 
-   This project is under development. The Jupyter notebook are not uploaded yet, neither is the tool library.
+   This project is under development. The Jupyter notebook are not uploaded yet, neither are the tools.
