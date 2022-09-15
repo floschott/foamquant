@@ -15,6 +15,12 @@ Here will be provided tutorials and jupyter notebooks for:
 
 - extracting the flow field
 
+- extracting the elastic internal strain field
+
+- Extracting the plastic field
+
+- tracking the bubbles and their contacts
+
 
 
 
