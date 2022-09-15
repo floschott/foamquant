@@ -13,7 +13,7 @@ We propose a readthedocs documentation with three sections: **API reference**, *
 Tools
 -----------------
 
-.. figure:: Diagram.PNG
+.. figure:: docs/source/Diagram.PNG
    :scale: 50%
    
 Diagram showing the organisation of the python functions in the different sub-modules. The functions in red are not included in the package yet.
@@ -28,12 +28,12 @@ Elastic and plastic deformations quantification tools
 
    - Texture field, defined in [Graner2008]_ 
    
-.. figure:: shape_texture_2d.PNG
+.. figure:: docs/source/shape_texture_2d.PNG
    :scale: 5%
    :align: center
 Shape and texture in 2D
    
-.. figure:: shape_texture_3d.PNG
+.. figure:: docs/source/shape_texture_3d.PNG
    :scale: 5%
    :align: center
 Shape and texture in 3D
