@@ -30,3 +30,8 @@ For example:
 >>> import foamquant
 >>> foamquant.Figure.Histogram()
 
+
+.. toctree::
+
+   usage
+   api
