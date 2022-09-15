@@ -1,3 +1,6 @@
+.. contents::
+   :local:
+
 Welcome to foamquant's documentation!
 ===================================
 
