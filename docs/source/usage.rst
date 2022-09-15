@@ -32,6 +32,7 @@ For example:
 
 
 .. toctree::
-
+   
+   index
    usage
    api
