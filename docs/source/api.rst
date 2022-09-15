@@ -13,3 +13,10 @@ FoamQuant.Basic.ReadRaw module
    :members:
    :undoc-members:
    :show-inheritance:
+   
+   
+.. toctree::
+   
+   index
+   usage
+   api
