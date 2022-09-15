@@ -92,3 +92,10 @@ References
 .. note::
 
    This project is under development. The Jupyter notebook are not uploaded yet, neither are the tools.
+   
+   
+.. toctree::
+   
+   index
+   usage
+   api
