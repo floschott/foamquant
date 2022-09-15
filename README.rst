@@ -87,20 +87,7 @@ References
 
 .. note::
 
-   This project is under development. The Jupyter notebook are not uploaded yet, neither is the tool library.
-
-Contents
---------
-
-.. automodule:: FoamQuant.Basic.ReadRaw
-   :members:
-   :undoc-members:
-   :show-inheritance:
-   
-.. automodule:: FoamQuant.Basic
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   This project is under development. The Jupyter notebook are not uploaded yet, neither are all the tools.
 
    
 .. toctree::
