@@ -18,5 +18,6 @@ FoamQuant.Basic.ReadRaw module
 .. toctree::
    
    index
-   usage
+   about
    api
+   examples
