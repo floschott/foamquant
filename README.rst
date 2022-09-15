@@ -91,7 +91,7 @@ References
 
 .. toctree::
    :maxdepth: 2
-   index
-   api
+   docs/source/index
+   docs/source/api
    
   
