@@ -89,4 +89,7 @@ References
 
    This project is under development. The Jupyter notebook are not uploaded yet, neither are all the tools.
 
+.. toctree::
+
+   index
   
