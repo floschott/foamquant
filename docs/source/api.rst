@@ -2,4 +2,8 @@ API
 ===
 
 
-.. automodule:: FoamQuant.Basic
+.. automodule:: FoamQuant.Basic.RandomCmap_json
+
+.. automodule:: RangeList
+
+.. automodule:: ReadRaw
