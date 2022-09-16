@@ -91,4 +91,6 @@ References
 
    
 .. toctree::
-   :glob:
+   :maxdepth: 2
+   
+   docs/source/*
