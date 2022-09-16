@@ -1,7 +1,5 @@
-PI
+API
 ===
 
-.. autosummary::
-   :toctree: generated
+.. automodule:: testfunction
 
-   testfunction
