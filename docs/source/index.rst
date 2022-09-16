@@ -91,5 +91,6 @@ References
 
 .. toctree::
    :maxdepth: 2
-   
-   docs/source/*
+
+   about
+   api
