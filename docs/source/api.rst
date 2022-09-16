@@ -1,5 +1,12 @@
 API
 ===
 
+1)
 
-.. automodule:: helpers.py
+.. automodule:: FoamQuant
+
+2)
+.. automodule:: FoamQuant.Basic
+
+3)
+.. automodule:: FoamQuant.Basic.ReadRaw
