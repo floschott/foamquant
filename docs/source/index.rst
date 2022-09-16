@@ -90,4 +90,9 @@ References
 
 
 .. toctree::
-   :glob:
+   :maxdepth: 2
+   
+   index
+   about
+   api
+   
