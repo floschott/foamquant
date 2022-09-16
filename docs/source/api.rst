@@ -2,4 +2,4 @@ API
 ===
 
 
-.. automodule:: helpers
+.. automodule:: helpers.py
