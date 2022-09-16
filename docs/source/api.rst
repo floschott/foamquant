@@ -2,5 +2,9 @@ API
 ===
 
 
-Here will be the API
+.. automodule:: FoamQuant
+
+.. autoclass::
+.. autofunction::
+.. autoexception::
 
