@@ -94,3 +94,4 @@ References
 
    about
    api
+   examples
