@@ -62,7 +62,7 @@ Example of extracted properties:
 
 3) Coordination distribution and Coordination image
 
-4) Foam flow field (thanks to ID-track in [Ando2013]_ and DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
+4) Foam flow field (tracking and DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
 
 5) Bubble tracking and time resolved visualization in ParaView
 
