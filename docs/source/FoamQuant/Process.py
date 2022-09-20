@@ -26,8 +26,8 @@ def RemoveBackground(image, method='white_tophat', radius=5):
         filtered = image-filtered
         filtered = (filtered-np.min(filtered))/(np.max(filtered)-np.min(filtered))
         return filtered
-      
-      
+
+
 def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
     import numpy as np
     if method == 'median':
@@ -44,8 +44,7 @@ def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
         from skimage.restoration import denoise_tv_chambolle
         filtered = denoise_tv_chambolle(image,weight=weight) # weight
         return filtered
-      
-      
+
 def PhaseSegmentation(image, method='ostu_global', th=0.5, radius=5, th0=0.3, th1=0.7, returnotsu=False):
     import numpy as np
     
@@ -85,13 +84,11 @@ def PhaseSegmentation(image, method='ostu_global', th=0.5, radius=5, th0=0.3, th
         segmented = segmented > 1
         return np.asarray(segmented,dtype='uint8')
 
-
 def MaskCyl(image):
     import numpy as np
     from spam.mesh.structured import createCylindricalMask
     cyl = createCylindricalMask(np.shape(image), (np.shape(image)[1]-2)//2, voxSize=1.0, centre=None)
     return cyl
-  
   
 def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=False, ClosingRadius=None, GiveVolumes=False, Verbose=True, Vminobj=None, Vminhole=None):
     import numpy as np
@@ -162,7 +159,6 @@ def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=Fal
     
     return np.asarray(image, dtype='uint8')
 
-  
 def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, radius_opening=None, verbose=False):
     import numpy as np
     from scipy import ndimage as ndi
@@ -199,8 +195,7 @@ def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, 
             print('opening: done')
             
     return labels
-  
-  
+
 def RemoveEdgeBubble(image, mask=None):
     from spam.label.label import labelsOnEdges, removeLabels, makeLabelsSequential
     from skimage.measure import regionprops
