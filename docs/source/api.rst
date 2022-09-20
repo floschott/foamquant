@@ -4,4 +4,7 @@ API
 Figure module
 -------------------------
 
-.. automodule:: FoamQuant.Figure.Histogram
+.. autosummary::
+   :toctree: generated
+    
+   FoamQuant.Figure.Histogram
