@@ -14,6 +14,7 @@ def ReadRaw(series, imi, rawdir, zN=800, top=0, bottom=None):
     :type top: int
     :param bottom: ending z index
     :type bottom: int
+    :return: 3D numpy array
     """
     
     import numpy as np
@@ -59,6 +60,7 @@ def RangeList(i1, i2, verbose=False):
     :type i2: int
     :param verbose: if True, print the array
     :type verbose: Bool
+    :return: numpy int array
     """
     
     import numpy as np
