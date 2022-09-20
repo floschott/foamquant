@@ -1,9 +1,6 @@
 API
 =============
-Submodules
-------------------------
-.. autodoc:: FoamQuant
-   :toctree: generate
+
 
 
 Process submodule
