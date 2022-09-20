@@ -342,10 +342,3 @@ def RemoveEdgeBubble(image, mask=None):
     noedge = makeLabelsSequential(noedge)
     
     return noedge
-    
-    
-      
-      
-      
-      
-      
