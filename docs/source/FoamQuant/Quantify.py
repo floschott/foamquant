@@ -1,4 +1,9 @@
 def LiqFrac_Glob(image, Nz,Nr, crop=None, Mask=None):
+    
+    """
+    
+    """
+        
     import numpy as np
     
     # if crop image
@@ -16,6 +21,11 @@ def LiqFrac_Glob(image, Nz,Nr, crop=None, Mask=None):
   
   
 def LiqFrac_CartesMesh(image, Nz,Ny,Nx, crop=None, Mask=None):
+    
+    """
+    
+    """
+    
     import numpy as np
     
     # if crop image
@@ -77,6 +87,11 @@ def LiqFrac_CartesMesh(image, Nz,Ny,Nx, crop=None, Mask=None):
 
   
 def LiqFrac_CylMesh(image, Nz,Nr, crop=None, Mask=None):
+    
+    """
+    
+    """
+    
     import numpy as np
     from spam.mesh.structured import createCylindricalMask
     
@@ -138,6 +153,11 @@ def LiqFrac_CylMesh(image, Nz,Nr, crop=None, Mask=None):
     return [Mgridz,Mgridr], Mliqfrac
 
 def LiqFrac_Batch(series, readdir, savedir, imrange, TypeGrid='Global', Nz=None,Ny=None,Nx=None,Nr=None, crop=None, Mask=None, verbose=False):
+    
+    """
+    
+    """
+    
     import numpy as np
     from tifffile import imread, imsave
     from Package.Process.MaskCyl import MaskCyl
