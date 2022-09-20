@@ -34,7 +34,7 @@ def LiqFrac_CartesMesh(image, Nz,Ny,Nx, crop=None, Mask=None):
     :param image: 3D image 
     :type image: int numpy array
     :param Nz: number of sub-regions along z
-    :type Nz int
+    :type Nz: int
     :param Ny: number of sub-regions along y
     :type Ny: int
     :param Nx: number of sub-regions along x
@@ -113,7 +113,7 @@ def LiqFrac_CylMesh(image, Nz,Nr, crop=None, Mask=None):
     :param image: 3D image 
     :type image: int numpy array
     :param Nz: number of sub-regions along z
-    :type Nz int
+    :type Nz: int
     :param Nr: number of sub-regions along r
     :type Nr: int
     :param crop: Study crop region inside the image
@@ -198,11 +198,11 @@ def LiqFrac_Batch(series, readdir, savedir, imrange, TypeGrid='Global', Nz=None,
     :param TypeGrid: Optional, type of method: 'Global' for global liquid fraction, 'CartesMesh' for cartesian grid liquid fraction, 'CylMesh' for cylindrical grid liquid fraction
     :type TypeGrid: str
     :param Nz: Optional, number of sub-regions along z
-    :type Nz int
+    :type Nz: int
     :param Ny: Optional, number of sub-regions along y
-    :type Ny int
+    :type Ny: int
     :param Nx: Optional, number of sub-regions along x
-    :type Nx int
+    :type Nx: int
     :param Nr: Optional, number of sub-regions along r
     :type Nr: int
     :param crop: Optional, Study crop region inside the image
