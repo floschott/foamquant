@@ -1,24 +1,6 @@
 API
 =============
 
-Figure submodule
--------------------------
-
-.. automodule:: FoamQuant.Figure
-   :members:
-
-Basic submodule
--------------------------
-  
-.. automodule:: FoamQuant.Basic
-   :members:
-   
-Movie submodule
--------------------------
-  
-.. automodule:: FoamQuant.Movie
-   :members:
-   
 Process submodule
 -------------------------
   
@@ -35,4 +17,22 @@ Passage submodule
 -------------------------
   
 .. automodule:: FoamQuant.Passage
+   :members:
+   
+Figure submodule
+-------------------------
+
+.. automodule:: FoamQuant.Figure
+   :members:
+
+Basic submodule
+-------------------------
+  
+.. automodule:: FoamQuant.Basic
+   :members:
+   
+Movie submodule
+-------------------------
+  
+.. automodule:: FoamQuant.Movie
    :members:
