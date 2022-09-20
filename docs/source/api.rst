@@ -4,8 +4,7 @@ API
 Figure module
 -------------------------
 
-.. autosummary::
-   :toctree: generated
+.. automodule::
 
    lumache
    
