@@ -3,7 +3,7 @@ API
 Submodules
 ------------------------
 .. autodoc:: FoamQuant
-   :members:
+   :toctree: generate
 
 
 Process submodule
