@@ -4,5 +4,8 @@ API
 Figure module
 -------------------------
 
-.. autodoc::
-   lumache
+.. autoclass:: lumache
+
+   .. automethod:: __init__
+   .. rubric:: Methods
+   
