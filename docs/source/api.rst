@@ -4,4 +4,4 @@ API
 Figure module
 -------------------------
 
-.. autoapimodule:: FoamQuant.Figure.Histogram
+.. automodule:: FoamQuant.Figure.Histogram
