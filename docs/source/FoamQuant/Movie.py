@@ -1,4 +1,9 @@
 def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, binvalue=1, verbose=False, EndName='_CutMovie_'):
+    
+    """
+    
+    """
+    
     import numpy as np
     from tifffile import imsave, imread
     from spam.DIC.deform import binning
@@ -45,6 +50,11 @@ def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, b
             print(imi, ': done')
             
 def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False):
+    
+    """
+    
+    """
+    
     import numpy as np
     from scipy.interpolate import RectBivariateSpline
 
@@ -78,6 +88,11 @@ def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False):
     return interpolated
 
 def CylMovie(series, imrange, readdir, savedir, CylRadius, binvalue=1, verbose=False, EndName='_MovieCylinder_'):
+    
+    """
+    
+    """
+    
     import numpy as np
     from tifffile import imsave, imread
     from spam.DIC.deform import binning
@@ -125,6 +140,11 @@ def CylMovie(series, imrange, readdir, savedir, CylRadius, binvalue=1, verbose=F
             
             
 def AssembleMovie(series, imrange, readdir, savedir, EndNameread='_CutMovie_',EndNamesave='_FullCutMovie'):
+    
+    """
+    
+    """
+    
     import numpy as np
     from tifffile import imsave, imread
     
