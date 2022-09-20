@@ -1,4 +1,4 @@
-def Cut3D(image, histtitle=False):
+def Histogram(image, histtitle=False):
     """
     This function plot an grey-level histogram of the image.
 
