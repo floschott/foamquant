@@ -1,9 +1,21 @@
 def ReadRaw(series, imi, rawdir, zN=800, top=0, bottom=None):
+    """
+    Read raw images saved as 2D tiffs.
     
+    :param series: Name of the series
+    :type series: str
+    :param imi: image index
+    :type imi: int
+    :param rawdir: raw image directory
+    :type rawdir: str
+    :param zN: number of 2D images
+    :type zN: int
+    :param top: starting z index
+    :type top: int
+    :param bottom: ending z index
+    :type bottom: int
     """
     
-    """
-        
     import numpy as np
     from tifffile import imread
     
@@ -38,9 +50,15 @@ def ReadRaw(series, imi, rawdir, zN=800, top=0, bottom=None):
 
 
 def RangeList(i1, i2, verbose=False):
-    
     """
+    Create a int numpy array between i1 and i2.
     
+    :param i1: begin index
+    :type i1: str
+    :param i2: end index
+    :type i2: int
+    :param verbose: if True, print the array
+    :type verbose: Bool
     """
     
     import numpy as np
