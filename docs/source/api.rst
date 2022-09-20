@@ -4,7 +4,11 @@ API
 Figure module
 -------------------------
 
-.. automodule::
-
-   lumache
+.. automodule:: lumache
+   :members:
    
+.. automodule:: FoamQuant.Figure
+   :members:
+   
+.. automodule:: FoamQuant.Figure.Histogram
+   :members:
