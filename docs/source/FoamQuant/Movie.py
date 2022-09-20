@@ -1,7 +1,28 @@
-def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, binvalue=1, verbose=False, EndName='_CutMovie_'):
-    
+def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, binvalue=1, verbose=False, suffix='_CutMovie_'):
     """
+    Save 2D cuts of a series of 3D images for creating a cross-section movie.
     
+    :param series: Name of the series
+    :type series: str
+    :param imrange: image index range
+    :type imrange: int numpy array
+    :param readdir: read image directory
+    :type readdir: str
+    :param savedir: save image directory
+    :type savedir: str
+    :param zcut: Optional, z cut position
+    :type zcut: int
+    :param ycut: Optional, y cut position
+    :type zcut: int
+    :param xcut: Optional, x cut position
+    :type xcut: int
+    :param binvalue: Optional, movie binning
+    :type binvalue: int
+    :param verbose: Optional, if True, print for loop progress
+    :type verbose: Bool
+    :param suffix: Saving suffix name
+    :type suffix: str
+    :return: None
     """
     
     import numpy as np
@@ -50,9 +71,20 @@ def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, b
             print(imi, ': done')
             
 def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False):
-    
     """
+    Return a 2D cylindrical interpolation of a 3D image
     
+    :param image: 3D image
+    :type image: numpy array
+    :param CylRadius: Cylindrical radius for interpolation
+    :type CylRadius: int
+    :param verbose: Optional, if True, print the interpolation progress
+    :type verbose: Bool
+    :param verbose: Optional, if True, print the interpolation progress
+    :type verbose: Bool
+    :param plotfigure: Optional, if True, plot the interpolation
+    :type plotfigure: Bool
+    :return: 2D image numoy array
     """
     
     import numpy as np
@@ -88,9 +120,26 @@ def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False):
     return interpolated
 
 def CylMovie(series, imrange, readdir, savedir, CylRadius, binvalue=1, verbose=False, EndName='_MovieCylinder_'):
-    
     """
+    Save series of 2D cylindrical interpolated images of a series of 3D images for creating a cross-section movie.
     
+    :param series: Name of the series
+    :type series: str
+    :param imrange: image index range
+    :type imrange: int numpy array
+    :param readdir: read image directory
+    :type readdir: str
+    :param savedir: save image directory
+    :type savedir: str
+    :param CylRadius: Cylindrical radius for interpolation
+    :type CylRadius: int
+    :param binvalue: Optional, movie binning
+    :type binvalue: int
+    :param verbose: Optional, if True, print for loop progress
+    :type verbose: Bool
+    :param suffix: Saving suffix name
+    :type suffix: str
+    :return: None
     """
     
     import numpy as np
@@ -139,10 +188,23 @@ def CylMovie(series, imrange, readdir, savedir, CylRadius, binvalue=1, verbose=F
             print(imi, ': done')
             
             
-def AssembleMovie(series, imrange, readdir, savedir, EndNameread='_CutMovie_',EndNamesave='_FullCutMovie'):
-    
+def AssembleMovie(series, imrange, readdir, savedir, suffixread='_CutMovie_',suffixsave='_FullCutMovie'):
     """
+    Assemble series of 2D images ans save one 3D numpy image (movie).
     
+    :param series: Name of the series
+    :type series: str
+    :param imrange: image index range
+    :type imrange: int numpy array
+    :param readdir: read image directory
+    :type readdir: str
+    :param savedir: save image directory
+    :type savedir: str
+    :param suffixread: Read suffix name
+    :type suffixread: str
+    :param suffixsave: Saving suffix name
+    :type suffixsave: str
+    :return: None
     """
     
     import numpy as np
