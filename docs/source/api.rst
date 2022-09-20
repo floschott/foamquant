@@ -1,5 +1,5 @@
 API
 ===
 
-.. automodule:: testfunction
+.. automodule:: FoamQuant.Figure.Histogram
 
