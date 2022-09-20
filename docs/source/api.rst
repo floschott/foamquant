@@ -4,7 +4,7 @@ API
 Figure module
 -------------------------
 
-.. autosummary::
+.. autodoc::
    :toctree: generated
-    
+   FoamQuant.Figure.Cut3D
    lumache
