@@ -1,6 +1,5 @@
-def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=False, showhistogram=False,
-          histtitle=False, cmap='gray', interpolation=None, figblocksize=5, returnfig=False):
-  
+def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=False, showhistogram=False, histtitle=False, cmap='gray', interpolation=None, figblocksize=5, returnfig=False):
+	
     """
     Plot a 3x1 figure showing three orthogonal cross-sections of the 3D image.
     
@@ -88,6 +87,7 @@ def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=Fa
       
       
 def Histogram(image, histtitle=False):
+
     """
     Plot a 1x1 grey value histogram.
     
@@ -106,6 +106,7 @@ def Histogram(image, histtitle=False):
 
 # Refenece: https://github.com/delestro/rand_cmap
 def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=False, verbose=True):
+	
     """
     Creates a random colormap for matplotlib.
     
@@ -123,6 +124,7 @@ def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=
     :type verbose: Bool
     :return: matplotlib colormap
     """
+
     from matplotlib.colors import LinearSegmentedColormap
     import colorsys
     import numpy as np
