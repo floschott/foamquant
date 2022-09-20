@@ -1,5 +1,4 @@
 def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=False, showhistogram=False, histtitle=False, cmap='gray', interpolation=None, figblocksize=5, returnfig=False):
-	
     """
     Plot a 3x1 figure showing three orthogonal cross-sections of the 3D image.
     
@@ -33,7 +32,7 @@ def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=Fa
     import numpy as np
     import matplotlib.pyplot as plt
     from skimage.exposure import histogram
-    
+ 
     
     shapezyx = np.shape(image)
     if zcut == False:
@@ -87,7 +86,6 @@ def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, showaxes=Fa
       
       
 def Histogram(image, histtitle=False):
-
     """
     Plot a 1x1 grey value histogram.
     
@@ -95,6 +93,7 @@ def Histogram(image, histtitle=False):
     :type image: numpy array
     :return: None
     """
+
     from skimage.exposure import histogram
     fig, ax = plt.subplots(ncols=1, figsize=(5, 5))
     hist, hist_centers = skimage.exposure.histogram(image)
@@ -106,11 +105,8 @@ def Histogram(image, histtitle=False):
 
 # Refenece: https://github.com/delestro/rand_cmap
 def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=False, verbose=True):
-	
     """
-    Creates a random colormap for matplotlib.
-    
-    Reference: copied from https://github.com/delestro/rand_cmap
+    Creates a random colormap for matplotlib. Reference: copied from https://github.com/delestro/rand_cmap
     
     :param nlabels: Number of labels (size of colormap)
     :type nlabels: int
@@ -188,7 +184,6 @@ def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=
 
 
 def RandomCmap_json(Ncolors, namecmap, first_color_black=True):
-          
     """
     Save a json random colormap to be used with ParaView or Tomviz.
     :param Ncolors: Number of labels (size of colormap)
