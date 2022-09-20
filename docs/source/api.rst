@@ -8,3 +8,5 @@ Figure module
    :toctree: generated
     
    FoamQuant.Figure.Histogram
+   FoamQuant.Figure
+   FoamQuant.Figure.Cut3D
