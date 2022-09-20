@@ -1,5 +1,18 @@
 def Cut3D(image, zcut=False, ycut=False, xcut=False, histogram=False, showcuts=False, showaxes=False, showhistogram=False,
           histtitle=False, cmap='gray', interpolation=None, figblocksize=5, returnfig=False):
+          
+    """
+    Cut3D - Produces a 3 perpendicular cross section figure of the 3D image
+    
+    .. code-block:: python
+    # Import lumache
+    import lumache
+    # Call its only function
+    get_random_ingredients(kind=["cheeses"])
+    
+    """
+          
+     
     import numpy as np
     import matplotlib.pyplot as plt
     from skimage.exposure import histogram
