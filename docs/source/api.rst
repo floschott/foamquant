@@ -4,8 +4,8 @@ API
 Figure module
 -------------------------
 
-.. autoclass:: lumache
+.. autosummary::
+   :toctree: generated
 
-   .. automethod:: __init__
-   .. rubric:: Methods
+   lumache
    
