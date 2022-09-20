@@ -1,5 +1,5 @@
 def Cut3D(image, histtitle=False):
-    ""
+    """
     This function plot an grey-level histogram of the image.
 
     Parameters
@@ -14,7 +14,6 @@ def Cut3D(image, histtitle=False):
     --------
         None
     """
-   
     from skimage.exposure import histogram
     fig, ax = plt.subplots(ncols=1, figsize=(5, 5))
     hist, hist_centers = skimage.exposure.histogram(image)
