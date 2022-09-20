@@ -1,5 +1,10 @@
 API
 =============
+Submodules
+------------------------
+.. autodoc:: FoamQuant
+   :members:
+
 
 Process submodule
 -------------------------
