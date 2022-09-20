@@ -3,14 +3,15 @@ def RemoveBackground(image, method='white_tophat', radius=5):
     ''' Remove grey-scale image low frequency background
     
     :param image: 3D image 
-    :type image: float array
+    :type image: float numpy array
     
     :param method: method for removing the background, either 'white_tophat':white tophat filter or 'remove_gaussian': remove the Gaussian filtered image
     :type method: str
     
     :param radius: white_tophat kernel radius or sigma gaussian filter radius
     :type radius: int
-
+    
+    :return: float numpy array
     '''    
     
     if method == 'white_tophat':
@@ -29,6 +30,24 @@ def RemoveBackground(image, method='white_tophat', radius=5):
 
 
 def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
+    
+    ''' Remove speckle from the image
+    
+    :param image: 3D image 
+    :type image: float numpy array
+    
+    :param method: method for removing the speckle, either 'median', 'gaussian' or 'tv_chambolle'
+    :type method: str
+    
+    :param radius: kernel radius or sigma gaussian filter radius
+    :type radius: int
+    
+    :param weight: weight for tv_chambolle
+    :type weight: int
+    
+    :return: float numpy array
+    '''   
+    
     import numpy as np
     if method == 'median':
         from scipy import ndimage
