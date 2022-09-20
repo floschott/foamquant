@@ -1,18 +1,15 @@
 def RemoveBackground(image, method='white_tophat', radius=5):
-    
-    ''' Remove grey-scale image low frequency background
+    """
+    Remove grey-scale image low frequency background
     
     :param image: 3D image 
     :type image: float numpy array
-    
     :param method: method for removing the background, either 'white_tophat':white tophat filter or 'remove_gaussian': remove the Gaussian filtered image
     :type method: str
-    
     :param radius: white_tophat kernel radius or sigma gaussian filter radius
     :type radius: int
-    
     :return: float numpy array
-    '''    
+    """
     
     if method == 'white_tophat':
         from skimage.morphology import white_tophat
@@ -30,23 +27,19 @@ def RemoveBackground(image, method='white_tophat', radius=5):
 
 
 def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
-    
-    ''' Remove speckle from the image
+    """
+    Remove speckle from the image
     
     :param image: 3D image 
     :type image: float numpy array
-    
     :param method: method for removing the speckle, either 'median', 'gaussian' or 'tv_chambolle'
     :type method: str
-    
     :param radius: kernel radius or sigma gaussian filter radius
     :type radius: int
-    
     :param weight: weight for tv_chambolle
     :type weight: int
-    
     :return: float numpy array
-    '''   
+    """   
     
     import numpy as np
     if method == 'median':
@@ -65,29 +58,23 @@ def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
         return filtered
 
 def PhaseSegmentation(image, method='ostu_global', th=0.5, th0=0.3, th1=0.7, returnotsu=False):
-    
-    ''' Perform the phase segmentation
+    """
+    Perform the phase segmentation
     
     :param image: 3D image 
     :type image: float numpy array
-    
     :param method: Optional, method for segmenting the phase, either 'simple' for simple threshold, 'ostu_global' for a global Otsu threshold, 'niblack', 'sauvola', or 'sobel', Default is 'ostu_global'
     :type method: str
-    
     :param th: Optional, given threshold for 'simple' method
     :type th: float
-    
     :param th0: Optional, given low threshold for 'sobel' method
     :type th0: float
-    
     :param th1: Optional, given high threshold for 'sobel' method
     :type th1: float
-    
     :param returnotsu: Optional, if True, returns Otsu threshold for 'ostu_global' method
     :type returnotsu: Bool
-    
     :return: int numpy array and float
-    '''    
+    """    
     
     import numpy as np
     
@@ -128,14 +115,13 @@ def PhaseSegmentation(image, method='ostu_global', th=0.5, th0=0.3, th1=0.7, ret
         return np.asarray(segmented,dtype='uint8')
 
 def MaskCyl(image):
-    
-    ''' Create a cylindrical mask of the size of the image
+    """ 
+    Create a cylindrical mask of the size of the image
     
     :param image: 3D image 
     :type image: float numpy array
-    
     :return: int numpy array
-    '''
+    """
     
     import numpy as np
     from spam.mesh.structured import createCylindricalMask
@@ -143,38 +129,29 @@ def MaskCyl(image):
     return cyl
   
 def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=False, ClosingRadius=None, GiveVolumes=False, Verbose=True, Vminobj=None, Vminhole=None):
-    
-    ''' Remove small objects and holes in binary image
+    """
+    Remove small objects and holes in binary image
     
     :param image: 3D image 
     :type image: int numpy array
-    
     :param RemoveObjects: if True, removes the small objects
     :type RemoveObjects: Bool
-    
     :param RemoveHoles: if True, removes the small holes
     :type RemoveHoles: Bool
-    
     :param BinClosing: if True, perform a binnary closing of radius ClosingRadius
     :type BinClosing: Bool
-    
     :param ClosingRadius: radius of the binnary closing
     :type ClosingRadius: int
-    
     :param GiveVolumes: if True, returns in addition the used min volume thresholds for objects and holes
     :type GiveVolumes: Bool
-    
     :param Verbose: if True, print progression steps of the cleaning
     :type Verbose: Bool
-    
     :param Vminobj: if given the min volume threshold for the objects is not computed, Vminobj is used as the threshold 
     :type Vminobj: int
-    
     :param Vminhole: if given the min volume threshold for the holes is not computed, Vminobj is used as the threshold 
     :type Vminhole: int
-    
     :return: int numpy array, int, int
-    '''
+    """
     
     import numpy as np
     from skimage.measure import label
@@ -245,29 +222,23 @@ def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=Fal
     return np.asarray(image, dtype='uint8')
 
 def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, radius_opening=None, verbose=False):
-    
-    ''' Perform the bubble segmentation
+    """
+    Perform the bubble segmentation
     
     :param image: 3D image 
     :type image: int numpy array
-    
     :param SigSeeds: Optional, Gaussian filter Sigma for the seeds
     :type SigSeeds: int
-    
     :param SigWatershed: Optional, Gaussian filter Sigma for the watershed
     :type SigWatershed: int
-    
     :param watershed_line: Optional, If True keep the 0-label surfaces between the segmented bubble regions
     :type watershed_line: Bool
-    
     :param radius_opening: Optional, if not None, perform a radius opening operation on the labelled image with the given radius
     :type radius_opening: None or int
-    
     :param verbose: Optional, if True, print progression steps of the segmentation
     :type verbose: Bool
-    
     :return: int numpy array
-    '''
+    """
     
     import numpy as np
     from scipy import ndimage as ndi
@@ -306,17 +277,15 @@ def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, 
     return labels
 
 def RemoveEdgeBubble(image, mask=None):
-    
-     ''' Remove the bubbles on the image edges and in intersection with the mask (if given)
+    """
+    Remove the bubbles on the image edges and in intersection with the mask (if given)
     
     :param image: 3D image 
     :type image: int numpy array
-    
     :param image: 3D image, if given, removes also the labels at the intersection with the mask
     :type image: None or int numpy array
-    
     :return: int numpy array
-    '''
+    """
     
     from spam.label.label import labelsOnEdges, removeLabels, makeLabelsSequential
     from skimage.measure import regionprops
