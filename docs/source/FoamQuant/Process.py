@@ -245,6 +245,30 @@ def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=Fal
     return np.asarray(image, dtype='uint8')
 
 def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, radius_opening=None, verbose=False):
+    
+    ''' Perform the bubble segmentation
+    
+    :param image: 3D image 
+    :type image: int numpy array
+    
+    :param SigSeeds: Optional, Gaussian filter Sigma for the seeds
+    :type SigSeeds: int
+    
+    :param SigWatershed: Optional, Gaussian filter Sigma for the watershed
+    :type SigWatershed: int
+    
+    :param watershed_line: Optional, If True keep the 0-label surfaces between the segmented bubble regions
+    :type watershed_line: Bool
+    
+    :param radius_opening: Optional, if not None, perform a radius opening operation on the labelled image with the given radius
+    :type radius_opening: None or int
+    
+    :param verbose: Optional, if True, print progression steps of the segmentation
+    :type verbose: Bool
+    
+    :return: int numpy array
+    '''
+    
     import numpy as np
     from scipy import ndimage as ndi
     from skimage.segmentation import watershed
@@ -282,6 +306,18 @@ def BubbleSegmentation(image, SigSeeds=1, SigWatershed=1, watershed_line=False, 
     return labels
 
 def RemoveEdgeBubble(image, mask=None):
+    
+     ''' Remove the bubbles on the image edges and in intersection with the mask (if given)
+    
+    :param image: 3D image 
+    :type image: int numpy array
+    
+    :param image: 3D image, if given, removes also the labels at the intersection with the mask
+    :type image: None or int numpy array
+    
+    :return: int numpy array
+    '''
+    
     from spam.label.label import labelsOnEdges, removeLabels, makeLabelsSequential
     from skimage.measure import regionprops
     
