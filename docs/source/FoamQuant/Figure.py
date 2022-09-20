@@ -230,6 +230,4 @@ def RandomCmap_json(Ncolors, namecmap, first_color_black=True):
     with open(namecmap+".json", "w") as outfile:
         json.dump(json_cmap, outfile)
 
-json_rand_dictionary(Ncolors, 'RandomCmap', first_color_black=True)
-
         
