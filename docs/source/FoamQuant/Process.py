@@ -64,7 +64,31 @@ def RemoveSpeckle(image, method='median', radius=5, weight=0.1):
         filtered = denoise_tv_chambolle(image,weight=weight) # weight
         return filtered
 
-def PhaseSegmentation(image, method='ostu_global', th=0.5, radius=5, th0=0.3, th1=0.7, returnotsu=False):
+def PhaseSegmentation(image, method='ostu_global', th=0.5, th0=0.3, th1=0.7, returnotsu=False):
+    
+    ''' Perform the phase segmentation
+    
+    :param image: 3D image 
+    :type image: float numpy array
+    
+    :param method: Optional, method for segmenting the phase, either 'simple' for simple threshold, 'ostu_global' for a global Otsu threshold, 'niblack', 'sauvola', or 'sobel', Default is 'ostu_global'
+    :type method: str
+    
+    :param th: Optional, given threshold for 'simple' method
+    :type th: float
+    
+    :param th0: Optional, given low threshold for 'sobel' method
+    :type th0: float
+    
+    :param th1: Optional, given high threshold for 'sobel' method
+    :type th1: float
+    
+    :param returnotsu: Optional, if True, returns Otsu threshold for 'ostu_global' method
+    :type returnotsu: Bool
+    
+    :return: int numpy array and float
+    '''    
+    
     import numpy as np
     
     if method == 'simple':
@@ -104,12 +128,54 @@ def PhaseSegmentation(image, method='ostu_global', th=0.5, radius=5, th0=0.3, th
         return np.asarray(segmented,dtype='uint8')
 
 def MaskCyl(image):
+    
+    ''' Create a cylindrical mask of the size of the image
+    
+    :param image: 3D image 
+    :type image: float numpy array
+    
+    :return: int numpy array
+    '''
+    
     import numpy as np
     from spam.mesh.structured import createCylindricalMask
     cyl = createCylindricalMask(np.shape(image), (np.shape(image)[1]-2)//2, voxSize=1.0, centre=None)
     return cyl
   
 def RemoveSpeckleBin(image, RemoveObjects=True, RemoveHoles=True, BinClosing=False, ClosingRadius=None, GiveVolumes=False, Verbose=True, Vminobj=None, Vminhole=None):
+    
+    ''' Remove small objects and holes in binary image
+    
+    :param image: 3D image 
+    :type image: int numpy array
+    
+    :param RemoveObjects: if True, removes the small objects
+    :type RemoveObjects: Bool
+    
+    :param RemoveHoles: if True, removes the small holes
+    :type RemoveHoles: Bool
+    
+    :param BinClosing: if True, perform a binnary closing of radius ClosingRadius
+    :type BinClosing: Bool
+    
+    :param ClosingRadius: radius of the binnary closing
+    :type ClosingRadius: int
+    
+    :param GiveVolumes: if True, returns in addition the used min volume thresholds for objects and holes
+    :type GiveVolumes: Bool
+    
+    :param Verbose: if True, print progression steps of the cleaning
+    :type Verbose: Bool
+    
+    :param Vminobj: if given the min volume threshold for the objects is not computed, Vminobj is used as the threshold 
+    :type Vminobj: int
+    
+    :param Vminhole: if given the min volume threshold for the holes is not computed, Vminobj is used as the threshold 
+    :type Vminhole: int
+    
+    :return: int numpy array, int, int
+    '''
+    
     import numpy as np
     from skimage.measure import label
     from skimage.measure import regionprops
