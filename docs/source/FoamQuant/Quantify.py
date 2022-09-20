@@ -1,9 +1,16 @@
-def LiqFrac_Glob(image, Nz,Nr, crop=None, Mask=None):
+def LiqFrac_Glob(image, crop=None, Mask=None):
+    """
+    Return the global liquid fraction of an image
     
+    :param image: 3D image 
+    :type image: int numpy array
+    :param crop: Study crop region inside the image
+    :type crop: [zmin, zmax, ymin, ymax, xmin, xmax] int array
+    :param Mask: 3D image 
+    :type Mask: int numpy array
+    :return: int numpy array
     """
     
-    """
-        
     import numpy as np
     
     # if crop image
@@ -21,9 +28,22 @@ def LiqFrac_Glob(image, Nz,Nr, crop=None, Mask=None):
   
   
 def LiqFrac_CartesMesh(image, Nz,Ny,Nx, crop=None, Mask=None):
-    
     """
+    Return a 3D zyx grid with its corresponding non-overlapping subvolume (cuboids) liquid fraction 
     
+    :param image: 3D image 
+    :type image: int numpy array
+    :param Nz: number of sub-regions along z
+    :type Nz int
+    :param Ny: number of sub-regions along y
+    :type Ny: int
+    :param Nx: number of sub-regions along x
+    :type Nx: int
+    :param crop: Study crop region inside the image
+    :type crop: [zmin, zmax, ymin, ymax, xmin, xmax] int array
+    :param Mask: 3D image 
+    :type Mask: int numpy array
+    :return: int numpy array
     """
     
     import numpy as np
@@ -87,9 +107,20 @@ def LiqFrac_CartesMesh(image, Nz,Ny,Nx, crop=None, Mask=None):
 
   
 def LiqFrac_CylMesh(image, Nz,Nr, crop=None, Mask=None):
-    
     """
+    Return a 2D zr grid with its corresponding non-overlapping subvolume (tori) liquid fraction
     
+    :param image: 3D image 
+    :type image: int numpy array
+    :param Nz: number of sub-regions along z
+    :type Nz int
+    :param Nr: number of sub-regions along r
+    :type Nr: int
+    :param crop: Study crop region inside the image
+    :type crop: [zmin, zmax, ymin, ymax, xmin, xmax] int array
+    :param Mask: 3D image 
+    :type Mask: int numpy array
+    :return: int numpy array
     """
     
     import numpy as np
@@ -153,9 +184,34 @@ def LiqFrac_CylMesh(image, Nz,Nr, crop=None, Mask=None):
     return [Mgridz,Mgridr], Mliqfrac
 
 def LiqFrac_Batch(series, readdir, savedir, imrange, TypeGrid='Global', Nz=None,Ny=None,Nx=None,Nr=None, crop=None, Mask=None, verbose=False):
-    
     """
+    Read 3D binary images and save liquid fraction informations in series (for loop). Save liquid fraction dictionary as pickle: {"crop", "1D, 2D or 3D grid","lf"}
     
+    :param series: series name
+    :type series: str
+    :param series: read image directory
+    :type series: str
+    :param savedir: save liquid fraction directory
+    :type savedir: str
+    :param imrange: image index range
+    :type imrange: int numpy array
+    :param TypeGrid: Optional, type of method: 'Global' for global liquid fraction, 'CartesMesh' for cartesian grid liquid fraction, 'CylMesh' for cylindrical grid liquid fraction
+    :type TypeGrid: str
+    :param Nz: Optional, number of sub-regions along z
+    :type Nz int
+    :param Ny: Optional, number of sub-regions along y
+    :type Ny int
+    :param Nx: Optional, number of sub-regions along x
+    :type Nx int
+    :param Nr: Optional, number of sub-regions along r
+    :type Nr: int
+    :param crop: Optional, Study crop region inside the image
+    :type crop: [zmin, zmax, ymin, ymax, xmin, xmax] int array
+    :param Mask: Optional, 3D image 
+    :type Mask: int numpy array
+    :param verbose: if True or 1, print progress image by image. If 10, print additionally the extracted liquid fraction dictionary 
+    :type verbose: int numpy array
+    :return: None
     """
     
     import numpy as np
@@ -232,5 +288,3 @@ def LiqFrac_Batch(series, readdir, savedir, imrange, TypeGrid='Global', Nz=None,
         # if verbose
         if verbose == 1:
             print('Liquid fraction image '+str(imi)+': done')
-        
-
