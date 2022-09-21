@@ -9,7 +9,7 @@ We propose a readthedocs documentation with three sections: **API reference**, *
 
 
 
-Tools diagram
+Overview
 -----------------
 
 .. figure:: Diagram.PNG
