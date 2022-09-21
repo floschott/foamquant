@@ -186,6 +186,7 @@ def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=
 def RandomCmap_json(Ncolors, namecmap, first_color_black=True):
     """
     Save a json random colormap to be used with ParaView or Tomviz.
+    
     :param Ncolors: Number of labels (size of colormap)
     :type Ncolors: int
     :param type: 'bright' for strong colors, 'soft' for pastel colors
