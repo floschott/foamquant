@@ -1,6 +1,3 @@
-Example: image processing
-=========================
-
 Liquid foam image processing steps before quantification:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
