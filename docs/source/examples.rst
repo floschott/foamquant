@@ -1,6 +1,8 @@
 Examples
 ==================
 
-Processing: from a grey-value image to a bubble segmented image
+.. toctree::
+   :maxdepth: 2
 
-Example_Processing
+   Example_Processing
+
