@@ -11,7 +11,7 @@ version = '0.1.0'
 
 # -- General configuration
 
-pip install nbsphinx
+python3 -m pip install Sphinx
 
 extensions = [
     'sphinx.ext.duration',
