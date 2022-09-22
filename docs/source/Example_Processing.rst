@@ -1,5 +1,5 @@
-Liquid foam image processing steps before quantification:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Liquid foam image processing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1) Remove speckle
 2) Remove background
