@@ -10,6 +10,9 @@ The **objective** is a greater accessibility of time-resolved liquid foam 3D ana
 We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples** and  **Tutorials**
 
 
+Dependencies: **SPAM** and **scikit-image**.
+
+
 .. toctree::
    :maxdepth: 2
 
