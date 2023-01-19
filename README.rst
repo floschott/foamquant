@@ -1,7 +1,8 @@
 Welcome to foamquant's documentation! (Documentation in progress)
 ===================================
 
-![Binder] https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Example_Process.ipynb
+![Binder](https://mybinder.org/badge_logo.svg)
+https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Example_Process.ipynb
 
 **foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
 
