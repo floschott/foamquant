@@ -2,7 +2,7 @@ Examples
 ==================
 
 Processing example jupyter:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Example_Process.ipynb)
+[![Binder]](https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Example_Process.ipynb)
 
 .. toctree::
    :maxdepth: 2
