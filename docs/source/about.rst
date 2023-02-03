@@ -5,21 +5,45 @@ About
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
 
-We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples** and  **Tutorials**
+The documentation consists of the following sections: **About**, **References**, **API** and **Examples**.
 
 
 
-Overview
+Toolbox overview
 -----------------
 
 .. figure:: Diagram.png
-   :scale: 50%
+   :scale: 40%
    
-Diagram showing the organisation of the python functions in the different sub-modules. The functions in red are not included in the package yet.
+Structure of the current package (python functions). The functions in red are not yet included in the package.
 
 
 
-Elastic and plastic fields quantification tools (not uploaded yet)
+Process
+-----------------
+
+Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images. 
+
+.. figure:: Process.png
+   :scale: 40%
+
+
+FromBinary
+-----------------
+
+FromLabelled
+-----------------
+
+Tracking
+-----------------
+
+Average
+-----------------
+
+Figure
+-----------------
+
+Movie
 -----------------
 
 1) Elastic deformation field:
