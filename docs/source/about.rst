@@ -12,7 +12,7 @@ We propose a readthedocs documentation with three sections: **API reference**, *
 Overview
 -----------------
 
-.. figure:: Diagram.PNG
+.. figure:: Diagram.png
    :scale: 50%
    
 Diagram showing the organisation of the python functions in the different sub-modules. The functions in red are not included in the package yet.
