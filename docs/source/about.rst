@@ -23,25 +23,38 @@ Process
 -----------------
 
 Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images:
-- Remove background (homogeneization)
-- Phase segmentation (binarization)
-- Masking (cylindrical or region of interest)
-- Remove small objects and holes (volume threshold)
-- Bubble segmentation (watershed)
-- Remove edge bubbles (edge of a mask if provided)
+
+* Remove background (homogeneization)
+
+* Phase segmentation (binarization)
+
+* Masking (cylindrical or region of interest)
+
+* Remove small objects and holes (volume threshold)
+
+* Bubble segmentation (watershed)
+
+* Remove edge bubbles (edge of a mask if provided)
 
 .. figure:: Process.png
    :scale: 40%
-
+   
+From the left to the right: example of raw, phase segmented and bubble segmented images.
 
 FromBinary
 -----------------
 
+Functions to quantify the liquid fraction from a batch of phase segmented images.
+
 .. figure:: fromliqfrac.png
    :scale: 40%
+   
+The liquid fraction along a cartesian mesh can be returned structured or unstructured.
 
 FromLabelled
 -----------------
+
+Functions to quantify the bubbles regions properties from a batch of labelled images.
 
 .. figure:: fromlab.png
    :scale: 40%
@@ -49,65 +62,41 @@ FromLabelled
 Tracking
 -----------------
 
+Functions to track the bubbles and their properties from a batch of labelled images.
+
 .. figure:: tracking.png
    :scale: 40%
+   
+The color (from green to black) indicates the time index. The red points are the position of lost tracking.
 
-Average
+Passage and Average
 -----------------
+
+Functions to convert scalar, vectorial or tensorial properties from cartesian to cylindrical and spherical, and perform time/space averages.
 
 .. figure:: passage_average.png
    :scale: 40%
 
-Figure
------------------
 
-Movie
------------------
 
-1) Elastic deformation field:
+Two ways of measuring the internal strain field
+-----------------
 
    - Shape field, defined in [Graner2008]_ and first used in [Raufaste2015]_
 
    - Texture field, defined in [Graner2008]_ 
    
 .. figure:: shape_texture_3d.PNG
-   :scale: 50%
+   :scale: 30%
 
-Shape and texture in 3D
-
-   - Elastic internal strain field, defined in [Graner2008]_ 
-
-2) Detection of created / disappeared films (contacts)
-
-3) Plastic deformation field (T1)
-
-Label traking (not uploaded yet)
+Label traking
 -----------------
-The tracking method was inspired by ID-track presented in [Ando2013]_ and uses DVC SPAM-ddic [Hall2010]_ [Ando2013]_.
-
-1) Bubble traking
+The tracking method was inspired by ID-track presented in [Ando2013]_.
 
 .. figure:: tracking_3d.PNG
-   :scale: 90%
+   :scale: 50%
 
 Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
-
-2) Film traking
-
-
-Jupyter Notebooks (in progress)
------------------
-Example of extracted properties:
-
-1) Liquid fraction and Plateau border radius
-
-2) Bubble volume distribution and Volume image
-
-3) Coordination distribution and Coordination image
-
-4) Foam flow field (tracking and DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
-
-5) Bubble tracking and time resolved visualization in ParaView
 
 
 References
