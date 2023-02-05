@@ -118,5 +118,5 @@ References
 
 .. note::
 
-   This project is under development. The Jupyter notebook are not uploaded yet, neither are all the tools.
+   This documentation is under development. Only one jupyter notebook and part of the tools are currently available.
 
