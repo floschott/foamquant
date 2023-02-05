@@ -22,7 +22,13 @@ Structure of the current package (python functions). The functions in red are no
 Process
 -----------------
 
-Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images. 
+Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images:
+- Remove background (homogeneization)
+- Phase segmentation (binarization)
+- Masking (cylindrical or region of interest)
+- Remove small objects and holes (volume threshold)
+- Bubble segmentation (watershed)
+- Remove edge bubbles (edge of a mask if provided)
 
 .. figure:: Process.png
    :scale: 40%
