@@ -118,5 +118,11 @@ References
 
 .. note::
 
-   This documentation is under development. Only one jupyter notebook and part of the tools are currently available.
+   This documentation is under development:
+   
+   * Only one jupyter notebook was uploaded.
+   
+   * Only part of the tools are currently available.
+   
+   * pip and conda installation are not yet available.
 
