@@ -31,14 +31,26 @@ Functions for processing batch liquid foam images, all the steps from the raw-re
 FromBinary
 -----------------
 
+.. figure:: fromliqfrac.png
+   :scale: 40%
+
 FromLabelled
 -----------------
+
+.. figure:: fromlab.png
+   :scale: 40%
 
 Tracking
 -----------------
 
+.. figure:: tracking.png
+   :scale: 40%
+
 Average
 -----------------
+
+.. figure:: passage_average.png
+   :scale: 40%
 
 Figure
 -----------------
