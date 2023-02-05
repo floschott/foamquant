@@ -87,14 +87,14 @@ Two ways of measuring the internal strain field
    - Texture field, defined in [Graner2008]_ 
    
 .. figure:: shape_texture_3d.PNG
-   :scale: 30%
+   :scale: 20%
 
 Label traking
 -----------------
 The tracking method was inspired by ID-track presented in [Ando2013]_.
 
 .. figure:: tracking_3d.PNG
-   :scale: 50%
+   :scale: 20%
 
 Tracking of five bubbles, showing various tracked properties: elastic internal strain, contact, velocity, and volume.
 
