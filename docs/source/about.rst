@@ -33,6 +33,7 @@ Functions for processing batch liquid foam images, all the steps from the raw-re
 * Remove small objects and holes (volume threshold)
 
 * Bubble segmentation (watershed)
+ :target: https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Jupy_FoamQuant.ipynb
 
 * Remove edge bubbles (edge of a mask if provided)
 
