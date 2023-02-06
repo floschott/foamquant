@@ -33,9 +33,6 @@ Functions for processing batch liquid foam images, all the steps from the raw-re
 * Remove small objects and holes (volume threshold)
 
 * Bubble segmentation (watershed)
-.. image:: https://www.shareicon.net/data/512x512/2016/11/22/855055_multimedia_512x512.png
-  :scale: 5%
- :target: https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_watershed.html#sphx-glr-auto-examples-segmentation-plot-watershed-py
 
 * Remove edge bubbles (edge of a mask if provided)
 
