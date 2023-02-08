@@ -38,6 +38,7 @@ Requirements:
    examples
 
    
-.. seealso::
-
-   <a href="mailto:florian.schott@solid.lth.se">Write to us</a>.
+.. note::
+   Contacts:
+   * florian.schott@solid.lth.se
+   * rajmo@dtu.dk
