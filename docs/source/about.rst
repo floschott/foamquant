@@ -18,7 +18,7 @@ Structure of the current package (python functions). The functions in red are no
 Process
 -----------------
 
-Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images:
+Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images :
 
 * Remove background (homogeneization)
 
@@ -108,3 +108,5 @@ References
 .. [Graner2008] F. Graner et al., Discrete rearranging disordered patterns, part I: Robust statistical tools in two or three dimensions, Eur. Phys. J. E 25, 349–369 (2008) https://doi.org/10.1140/epje/i2007-10298-8
 
 .. [Raufaste2015] Raufaste, C. et al., Three-dimensional foam flow resolved by fast X-ray tomographic microscopy, EPL, 111, 38004, (2015) https://doi.org/10.1209/0295-5075/111/38004
+
+.. [Schott2023] F. Schott et al., : Image processing in Python. PeerJ 2:e453 (2014) https://doi.org/10.7717/peerj.453 
