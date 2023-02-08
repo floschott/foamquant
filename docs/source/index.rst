@@ -40,6 +40,7 @@ Requirements:
    
 .. note::
    Contacts:
+   
    * florian.schott@solid.lth.se
    
    * rajmo@dtu.dk
