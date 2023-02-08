@@ -12,13 +12,21 @@ We propose a readthedocs documentation with three sections: **API reference**, *
 
 
 Main dependencies: **SPAM** and **scikit-image**
+
 Requirements:
+
 * numpy==1.17.2
+
 * matplotlib==3.3.4
+
 * matplotlib-inline==0.1.6
+
 * scikit-image==0.18.3
+
 * tifffile==2021.11.2
+
 * pandas==0.25.1
+
 * spam==0.6.0.3
 
 
