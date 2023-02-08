@@ -38,5 +38,6 @@ Requirements:
    examples
 
    
-.. seealso:: 
+.. seealso::
+
    <a href="mailto:florian.schott@solid.lth.se">Write to us</a>.
