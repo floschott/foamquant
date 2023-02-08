@@ -1,13 +1,9 @@
 About
 =======
 
-**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
+.. warning::
 
-The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
-
-The documentation consists of the following sections: **About**, **References**, **API** and **Examples**.
-
-
+   This project is under construction. New functionalities are constantly added to this package.
 
 Toolbox overview
 -----------------
@@ -112,17 +108,3 @@ References
 .. [Graner2008] F. Graner et al., Discrete rearranging disordered patterns, part I: Robust statistical tools in two or three dimensions, Eur. Phys. J. E 25, 349–369 (2008) https://doi.org/10.1140/epje/i2007-10298-8
 
 .. [Raufaste2015] Raufaste, C. et al., Three-dimensional foam flow resolved by fast X-ray tomographic microscopy, EPL, 111, 38004, (2015) https://doi.org/10.1209/0295-5075/111/38004
-
-
-
-
-.. note::
-
-   This documentation is under development:
-   
-   * Only one jupyter notebook was uploaded.
-   
-   * Only part of the tools are currently available.
-   
-   * pip and conda installation are not yet available.
-
