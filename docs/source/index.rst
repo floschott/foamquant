@@ -11,7 +11,15 @@ The **objective** is a greater accessibility of time-resolved liquid foam 3D ana
 We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples** and  **Tutorials**
 
 
-Dependencies: **SPAM** and **scikit-image**.
+Main dependencies: **SPAM** and **scikit-image**
+Requirements:
+* numpy==1.17.2
+* matplotlib==3.3.4
+* matplotlib-inline==0.1.6
+* scikit-image==0.18.3
+* tifffile==2021.11.2
+* pandas==0.25.1
+* spam==0.6.0.3
 
 
 .. toctree::
