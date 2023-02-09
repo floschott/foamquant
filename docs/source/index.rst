@@ -13,10 +13,8 @@ Installation: neither ``conda`` and ``pip`` installations are not yet available.
 
 Main dependencies: `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ and  `scikit-image <https://scikit-image.org/>`_
 
-Requirements:
-
 .. code::
-
+   # Requirements
    numpy==1.17.2
    matplotlib==3.3.4
    matplotlib-inline==0.1.6
@@ -34,8 +32,4 @@ Requirements:
 
    
 .. note::
-   Contacts:
-   
-   * florian.schott@solid.lth.se
-   
-   * rajmo@dtu.dk
+   Contacts: `Florian Schott <florian.schott@solid.lth.se>`_ and `Rajmund Mokso <rajmo@dtu.dk>`_
