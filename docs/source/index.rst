@@ -6,12 +6,9 @@ Welcome to foamquant documentation
 
 **foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
 
-The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
+The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites. We propose the following documentation: **API** and **Jupyter Notebooks**.
 
-We propose a readthedocs documentation with three sections: **API reference**, **Jupyter Notebooks examples** and  **Tutorials**
-
-
-Main dependencies: **SPAM** and **scikit-image**
+Main dependencies: 'SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>' **SPAM** and **scikit-image**
 
 Requirements:
 
