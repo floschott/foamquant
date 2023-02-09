@@ -8,11 +8,7 @@ Welcome to foamquant documentation
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites. We propose the following documentation: **API** and **Jupyter Notebooks**.
 
-Main dependencies: _`SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ 
-
- **SPAM** and **scikit-image**
- 
- `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_
+Main dependencies: `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ and  `scikit-image <https://scikit-image.org/>`_
 
 Requirements:
 
