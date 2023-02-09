@@ -1,7 +1,7 @@
 Welcome to foamquant documentation
 ===================================
 
-.. warning::
+.. important::
    This project is under construction. New functionalities are constantly added to this package.
 
 **foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
@@ -15,20 +15,15 @@ Main dependencies: **SPAM** and **scikit-image**
 
 Requirements:
 
-* numpy==1.17.2
+.. code::
 
-* matplotlib==3.3.4
-
-* matplotlib-inline==0.1.6
-
-* scikit-image==0.18.3
-
-* tifffile==2021.11.2
-
-* pandas==0.25.1
-
-* spam==0.6.0.3
-
+   numpy==1.17.2
+   matplotlib==3.3.4
+   matplotlib-inline==0.1.6
+   scikit-image==0.18.3
+   tifffile==2021.11.2
+   pandas==0.25.1
+   spam==0.6.0.3
 
 .. toctree::
    :maxdepth: 2
