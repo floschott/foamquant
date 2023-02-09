@@ -33,7 +33,7 @@ Functions for processing batch liquid foam images, all the steps from the raw-re
 
 .. figure:: Process.png
    :scale: 40%
-   :alt: From the left to the right: **raw**, **phase segmented** and **bubble segmented** images.
+   From the left to the right: **raw**, **phase segmented** and **bubble segmented** images.
 
 FromBinary
 -----------------
@@ -42,7 +42,7 @@ Functions to quantify the liquid fraction from a batch of phase segmented images
 
 .. figure:: fromliqfrac.png
    :scale: 40%
-   :alt: The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured**.
+   The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured**.
 
 FromLabelled
 -----------------
@@ -51,7 +51,7 @@ Functions to quantify the bubbles regions properties from a batch of labelled im
 
 .. figure:: fromlab.png
    :scale: 40%
-   :alt: The function save the regions properties in a **.csv**
+   The function save the regions properties in a **.csv**
 
 Tracking
 -----------------
@@ -60,7 +60,7 @@ Functions to track the bubbles and their properties from a batch of labelled ima
 
 .. figure:: tracking.png
    :scale: 40%
-   :alt: The color (from green to black) indicates the time index. The red points are the lost tracking positions.
+   The color (from green to black) indicates the time index. The red points are the lost tracking positions.
 
 Passage and Average
 -----------------
@@ -69,7 +69,7 @@ Functions to convert scalar, vectorial or tensorial properties from cartesian to
 
 .. figure:: passage_average.png
    :scale: 40%
-   :alt: In this example the displacement field is first expressed in a cylindrical basic and then averaged.
+   In this example the displacement field is first expressed in a cylindrical basic and then averaged.
 
 
 
@@ -89,7 +89,7 @@ The tracking method was inspired by ID-track presented in [Ando2013]_.
 
 .. figure:: tracking_3d.PNG
    :scale: 70%
-   :alt: Tracking of five bubbles, showing various tracked properties: elastic internal strain, number of neighbours, velocity, and volume.
+   Tracking of five bubbles, showing various tracked properties: elastic internal strain, number of neighbours, velocity, and volume.
 
 
 References
