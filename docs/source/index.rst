@@ -12,7 +12,7 @@ Main dependencies: _`SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/
 
  **SPAM** and **scikit-image**
  
- `Google search engine <https://www.google.com>`_
+ `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_
 
 Requirements:
 
