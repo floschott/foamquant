@@ -34,3 +34,13 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+html_logo = 'foamquant_small'
+
+# -- Options theme
+html_theme_options = {
+    'logo_only': False,
+    'prev_next_buttons_location': 'both',
+    'style_external_links': True,
+    'sticky_navigation': True,
+}
