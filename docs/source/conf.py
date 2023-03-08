@@ -37,7 +37,7 @@ epub_show_urls = 'footnote'
 
 # -- Options theme
 html_theme_options = {
-    'html_logo': 'foamquant_small.png'
+    'html_logo': 'foamquant_small.png',
     'logo_only': False,
     'prev_next_buttons_location': 'both',
     'style_external_links': True,
