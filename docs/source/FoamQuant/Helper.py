@@ -16,6 +16,18 @@ def strindex(i, n0):
 
 
 def RangeList(i1, i2, verbose=False):
+    """
+    Return an index range
+    
+    :param i1: first index 
+    :type i1: int
+    :param i2: last index 
+    :type i2: int
+    :param verbose: If True, print the range
+    :type verbose: Bool
+    :return: int numpy array
+    """
+    
     import numpy as np
     List = np.uint8(np.linspace(i1,i2,i2-i1+1))
     if verbose:
