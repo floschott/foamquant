@@ -101,12 +101,6 @@ A) The raw images
           cmap='bone')
 
 
-.. parsed-literal::
-
-    /gpfs/offline1/staff/tomograms/users/flosch/Old/PSI_2021_Bread/FoamQuant/Figure.py:78: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
-      plt.tight_layout()
-
-
 
 .. image:: Jupy_Bread_files/Jupy_Bread_7_1.png
 
