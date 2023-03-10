@@ -24,13 +24,13 @@ FromLabelled submodule
 Shape submodule
 -------------------------
 
-.. automodule:: FoamQuant.Shape
+.. automodule:: FoamQuant.FromContact
    :members:
 
 Texture submodule
 -------------------------
   
-.. automodule:: FoamQuant.Texture
+.. automodule:: FoamQuant.Tracking
    :members:
 
 Passage submodule
