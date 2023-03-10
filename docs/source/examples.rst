@@ -28,6 +28,7 @@ In-situ bread baking
 ---------------------
 
 Jupyter example:
+
 .. toctree::
    :maxdepth: 2
    
