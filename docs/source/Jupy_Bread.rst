@@ -79,6 +79,10 @@ A) The raw images
     RawFirst = imread(dirread+nameread+strindex(imrange[0], 3)+'.tif')
     RawLast = imread(dirread+nameread+strindex(imrange[-1], 3)+'.tif')
 
+-----------------
+Example of raw images in the beginning of baking 
+-----------------
+
 .. code:: ipython3
 
     # Show a 3D-cut view of the two volume
@@ -464,7 +468,7 @@ Let’s see the result…
 .. image:: Jupy_Bread_files/Jupy_Bread_27_1.png
 
 
--> To visualize the segmentation result in Parraview
+-> To visualize the segmentation result in Paraview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download your ‘random_cmap.json’ and vizualize your pore-segmented image
