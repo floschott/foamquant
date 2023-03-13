@@ -80,7 +80,7 @@ A) The raw images
     RawLast = imread(dirread+nameread+strindex(imrange[-1], 3)+'.tif')
 
 -----------------
-Example of raw images in the beginning of baking 
+*Example of raw images in the beginning of baking*
 -----------------
 
 .. code:: ipython3
