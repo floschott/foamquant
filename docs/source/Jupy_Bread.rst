@@ -79,9 +79,6 @@ A) The raw images
     RawFirst = imread(dirread+nameread+strindex(imrange[0], 3)+'.tif')
     RawLast = imread(dirread+nameread+strindex(imrange[-1], 3)+'.tif')
 
------------------
-*Example of raw images in the beginning of baking*
------------------
 
 .. code:: ipython3
 
@@ -104,11 +101,15 @@ A) The raw images
           xcut=False,    # tune this parrameter if you wish
           cmap='bone')
 
-
+-----------------
+*Example of raw images in the beginning of baking*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_7_1.png
 
-
+-----------------
+*Example of raw images in the end of baking*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_7_2.png
 
@@ -188,7 +189,9 @@ Let’s see the result…
     Cut3D((SegFirst>0)*RawFirst, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)     # Phase segmented image * Raw image
     Cut3D((1-SegFirst)*RawFirst, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)     # (1-Phase segmented image) * Raw image
 
-
+-----------------
+*Check the phase segmentation of the first raw image (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_13_0.png
 
@@ -214,7 +217,9 @@ Let’s see the result…
     Cut3D((SegLast>0)*RawLast, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)     # Phase segmented image * Raw image
     Cut3D((1-SegLast)*RawLast, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)     # (1-Phase segmented image) * Raw image
 
-
+-----------------
+*Check the phase segmentation of the last raw image (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_14_0.png
 
@@ -348,7 +353,9 @@ are often due to imaging artefacts.
     Cut3D(Cleaned, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)  
     Cut3D(Cleaned-Seg, showcuts=True, showaxes=True, figblocksize=7,zcut=zcut,ycut=ycut,xcut=xcut, cmap=cmap)   
 
-
+-----------------
+*Check the small holes removal in the first image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_21_0.png
 
@@ -459,11 +466,15 @@ Let’s see the result…
           ycut=False,               # tune this parrameter if you wish
           xcut=False)               # tune this parrameter if you wish
 
-
+-----------------
+*Check the pores segmentation in the first image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_27_0.png
 
-
+-----------------
+*Check the pores segmentation in the last image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_27_1.png
 
@@ -564,11 +575,15 @@ Let’s see the result…
           ycut=False,               # tune this parrameter if you wish
           xcut=False)               # tune this parrameter if you wish
 
-
+-----------------
+*Check the pores removal on the edges in the first image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_36_0.png
 
-
+-----------------
+*Check the pores removal on the edges in the last image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_36_1.png
 
@@ -637,11 +652,15 @@ coordination table, coordination images and contact table, batchwise.
           ycut=False,               # tune this parrameter if you wish
           xcut=False)               # tune this parrameter if you wish
 
-
+-----------------
+*Check the contacts labelling in the first image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_41_0.png
 
-
+-----------------
+*Check the contacts labelling in the last image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_41_1.png
 
@@ -735,11 +754,15 @@ Let’s see the result…
           ycut=False,               # tune this parrameter if you wish
           xcut=False)               # tune this parrameter if you wish
 
-
+-----------------
+*Check the first local-wall thickness image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_48_0.png
 
-
+------------------
+*Check the last local-wall thickness image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_48_1.png
 
@@ -768,11 +791,15 @@ Let’s see the result…
           ycut=False,               # tune this parrameter if you wish
           xcut=False)               # tune this parrameter if you wish
 
-
+-----------------
+*Check the first separation image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_49_0.png
 
-
+-----------------
+*Check the last separation image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_49_1.png
 
@@ -947,7 +974,9 @@ A) Porosity :math:`\phi`
     <matplotlib.legend.Legend at 0x2b63b8aee2b0>
 
 
-
+-----------------
+*Porosity (in percent) as a function of the vertical position z (in voxels)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_61_1.png
 
@@ -1072,7 +1101,9 @@ Get some properties in the given field of view
     ax[3].grid(True)
     ax[3].set_yscale('log')   # tune this parrameter if you wish
 
-
+-----------------
+*Individual pore properties histograms*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_69_0.png
 
@@ -1140,11 +1171,15 @@ C) Coordination :math:`Z`
     <matplotlib.colorbar.Colorbar at 0x2b643aef7340>
 
 
-
+-----------------
+*Coordination image of the first image of the series (in the beginning of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_72_4.png
 
-
+-----------------
+*Coordination image of the last image of the series (in the end of baking)*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_72_5.png
 
@@ -1189,7 +1224,9 @@ C) Coordination :math:`Z`
     <matplotlib.legend.Legend at 0x2b643afaccd0>
 
 
-
+-----------------
+*Coordination histogram*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_75_1.png
 
@@ -1228,10 +1265,11 @@ C) Local Wall Thickness :math:`h_w`
     ax.set_yscale('log')   # tune this parrameter if you wish
     ax.set_xscale('log')   # tune this parrameter if you wish
 
-
+-----------------
+*Local-wall thickness histogram*
+-----------------
 
 .. image:: Jupy_Bread_files/Jupy_Bread_79_0.png
-
 
 You have now completed the jupyter example for analysis on bread! We
 hope this has been useful to you!
