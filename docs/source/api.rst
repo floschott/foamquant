@@ -8,6 +8,8 @@ Process submodule
   
 .. automodule:: FoamQuant.Process
    :members:
+   :undoc-members:
+   :show-inheritance:
    
 FromBinary submodule
 -------------------------
