@@ -3,7 +3,7 @@ API
 
 
 
-Process submodule
+Process
 -------------------------
   
 .. automodule:: FoamQuant.Process
@@ -11,61 +11,61 @@ Process submodule
    :undoc-members:
    :show-inheritance:
    
-FromBinary submodule
+FromBinary
 -------------------------
   
 .. automodule:: FoamQuant.FromBinary
    :members:
    
-FromLabelled submodule
+FromLabelled
 -------------------------
   
 .. automodule:: FoamQuant.FromLabelled
    :members:
    
-Shape submodule
+Shape
 -------------------------
 
 .. automodule:: FoamQuant.FromContact
    :members:
 
-Texture submodule
+Texture
 -------------------------
   
 .. automodule:: FoamQuant.Tracking
    :members:
 
-Passage submodule
+Passage
 -------------------------
   
 .. automodule:: FoamQuant.Passage
    :members:
 
-Average submodule
+Average
 -------------------------
   
 .. automodule:: FoamQuant.Average
    :members:
 
-Figure submodule
+Figure
 -------------------------
   
 .. automodule:: FoamQuant.Figure
    :members:
    
-Movie submodule
+Movie
 -------------------------
   
 .. automodule:: FoamQuant.Movie
    :members:
 
-VTK submodule
+VTK
 -------------------------
   
 .. automodule:: FoamQuant.VTK
    :members:
    
-Helper submodule
+Helper
 -------------------------
   
 .. automodule:: FoamQuant.Helper
