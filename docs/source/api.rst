@@ -23,13 +23,13 @@ FromLabelled
 .. automodule:: FoamQuant.FromLabelled
    :members:
    
-Shape
+FromContact
 -------------------------
 
 .. automodule:: FoamQuant.FromContact
    :members:
 
-Texture
+Tracking
 -------------------------
   
 .. automodule:: FoamQuant.Tracking
