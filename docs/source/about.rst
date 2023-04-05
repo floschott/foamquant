@@ -10,7 +10,7 @@ Overview
 -----------------
 
 .. figure:: Diagram.png
-   :scale: 40%
+   :scale: 20%
    
 Current package structure. The functions in red are not yet included in the package.
 
