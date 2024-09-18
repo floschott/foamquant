@@ -2,7 +2,7 @@ Examples
 ==================
 
 
-Liquid foam flow: basic analysis
+Liquid foam flow and deformetion
 -----------------------------
 
 Binder tutorial:
@@ -18,10 +18,15 @@ Jupyter example:
    Jupy_FoamQuant
 
 
-Liquid foam flow: advance analysis
----------------------
+Liquid foam local stress measure
+-----------------------------
 
-Not yet available.
+Jupyter example:
+
+.. toctree::
+   :maxdepth: 2
+   
+   Jupy_FoamQuant_bachelor_stress
    
 
 In-situ bread baking
