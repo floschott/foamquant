@@ -1,8 +1,8 @@
 Batchelor stress tensor
 =======================
 
-In this jupyternotebook we are going to extract the local stress tensor of each individual bubble in a set of images.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this jupyternotebook we are going to extract the local stress tensor
+of each individual bubble in a set of images.
 
 .. code:: ipython3
 
@@ -43,8 +43,8 @@ In this jupyternotebook we are going to extract the local stress tensor of each 
 A) Type of imput data
 ---------------------
 
-The images we are extracting the individual bubble stress tensor are bubble-segmented images with removed labels on the edge of the images.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The images we are extracting the individual bubble stress tensor are
+bubble-segmented images with removed labels on the edge of the images.
 
 .. code:: ipython3
 
