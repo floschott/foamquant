@@ -28,6 +28,7 @@ Local stress measure
 Showing how to measure the individual bubble stress tensor from bubble segmented images.
 
 .. image:: integration.PNG
+   :scale: 25%
 
 Jupyter notebook:
 
