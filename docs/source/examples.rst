@@ -7,7 +7,8 @@ Liquid foam flow and deformetion
 
 Showing how to quantify the individual bubble properties, the flow field, and track the individual bubble. 
 
-.. image:: Jupy_FoamQuant_files/Jupy_FoamQuant_85_0.png
+.. image:: Jupy_FoamQuant_files/Jupy_FoamQuant_84_1.png
+   :scale: 50%
 
 Binder version:
 
@@ -28,7 +29,7 @@ Local stress measure
 Showing how to measure the individual bubble stress tensor from bubble segmented images.
 
 .. figure:: integration.PNG
-   :scale: 20%
+   :scale: 25%
 
 Jupyter notebook:
 
