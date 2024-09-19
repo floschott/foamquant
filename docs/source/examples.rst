@@ -32,6 +32,7 @@ Local elementary topological rearrangement detection
 -----------------------------
 
 T1 events detected in a subvolume between two time steps
+
 .. image:: Jupy_FoamQuant_T1_detection_files/Jupy_FoamQuant_T1_detection_29_0.png
 
 Jupyter example:
