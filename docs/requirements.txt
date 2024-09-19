@@ -1,5 +1,5 @@
 # Core dependencies
-sphinx>=4.0,<6.0
+Sphinx==3.1.2
 
 # Themes
 sphinx_rtd_theme>=1.0,<2.0
