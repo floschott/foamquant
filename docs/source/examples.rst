@@ -5,12 +5,16 @@ Examples
 Liquid foam flow and deformetion
 -----------------------------
 
-Binder tutorial:
+Showing how to quantify the individual bubble properties, the flow field, and track the individual bubble. 
+
+.. image:: Jupy_FoamQuant_files/Jupy_FoamQuant_85_0.png
+
+Binder version:
 
 .. image:: https://mybinder.org/badge_logo.svg
  :target: https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Jupy_FoamQuant.ipynb
 
-Jupyter example:
+Jupyter notebook version:
 
 .. toctree::
    :maxdepth: 2
@@ -21,21 +25,25 @@ Jupyter example:
 Local stress measure
 -----------------------------
 
-Jupyter example:
+Showing how to measure the individual bubble stress tensor from bubble segmented images.
+
+Jupyter notebook:
 
 .. toctree::
    :maxdepth: 2
    
    Jupy_FoamQuant_bachelor_stress
 
-Local elementary topological rearrangement detection
+Local  rearrangement detection
 -----------------------------
+
+Showing how to detect elementary contact rearrangment (T1) from bubble segmented images.
 
 T1 events detected in a subvolume between two time steps
 
 .. image:: Jupy_FoamQuant_T1_detection_files/Jupy_FoamQuant_T1_detection_29_0.png
 
-Jupyter example:
+Jupyter notebook:
 
 .. toctree::
    :maxdepth: 2
@@ -45,6 +53,8 @@ Jupyter example:
 
 In-situ bread baking
 ---------------------
+
+Showing how to apply FoamQuant tools on another cellular material: bread being 3D imaged while being backed!
 
 Jupyter example:
 
