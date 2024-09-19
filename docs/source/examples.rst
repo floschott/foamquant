@@ -36,7 +36,7 @@ Jupyter example:
 .. toctree::
    :maxdepth: 2
    
-   Jupy_FoamQuant_bachelor_stress
+   Jupy_FoamQuant_T1_detection
    
 
 In-situ bread baking
