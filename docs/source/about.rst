@@ -7,7 +7,7 @@ About
    The project is directly related to the study [Schott2023]_.
 
 Overview
------------------
+=======
 
 .. figure:: Diagram.png
    :scale: 20%
