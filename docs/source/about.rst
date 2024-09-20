@@ -47,10 +47,10 @@ Wrapped functions for processing batch foam-like images: from raw images to bubb
 
 * Remove edge bubbles (edge of a mask if provided)
 
-.. figure:: Process.png
+.. figure:: Figure_segmentation.png
    :scale: 40%
    
-From the left to the right: **raw**, **phase segmented** and **bubble segmented** images.
+(a) **raw reconstructed image**, (b) **phase segmented image** and (c) **bubble segmented image**.
 
 FromBinary
 -----------------
