@@ -3,22 +3,37 @@ About
 
 .. important::
 
-   This project is under construction. New functionalities are constantly added to this package.
-   The project is directly related to the study [Schott2023]_.
+   This work is directly related to the study [Schott2023]_ and [Schott20232]_.
+   This project is under construction and new functionalities are constantly added on this package.
+
+   For support do not hesitate to contact `Florian Schott <florian.schott@solid.lth.se>`_ or `Rajmund Mokso <rajmo@dtu.dk>`_
 
 Overview
 =======
 
+The package is currently structured in 11 sections: 
+* FoamQuant.Process
+* FoamQuant.FromBinary
+* FoamQuant.FromLabelled
+* FoamQuant.FromContact
+* FoamQuant.Tracking
+* FoamQuant.Passage
+* FoamQuant.Average
+* FoamQuant.Figure
+* FoamQuant.Movie
+* FoamQuant.VTK
+* FoamQuant.Helper
+
 .. figure:: Diagram.png
    :scale: 20%
    
-Current package structure. The functions in red are not yet included in the package.
+Current package structure. The functions in red are not yet included in FoamQuant.
 
 
 Process
 -----------------
 
-Functions for processing batch liquid foam images, all the steps from the raw-reconstructed images to the labelled images :
+Wrapped functions for processing batch foam-like images: from raw images to bubble-segmented images.
 
 * Remove background (homogeneization)
 
