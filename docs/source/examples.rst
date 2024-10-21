@@ -38,7 +38,7 @@ Jupyter notebook:
    
    Jupy_FoamQuant_bachelor_stress
 
-Local  rearrangement detection
+Topological rearrangement detection
 -----------------------------
 
 Showing how to detect elementary contact rearrangment (T1) from bubble segmented images.
