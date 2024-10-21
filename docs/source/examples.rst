@@ -2,7 +2,7 @@ Examples
 ==================
 
 
-Liquid foam flow and deformetion
+Liquid foam flow and deformation
 -----------------------------
 
 Showing how to quantify the individual bubble properties, the flow field, and track the individual bubble. 
