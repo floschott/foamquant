@@ -12,6 +12,6 @@ setup(name='foamquant',
       author_email='florian_schott@outlook.fr',
       url='https://www.lth.se',
       packages=['foamquant'],
-      package_dir={'foamquant': ['docs/source/FoamQuant']},
+      package_dir={'foamquant': 'docs/source/FoamQuant'},
       install_requires=required,
      )
