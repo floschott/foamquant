@@ -1,9 +1,9 @@
 Welcome to foamquant documentation
 ===================================
 
-.. important::
-   This project is under construction. New functionalities are constantly added to this package.
-   The project is directly related to the study [Schott2023]_.
+
+This project is under construction. New functionalities are constantly added to this package.
+The project is directly related to the study [Schott2023]_.
 
 =======
 
@@ -12,7 +12,7 @@ Welcome to foamquant documentation
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites. 
 We propose the following documentation: **API** and **Jupyter Notebooks**.
 
-Installation: neither ``conda``, nor ``pip`` installations are available yet.
+Installation using ``pip``: write **pip install foamquant**.
 
 Main dependencies: `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ and  `scikit-image <https://scikit-image.org/>`_
 
