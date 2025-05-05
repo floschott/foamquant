@@ -3,7 +3,7 @@ Welcome to foamquant's documentation! (Documentation in progress)
 
 [![Binder]] (https://mybinder.org/v2/gh/floschott/FoamQuant_binder/master?labpath=Example_Process.ipynb)
 
-**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamani2020]_. 
+**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [stamati2020]_. 
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites.
 
@@ -65,7 +65,7 @@ Examples on how we can use Scikit-Image and SPAM for extracting:
 
 2) Bubble volume distribution
 
-3) Coordination distribution (uing SPAM [Stamani2020]_)
+3) Coordination distribution (uing SPAM [stamati2020]_)
 
 4) Foam flow field (inspired by ID-track in [Ando2013]_ or DVC SPAM-ddic [Hall2010]_ [Ando2013]_)
 
@@ -74,7 +74,7 @@ References
 ============
 .. [vanderWalt2014] S. van der Walt et al., scikit-image: Image processing in Python. PeerJ 2:e453 (2014) https://doi.org/10.7717/peerj.453 
 
-.. [Stamani2020] Stamati et al., (2020). spam: Software for Practical Analysis of Materials. Journal of Open Source Software, 5(51), 2286, https://doi.org/10.21105/joss.02286
+.. [stamati2020] Stamati et al., (2020). spam: Software for Practical Analysis of Materials. Journal of Open Source Software, 5(51), 2286, https://doi.org/10.21105/joss.02286
 
 .. [Ando2013] Andò,E. et al., Experimental micromechanics: grain-scale observation of sand deformation, Géotechnique Letters 2, 107–112, (2012) https://doi.org/10.1680/geolett.12.00027
 
