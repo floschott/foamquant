@@ -7,7 +7,7 @@ The project is directly related to the study [Schott2023]_.
 
 =======
 
-**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [Stamati2020]_. 
+**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [stamati2020]_. 
 
 The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites. 
 We propose the following documentation: **API** and **Jupyter Notebooks**.
