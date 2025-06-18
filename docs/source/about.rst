@@ -11,7 +11,7 @@ About
 Overview
 =======
 
-The package is currently structured in 11 sections: 
+The package is currently structured in 11 modules: 
 
 * FoamQuant.Process
 * FoamQuant.FromBinary
