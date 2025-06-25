@@ -3,43 +3,34 @@ Modules overview
 
 **foamquant** is composed of 11 modules: 
 
-- FoamQuant.Process
-- FoamQuant.FromBinary
-- FoamQuant.FromLabelled
-- FoamQuant.FromContact
-- FoamQuant.Tracking
-- FoamQuant.T1
-- FoamQuant.Average
-- FoamQuant.Passage
-- FoamQuant.Figure
-- FoamQuant.Movie
-- FoamQuant.Helper
-
 .. figure:: Diagram.png
+   :alt: FoamQuant modules
    :scale: 20%
-   
-Current package structure. The functions in red are not yet included in FoamQuant.
+
+Typical analysis pipeline
+-----------------
+.. figure:: typicalpipeline.png
+   :alt: Processing pipeline
+   :width: 50%
+   :align: center
 
 
 Process
 -----------------
 
-Wrapped functions for processing batch foam-like images: from raw images to bubble-segmented images.
+The ``Process`` module focuses on the first image processing steps, aiming to produce phase-segmented and bubble-segmented images for the subsequent quantification. The provided functions are wrappers around existing tools from ``scikit-image`` [scikit-image]_, ``SPAM`` [Stamati2020]_, and ``PoreSpy`` [porespy_gostick_2019]_, enabling the processing of the images in a sequence (batch-wise). 
 
-* Remove background (homogeneization)
+As illustrated in :numref:`fig-pipeline`, these include subsequent background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal. An illustration of reconstructed, phase-segmented and bubble-segmented tomographic images is given in :numref:`fig-processing` (a--c). 
 
-* Phase segmentation (binarization)
+For more details, a complete example of a processing pipeline is available at `foamquant.readthedocs.io <https://foamquant.readthedocs.io>`_.
 
-* Masking (cylindrical or region of interest)
+Note that although used on foams, this generic module is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [schott2023structural]_.
 
-* Remove small objects and holes (volume threshold)
-
-* Bubble segmentation (watershed)
-
-* Remove edge bubbles (edge of a mask if provided)
 
 .. figure:: Figure_segmentation.png
-   :scale: 40%
+   :alt: Processing pipeline
+   :width: 80%
+   :align: center
    
 (a) **raw reconstructed image**, (b) **phase segmented image** and (c) **bubble segmented image**.
 
