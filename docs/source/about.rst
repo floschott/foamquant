@@ -11,7 +11,7 @@ Typical analysis pipeline
 -----------------
 .. figure:: typicalpipeline.png
    :alt: Processing pipeline
-   :width: 80%
+   :width: 100%
    :align: center
 
 
@@ -24,10 +24,10 @@ As illustrated in :numref:`fig-pipeline`, these include subsequent background re
 
 .. figure:: processing.png
    :alt: Example of reconstructed, phase-segmented and bubble-segmented (pore-segmented) images.
-   :width: 80%
+   :width: 100%
    :align: center
    
-(a) **raw reconstructed image**, (b) **phase segmented image** and (c) **bubble segmented image**.
+Example of reconstructed, phase-segmented and bubble-segmented (pore-segmented) images from liquid foam (top) and bread (bottom) samples.
 
 FromBinary
 -----------------
