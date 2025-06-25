@@ -7,7 +7,7 @@ The toolbox has four main dependencies: ``numpy``, `scikit-image <https://scikit
 
 Main objectives:
 
-- Integrating standard image processing methods from ``scikit-image`, ``SPAM``, and ``porespy``.
+- Integrating standard image processing methods from ``scikit-image``, ``SPAM``, and ``porespy``.
 - Including new mechanical quantification methods specifically dedicated to studying evolving liquid foam structure: local elasticity and plasticity.
 
 This website provides an **API reference** and ready-to-use **jupyter notebooks** image analysis pipelines.
