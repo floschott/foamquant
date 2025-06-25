@@ -30,11 +30,19 @@ This website provides an **API reference** and ready-to-use **jupyter notebooks*
    examples
 
    
-.. note::
-   For more information, please contact: `Florian Schott <florian.schott@solid.lth.se>`_ and `Rajmund Mokso <rajmo@dtu.dk>`_
+References
+-----------------------------------
 
 .. [scikit-image] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
 
 .. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
 
 .. [porespy_gostick_2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
+
+.. note::
+
+   FoamQuant requires Python 3.8 or higher.
+
+   - Make sure to install dependencies: ``numpy``, ``scikit-image``, ``SPAM``, and ``porespy``.
+   - Consider using a virtual environment to avoid conflicts.
+   - For more information or questions regarding this project please contact: `Florian Schott <florian.schott@solid.lth.se>`_ or `Rajmund Mokso <rajmo@dtu.dk>`_.
