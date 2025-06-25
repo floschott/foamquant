@@ -32,7 +32,12 @@ Example of reconstructed, phase-segmented and bubble-segmented (pore-segmented) 
 FromBinary
 -----------------
 
-Functions to quantify the liquid fraction from a batch of phase segmented images.
+Liquid foam microscopic structure at rest is described by mainly three structural parameters: the liquid fraction, the mean bubble size, and the dispersion in bubble sizes. The liquid fraction is quantified from the phase-segmented images, as the number of liquid phase voxels divided by the total number of voxels inside a given volume:
+
+:math:`\phi_\ell = \frac{N_{l}}{N_{g} + N_{l}}`
+
+where :math:`N_{l}` and :math:`N_{g}` are the liquid and gas volumes respectively in number of voxels.
+
 
 .. figure:: liquid_fraction.png
    :scale: 40%
