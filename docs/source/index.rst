@@ -1,20 +1,16 @@
 Welcome to foamquant documentation
 ===================================
 
+The ``pip`` installable Python library, **foamquant**, was primarily developed to study time-resolved X-ray tomograms of evolving liquid foams and their fundamental local physical behavior. However, we believe this library can be adapted to the broader class of cellular materials, using other imaging methods, and put to work on other scientific and engineering applications.
 
-This project is under construction. New functionalities are constantly added to this package.
-The project is directly related to the study [Schott2023]_.
+The toolbox has four main dependencies: ``numpy``, `scikit-image <https://scikit-image.org/>`_ [scikit-image]_, `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ [Stamati2020]_, and `porespy <https://porespy.org/>`_ [porespy_gostick_2019]_.
 
-=======
+Main objectives:
 
-**foamquant** is a toolbox specifically created for processing time series of 3D images of evolving liquid foams by using open source libraries Scikit-Image [vanderWalt2014]_ and SPAM [stamati2020]_. 
+- Integrating standard image processing methods from ``scikit-image`, ``SPAM``, and ``porespy``.
+- Including new mechanical quantification methods specifically dedicated to studying evolving liquid foam structure: local elasticity and plasticity.
 
-The **objective** is a greater accessibility of time-resolved liquid foam 3D analysis tools for the foam-physicis and food scientists communitites. 
-We propose the following documentation: **API** and **Jupyter Notebooks**.
-
-Installation using ``pip``: write **pip install foamquant**.
-
-Main dependencies: `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ and  `scikit-image <https://scikit-image.org/>`_
+This website provides an **API reference** and ready-to-use **jupyter notebooks** image analysis pipelines.
 
 .. code::
    # Requirements
@@ -35,4 +31,10 @@ Main dependencies: `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>
 
    
 .. note::
-   Contacts: `Florian Schott <florian.schott@solid.lth.se>`_ and `Rajmund Mokso <rajmo@dtu.dk>`_
+   For more information, please contact: `Florian Schott <florian.schott@solid.lth.se>`_ and `Rajmund Mokso <rajmo@dtu.dk>`_
+
+.. [scikit-image] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
+
+.. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
+
+.. [porespy_gostick_2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
