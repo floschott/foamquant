@@ -1,29 +1,19 @@
-About
+Modules overview
 =======
 
-.. important::
+**foamquant** is composed of 11 modules: 
 
-   This work is directly related to the study [Schott2023]_ and [Schott20232]_.
-   This project is under construction and new functionalities are constantly added on this package.
-
-   For support do not hesitate to contact `Florian Schott <florian.schott@solid.lth.se>`_ or `Rajmund Mokso <rajmo@dtu.dk>`_
-
-Overview
-=======
-
-The package is currently structured in 11 modules: 
-
-* FoamQuant.Process
-* FoamQuant.FromBinary
-* FoamQuant.FromLabelled
-* FoamQuant.FromContact
-* FoamQuant.Tracking
-* FoamQuant.Passage
-* FoamQuant.Average
-* FoamQuant.Figure
-* FoamQuant.Movie
-* FoamQuant.VTK
-* FoamQuant.Helper
+- FoamQuant.Process
+- FoamQuant.FromBinary
+- FoamQuant.FromLabelled
+- FoamQuant.FromContact
+- FoamQuant.Tracking
+- FoamQuant.T1
+- FoamQuant.Average
+- FoamQuant.Passage
+- FoamQuant.Figure
+- FoamQuant.Movie
+- FoamQuant.Helper
 
 .. figure:: Diagram.png
    :scale: 20%
