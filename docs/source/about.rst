@@ -40,7 +40,8 @@ where :math:`N_{l}` and :math:`N_{g}` are the liquid and gas volumes respectivel
 
 
 .. figure:: liquid_fraction.png
-   :scale: 40%
+   :width: 80%
+   :align: center
    
 The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured**.
 
