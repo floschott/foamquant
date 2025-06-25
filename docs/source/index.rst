@@ -3,7 +3,7 @@ Welcome to foamquant documentation
 
 The ``pip`` installable Python library, **foamquant**, was primarily developed to study time-resolved X-ray tomograms of evolving liquid foams and their fundamental local physical behavior. However, we believe this library can be adapted to the broader class of cellular materials, using other imaging methods, and put to work on other scientific and engineering applications.
 
-The toolbox has four main dependencies: ``numpy``, `scikit-image <https://scikit-image.org/>`_ [scikit-image]_, `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ [Stamati2020]_, and `porespy <https://porespy.org/>`_ [porespy_gostick_2019]_.
+The toolbox has four main dependencies: `numpy <https://numpy.org/doc/stable/>`_, `scikit-image <https://scikit-image.org/>`_ [scikit-image]_, `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ [Stamati2020]_, and `porespy <https://porespy.org/>`_ [porespy_gostick_2019]_.
 
 Main objectives:
 
