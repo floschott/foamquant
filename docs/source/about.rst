@@ -34,7 +34,7 @@ FromBinary
 
 Functions to quantify the liquid fraction from a batch of phase segmented images.
 
-.. figure:: fromliqfrac.png
+.. figure:: liquid_fraction.png
    :scale: 40%
    
 The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured**.
