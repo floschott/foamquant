@@ -5,13 +5,13 @@ Modules overview
 
 .. figure:: Diagram.png
    :alt: FoamQuant modules
-   :scale: 20%
+   :width: 80%
 
 Typical analysis pipeline
 -----------------
 .. figure:: typicalpipeline.png
    :alt: Processing pipeline
-   :width: 50%
+   :width: 80%
    :align: center
 
 
@@ -20,15 +20,10 @@ Process
 
 The ``Process`` module focuses on the first image processing steps, aiming to produce phase-segmented and bubble-segmented images for the subsequent quantification. The provided functions are wrappers around existing tools from ``scikit-image`` [scikit-image]_, ``SPAM`` [Stamati2020]_, and ``PoreSpy`` [porespy_gostick_2019]_, enabling the processing of the images in a sequence (batch-wise). 
 
-As illustrated in :numref:`fig-pipeline`, these include subsequent background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal. An illustration of reconstructed, phase-segmented and bubble-segmented tomographic images is given in :numref:`fig-processing` (a--c). 
+As illustrated in :numref:`fig-pipeline`, these include subsequent background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal. Note that although used on foams, this generic processing is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [Schott20232]_. An illustration of reconstructed, phase-segmented and bubble-segmented (pore-segmented) tomographic images is given here after in :numref:`fig-process` for a foam an a bread sample. 
 
-For more details, a complete example of a processing pipeline is available at `foamquant.readthedocs.io <https://foamquant.readthedocs.io>`_.
-
-Note that although used on foams, this generic module is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [schott2023structural]_.
-
-
-.. figure:: Figure_segmentation.png
-   :alt: Processing pipeline
+.. figure:: processing.png
+   :alt: Example of reconstructed, phase-segmented and bubble-segmented (pore-segmented) images.
    :width: 80%
    :align: center
    
