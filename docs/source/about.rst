@@ -43,12 +43,12 @@ where :math:`N_{l}` and :math:`N_{g}` are the liquid and gas volumes respectivel
    :width: 80%
    :align: center
    
-The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured** with the function `LiqFrac_Batch`.
+The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured** with the function **LiqFrac_Batch**.
 
 FromLabelled
 -----------------
 
-Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function `Region_Prop`. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
+Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function **Region_Prop**. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
 
 
 .. figure:: region_prop.png
@@ -58,7 +58,7 @@ Individual bubble properties such as their centroid Cartesian coordinates :math:
 FromContact
 -----------------
 
-Foam rigidity originates from its jammed structure. When sufficiently packed, the bubbles are trapped by their neighbors, allowing them to transmit forces through the foam structure. Jamming is related to the local structure *via* the mean number of neighbors or coordination number :math:`Z`. The contact topology between each bubble can be obtained from a bubble-segmented image using the `GetContacts_Batch` function. It provides quantities such as the individual bubble coordination number :math:`Z` and contact pairs between neighbooring bubbles :math:`(bbl_i,bbl_j)`. The function `ContactProp_Batch` then allow to extract individual film properties such as their ellipse-fitted area :math:`A` or normal orientation. Finally, the individual bubble strain texture tensor :math:`U_M`, taking into account the distance with the center of its neighboors, can be extracted with the function `Texture_Batch`.
+Foam rigidity originates from its jammed structure. When sufficiently packed, the bubbles are trapped by their neighbors, allowing them to transmit forces through the foam structure. Jamming is related to the local structure *via* the mean number of neighbors or coordination number :math:`Z`. The contact topology between each bubble can be obtained from a bubble-segmented image using the **GetContacts_Batch** function. It provides quantities such as the individual bubble coordination number :math:`Z` and contact pairs between neighbooring bubbles :math:`(bbl_i,bbl_j)`. The function **ContactProp_Batch** then allow to extract individual film properties such as their ellipse-fitted area :math:`A` or normal orientation. Finally, the individual bubble strain texture tensor :math:`U_M`, taking into account the distance with the center of its neighboors, can be extracted with the function **Texture_Batch**.
 
 .. figure:: contact.png
    :width: 80%
@@ -69,7 +69,7 @@ Tracking
 
 The displacement of individual bubbles between successive images can be quantified using the SPAM toolbox's discrete digital image correlation (``ddic``) method, which uses two consecutive grayscale tomograms and one bubble-segmented image from the first time step. Due to the lack of intrinsic texture, contrast is enhanced by dilating the bubble regions to include the surrounding liquid channels [Schott2023]_. 
 
-On the other hand, tracking allows the flow field to be measured as well as following individual bubble properties between subsequent bubble-segmented images. The `LabelTracking_Batch` function, inspired by ID-Track [Ando2013]_, tracks bubble centroids between two successive labeled images by incorporating a volume matching criterion to exclude segmentation artifacts [Schott2023]_. It can be optionally guided by the SPAM ``ddic`` results.  
+On the other hand, tracking allows the flow field to be measured as well as following individual bubble properties between subsequent bubble-segmented images. The **LabelTracking_Batch** function, inspired by ID-Track [Ando2013]_, tracks bubble centroids between two successive labeled images by incorporating a volume matching criterion to exclude segmentation artifacts [Schott2023]_. It can be optionally guided by the SPAM ``ddic`` results.  
 
 .. figure:: velocity.png
    :width: 100%
@@ -85,7 +85,7 @@ Liquid foam is flowing through irreversible local rearrangements between the bub
    :align: center
 
 
-In practice, lost and newly formed contacts are identified using the tracking and topological quantifications presented above. Each pair of bubble labels :math:`(bbl_i,bbl_j)` forming a contact are translated from one time step :math:`t_{i}` to the next :math:`t_{i+1}` with the function `TranslatePairs_Batch`. This allows for the detection of lost contact pairs :math:`L` and newly formed pairs :math:`N` between successive images with the function `LostNew_Batch`. The sets :math:`L` and :math:`N` are then combined to identify elementary T1 events with the function `T1_Batch`.
+In practice, lost and newly formed contacts are identified using the tracking and topological quantifications presented above. Each pair of bubble labels :math:`(bbl_i,bbl_j)` forming a contact are translated from one time step :math:`t_{i}` to the next :math:`t_{i+1}` with the function **TranslatePairs_Batch**. This allows for the detection of lost contact pairs :math:`L` and newly formed pairs :math:`N` between successive images with the function **LostNew_Batch**. The sets :math:`L` and :math:`N` are then combined to identify elementary T1 events with the function **T1_Batch**.
 
 .. figure:: T1event_function.png
    :width: 80%
