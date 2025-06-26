@@ -18,7 +18,7 @@ Typical analysis pipeline
 Process
 -----------------
 
-The ``Process`` module focuses on the first image processing steps, aiming to produce phase-segmented and bubble-segmented images for the subsequent quantification. The provided functions are wrappers around existing tools from ``scikit-image`` [scikit-image]_, ``SPAM`` [Stamati2020]_, and ``PoreSpy`` [porespy_gostick_2019]_, enabling the processing of the images in a sequence (batch-wise). 
+The ``Process`` module focuses on the first image processing steps, aiming to produce phase-segmented and bubble-segmented images for the subsequent quantification. The provided functions are wrappers around existing tools from ``scikit-image`` [vanderWalt2014]_, ``SPAM`` [Stamati2020]_, and ``PoreSpy`` [Gostick2019]_, enabling the processing of the images in a sequence (batch-wise). 
 
 As illustrated in :numref:`fig-pipeline`, these include subsequent background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal. Note that although used on foams, this generic processing is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [Schott20232]_. An illustration of reconstructed, phase-segmented and bubble-segmented (pore-segmented) tomographic images is given here after in :numref:`fig-process` for a foam an a bread sample. 
 
@@ -101,7 +101,9 @@ References
 ============
 .. [vanderWalt2014] S. van der Walt et al., scikit-image: Image processing in Python. PeerJ 2:e453 (2014) https://doi.org/10.7717/peerj.453
 
-.. [stamati2020] Stamati et al., (2020). spam: Software for Practical Analysis of Materials. Journal of Open Source Software, 5(51), 2286, https://doi.org/10.21105/joss.02286
+.. [Stamati2020] Stamati et al., (2020). spam: Software for Practical Analysis of Materials. Journal of Open Source Software, 5(51), 2286, https://doi.org/10.21105/joss.02286
+
+.. [gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
 
 .. [Ando2013] Andò,E. et al., Experimental micromechanics: grain-scale observation of sand deformation, Géotechnique Letters 2, 107–112, (2012) https://doi.org/10.1680/geolett.12.00027
 
