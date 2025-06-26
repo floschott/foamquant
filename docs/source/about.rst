@@ -75,6 +75,22 @@ On the other hand, tracking allows the flow field to be measured as well as foll
    :width: 100%
    :align: center
 
+T1
+-----------------
+
+Liquid foam is flowing through irreversible local rearrangements between the bubbles. The elementary rearrangement event is called T1 event [Weaire1984] and consist in a contact swap between four bubbles [Reinelt2000, Cantat2013]: a film between two bubbles vanishes, and a new film is formed between two neighboring bubbles as shown hereafter. 
+
+.. figure:: T1event.png
+   :width: 50%
+   :align: center
+
+
+In practice, lost and newly formed contacts are identified using the tracking and topological quantifications presented above. The pairs of bubble labels :math:`(bbl_i,bbl_j)` forming a contact are translated from one time step to the next. This allows for the detection of lost contact pairs :math:`L` and newly formed pairs :math:`N` between successive images. The sets :math:`L` and :math:`N` are then combined to identify elementary T1 events.
+
+.. figure:: T1event_function.png
+   :width: 50%
+   :align: center
+
 Passage and Average
 -----------------
 
