@@ -1,4 +1,4 @@
-Welcome to foamquant's documentation! (Documentation in progress)
+Welcome to foamquant documentation
 ===================================
 
 The ``pip`` installable Python library, **foamquant**, was primarily developed to study time-resolved X-ray tomograms of evolving liquid foams and their fundamental local physical behavior. However, we believe this library can be adapted to the broader class of cellular materials, using other imaging methods, and put to work on other scientific and engineering applications.
