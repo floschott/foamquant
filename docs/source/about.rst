@@ -81,7 +81,7 @@ T1
 Liquid foam is flowing through irreversible local rearrangements between the bubbles. The elementary rearrangement event is called T1 event [Weaire1984] and consist in a contact swap between four bubbles [Reinelt2000, Cantat2013]: a film between two bubbles vanishes, and a new film is formed between two neighboring bubbles as shown in figure below. 
 
 .. figure:: T1event.png
-   :width: 50%
+   :width: 30%
    :align: center
 
 
@@ -98,7 +98,7 @@ A set of additional modules are introduced to perform averages, basis conversion
 
 
 References
-============
+-----------------
 .. [vanderWalt2014] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
 
 .. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
