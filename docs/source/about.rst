@@ -99,11 +99,11 @@ Tracking of five bubbles, showing various tracked properties: elastic internal s
 
 References
 ============
-.. [vanderWalt2014] S. van der Walt et al., scikit-image: Image processing in Python. PeerJ 2:e453 (2014) https://doi.org/10.7717/peerj.453
+.. [vanderWalt2014] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
 
-.. [Stamati2020] Stamati et al., (2020). spam: Software for Practical Analysis of Materials. Journal of Open Source Software, 5(51), 2286, https://doi.org/10.21105/joss.02286
+.. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
 
-.. [gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
+.. [Gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
 
 .. [Ando2013] Andò,E. et al., Experimental micromechanics: grain-scale observation of sand deformation, Géotechnique Letters 2, 107–112, (2012) https://doi.org/10.1680/geolett.12.00027
 
