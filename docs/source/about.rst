@@ -48,10 +48,12 @@ The liquid fraction along a cartesian mesh can be returned **structured** or **u
 FromLabelled
 -----------------
 
-Functions to quantify the bubbles regions properties from a batch of labelled images.
+Individual bubble properties such as their centroid position, volume, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor can be obtained from bubble-segmented images with the function Region_Prop.
 
-.. figure:: fromlab.png
-   :scale: 40%
+
+.. figure:: region_prop.png
+   :width: 80%
+   :align: center
    
 The function save the regions properties in a **.csv**
 
