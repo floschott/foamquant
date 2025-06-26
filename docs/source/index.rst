@@ -3,7 +3,7 @@ Welcome to foamquant documentation
 
 The ``pip`` installable Python library, **foamquant**, was primarily developed to study time-resolved X-ray tomograms of evolving liquid foams and their fundamental local physical behavior. However, we believe this library can be adapted to the broader class of cellular materials, using other imaging methods, and put to work on other scientific and engineering applications.
 
-The toolbox has four main dependencies: `numpy <https://numpy.org/doc/stable/>`_, `scikit-image <https://scikit-image.org/>`_ [scikit-image]_, `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ [Stamati2020]_, and `porespy <https://porespy.org/>`_ [porespy_gostick_2019]_.
+The toolbox has four main dependencies: `numpy <https://numpy.org/doc/stable/>`_, `scikit-image <https://scikit-image.org/>`_ [vanderWalt2014]_, `SPAM <https://ttk.gricad-pages.univ-grenoble-alpes.fr/spam/>`_ [Stamati2020]_, and `porespy <https://porespy.org/>`_ [Gostick2019]_.
 
 Main objectives:
 
@@ -33,11 +33,11 @@ This website provides an **API reference** and ready-to-use **jupyter notebooks*
 References
 -----------------------------------
 
-.. [scikit-image] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
+.. [vanderWalt2014] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
 
 .. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
 
-.. [porespy_gostick_2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
+.. [Gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
 
 .. note::
 
