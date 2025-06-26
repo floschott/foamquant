@@ -78,49 +78,23 @@ On the other hand, tracking allows the flow field to be measured as well as foll
 T1
 -----------------
 
-Liquid foam is flowing through irreversible local rearrangements between the bubbles. The elementary rearrangement event is called T1 event [Weaire1984] and consist in a contact swap between four bubbles [Reinelt2000, Cantat2013]: a film between two bubbles vanishes, and a new film is formed between two neighboring bubbles as shown hereafter. 
+Liquid foam is flowing through irreversible local rearrangements between the bubbles. The elementary rearrangement event is called T1 event [Weaire1984] and consist in a contact swap between four bubbles [Reinelt2000, Cantat2013]: a film between two bubbles vanishes, and a new film is formed between two neighboring bubbles as shown in figure below. 
 
 .. figure:: T1event.png
    :width: 50%
    :align: center
 
 
-In practice, lost and newly formed contacts are identified using the tracking and topological quantifications presented above. The pairs of bubble labels :math:`(bbl_i,bbl_j)` forming a contact are translated from one time step to the next. This allows for the detection of lost contact pairs :math:`L` and newly formed pairs :math:`N` between successive images. The sets :math:`L` and :math:`N` are then combined to identify elementary T1 events.
+In practice, lost and newly formed contacts are identified using the tracking and topological quantifications presented above. Each pair of bubble labels :math:`(bbl_i,bbl_j)` forming a contact are translated from one time step :math:`t_{i}` to the next :math:`t_{i+1}` with the function `TranslatePairs_Batch`. This allows for the detection of lost contact pairs :math:`L` and newly formed pairs :math:`N` between successive images with the function `LostNew_Batch`. The sets :math:`L` and :math:`N` are then combined to identify elementary T1 events with the function `T1_Batch`.
 
 .. figure:: T1event_function.png
-   :width: 50%
+   :width: 80%
    :align: center
 
-Passage and Average
+Passage, Average, Figure and Movie
 -----------------
 
-Functions to convert scalar, vectorial or tensorial properties from cartesian to cylindrical and spherical, and perform time/space averages.
-
-.. figure:: passage_average.png
-   :scale: 40%
-   
-In this example the displacement field is first expressed in a cylindrical basic and then averaged.
-
-
-
-Two ways of measuring the internal strain field
------------------
-
-   - Shape field, defined in [Graner2008]_ and first used in [Raufaste2015]_
-
-   - Texture field, defined in [Graner2008]_ 
-   
-.. figure:: shape_texture_3d.PNG
-   :scale: 50%
-
-Label traking
------------------
-The tracking method was inspired by ID-track presented in [Ando2013]_.
-
-.. figure:: tracking_3d.PNG
-   :scale: 70%
-   
-Tracking of five bubbles, showing various tracked properties: elastic internal strain, number of neighbours, velocity, and volume.
+A set of additional modules are introduced to perform averages, basis conversions, plot figures and produce cross sections movies. 
 
 
 References
