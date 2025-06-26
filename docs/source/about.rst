@@ -67,12 +67,13 @@ Foam rigidity originates from its jammed structure. When sufficiently packed, th
 Tracking
 -----------------
 
-Functions to track the bubbles and their properties from a batch of labelled images.
+The displacement of individual bubbles between successive images can be quantified using the SPAM toolbox's discrete digital image correlation (``ddic``) method, which uses two consecutive grayscale tomograms and one bubble-segmented image from the first time step. Due to the lack of intrinsic texture, contrast is enhanced by dilating the bubble regions to include the surrounding liquid channels [Schott2023]_. 
 
-.. figure:: tracking.png
-   :scale: 40%
-   
-The color (from green to black) indicates the time index. The red points are the lost tracking positions.
+On the other hand, tracking allows the flow field to be measured as well as following individual bubble properties between subsequent bubble-segmented images. The `LabelTracking_Batch` function, inspired by ID-Track [Ando2013]_, tracks bubble centroids between two successive labeled images by incorporating a volume matching criterion to exclude segmentation artifacts [Schott2023]_. It can be optionally guided by the SPAM ``ddic`` results.  
+
+.. figure:: velocity.png
+   :width: 100%
+   :align: center
 
 Passage and Average
 -----------------
