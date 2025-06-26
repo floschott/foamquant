@@ -20,7 +20,7 @@ Process
 
 The ``Process`` module focuses on the first image processing steps, aiming to produce phase-segmented and bubble-segmented images for the subsequent quantification. The provided functions are wrappers around existing tools from ``scikit-image`` [vanderWalt2014]_, ``SPAM`` [Stamati2020]_, and ``PoreSpy`` [Gostick2019]_, enabling the processing of the images in a sequence (batch-wise). 
 
-As illustrated in :numref:`fig-pipeline`, these include subsequent background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal. Note that although used on foams, this generic processing is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [Schott20232]_. An illustration of reconstructed, phase-segmented and bubble-segmented (pore-segmented) tomographic images is given here after in :numref:`fig-process` for a foam an a bread sample. 
+As illustrated in the above figure, the image analysis pipeline first typically consist of the background removal, phase segmentation, masking, speckle removal, bubble segmentation, and edge bubble removal steps. Note that although used on foams, this generic processing is also applicable to analyze a wider range of porous materials, e.g., bread crumb during baking [Schott20232]_. An illustration of reconstructed, phase-segmented and bubble-segmented (pore-segmented) tomographic images is given in the following figure for a foam an a bread sample. 
 
 .. figure:: processing.png
    :alt: Example of reconstructed, phase-segmented and bubble-segmented (pore-segmented) images.
@@ -43,19 +43,22 @@ where :math:`N_{l}` and :math:`N_{g}` are the liquid and gas volumes respectivel
    :width: 80%
    :align: center
    
-The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured**.
+The liquid fraction along a cartesian mesh can be returned **structured** or **unstructured** with the function `LiqFrac_Batch`.
 
 FromLabelled
 -----------------
 
-Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function Region_Prop. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
+Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function `Region_Prop`. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
 
 
 .. figure:: region_prop.png
    :width: 80%
    :align: center
    
-Foam rigidity originates from its jammed structure. When sufficiently packed, the bubbles are trapped by their neighbors, allowing them to transmit forces through the foam structure. Jamming is related to the local structure *via* the mean number of neighbors or coordination number :math:`Z`. The contact topology between each bubble can be obtained from a bubble-segmented image using the GetContacts_Batch function. It provides quantities such as the individual bubble coordination number :math:`Z` and contact pairs between neighbooring bubbles :math:`(bbl_i,bbl_j)`. The function ContactProp_Batch then allow to extract individual film properties such as their ellipse-fitted area :math:`A` or normal orientation. Finally, the individual bubble strain texture tensor :math:`U_M`, taking into account the distance with the center of its neighboors, can be extracted with the function Texture_Batch.
+FromContact
+-----------------
+
+Foam rigidity originates from its jammed structure. When sufficiently packed, the bubbles are trapped by their neighbors, allowing them to transmit forces through the foam structure. Jamming is related to the local structure *via* the mean number of neighbors or coordination number :math:`Z`. The contact topology between each bubble can be obtained from a bubble-segmented image using the `GetContacts_Batch` function. It provides quantities such as the individual bubble coordination number :math:`Z` and contact pairs between neighbooring bubbles :math:`(bbl_i,bbl_j)`. The function `ContactProp_Batch` then allow to extract individual film properties such as their ellipse-fitted area :math:`A` or normal orientation. Finally, the individual bubble strain texture tensor :math:`U_M`, taking into account the distance with the center of its neighboors, can be extracted with the function `Texture_Batch`.
 
 .. figure:: contact.png
    :width: 80%
