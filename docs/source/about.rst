@@ -48,14 +48,18 @@ The liquid fraction along a cartesian mesh can be returned **structured** or **u
 FromLabelled
 -----------------
 
-Individual bubble properties such as their centroid position, volume, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor can be obtained from bubble-segmented images with the function Region_Prop.
+Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function Region_Prop. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
 
 
 .. figure:: region_prop.png
    :width: 80%
    :align: center
    
-The function save the regions properties in a **.csv**
+Foam rigidity originates from its jammed structure. When sufficiently packed, the bubbles are trapped by their neighbors, allowing them to transmit forces through the foam structure. Jamming is related to the local structure *via* the mean number of neighbors or coordination number :math:`Z`. The contact topology between each bubble can be obtained from a bubble-segmented image using the GetContacts_Batch function. It provides quantities such as the individual bubble coordination number :math:`Z` and contact pairs between neighbooring bubbles :math:`(bbl_i,bbl_j)`. The function ContactProp_Batch then allow to extract individual film properties such as their ellipse-fitted area :math:`A` or normal orientation. Finally, individual bubble strain can be obtained from the texture, taking into account the distance with the center of its neighboors, with the function Texture_Batch.
+
+.. figure:: contact.png
+   :width: 80%
+   :align: center
 
 Tracking
 -----------------
