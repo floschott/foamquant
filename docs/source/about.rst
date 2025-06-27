@@ -48,7 +48,7 @@ The liquid fraction along a cartesian mesh can be returned **structured** or **u
 FromLabelled
 -----------------
 
-Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` can be obtained from bubble-segmented images with the function **Region_Prop**. More advanced properties such as individual bubble surface area :math:`S` and Batchelor stress tensor :math:`(z,y,x)`.
+Individual bubble properties such as their centroid Cartesian coordinates :math:`(z,y,x)`, volume :math:`V`, equivalent radius :math:`R_V=(3 V/(4\pi))^{1/3}` or shape strain tensor :math:`U_S` [Graner2008]_ [Raufaste2015]_ can be obtained from bubble-segmented images with the function **Region_Prop**. The function **Batchelor_Batch** return more advanced properties such as the individual bubble surface area :math:`S` and Batchelor stress tensor :math:`\sigma`.
 
 
 .. figure:: region_prop.png
@@ -67,7 +67,7 @@ Foam rigidity originates from its jammed structure. When sufficiently packed, th
 Tracking
 -----------------
 
-The displacement of individual bubbles between successive images can be quantified using the SPAM toolbox's discrete digital image correlation (``ddic``) method, which uses two consecutive grayscale tomograms and one bubble-segmented image from the first time step. Due to the lack of intrinsic texture, contrast is enhanced by dilating the bubble regions to include the surrounding liquid channels [Schott2023]_. 
+The displacement of individual bubbles between successive images can be quantified using the SPAM [Stamati2020]_ toolbox's discrete digital image correlation (``ddic``) method, which uses two consecutive grayscale tomograms and one bubble-segmented image from the first time step [Hall2010]_. Due to the lack of intrinsic texture, contrast is enhanced by dilating the bubble regions to include the surrounding liquid channels [Schott2023]_. 
 
 On the other hand, tracking allows the flow field to be measured as well as following individual bubble properties between subsequent bubble-segmented images. The **LabelTracking_Batch** function, inspired by ID-Track [Ando2013]_, tracks bubble centroids between two successive labeled images by incorporating a volume matching criterion to exclude segmentation artifacts [Schott2023]_. It can be optionally guided by the SPAM ``ddic`` results.  
 
@@ -99,11 +99,11 @@ A set of additional modules are introduced to perform averages, basis conversion
 
 References
 -----------------
-.. [vanderWalt2014] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453.
+.. [vanderWalt2014] van der Walt, S., et al. (2014) scikit-image: image processing in Python. PeerJ 2, e453 https://doi.org/10.7717/peerj.453
 
-.. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286.
+.. [Stamati2020] Stamati, H., et al. (2020). SPAM: Software for Practical Analysis of Materials, 5, 2286 https://doi.org/10.21105/joss.02286 
 
-.. [Gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296.
+.. [Gostick2019] Gostick, J. et al. (2019). PoreSpy: A Python toolkit for quantitative analysis of porous media images. Journal of Open Source Software, 4(37), 1296 https://doi.org/10.21105/joss.01296
 
 .. [Ando2013] Andò,E. et al., Experimental micromechanics: grain-scale observation of sand deformation, Géotechnique Letters 2, 107–112, (2012) https://doi.org/10.1680/geolett.12.00027
 
@@ -116,3 +116,4 @@ References
 .. [Schott2023] F. Schott et al., Three-dimensional liquid foam flow through a hopper resolved by fast X-ray microtomography, Soft Matter, (2023) https://doi.org/10.1039/d2sm01299e
 
 .. [Schott20232] F. Schott et al., Structural formation during bread baking in a combined microwave-convective oven determined by sub-second in-situ synchrotron X-ray microtomography, Food Research International, (2023) https://doi.org/10.1016/j.foodres.2023.113283
+
