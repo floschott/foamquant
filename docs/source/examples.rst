@@ -1,15 +1,11 @@
-Examples
+Examples gallery
 ==================
 
-List of examples:
+.. nbgallery::
+   Jupy_FoamQuant_Processing
+   Jupy_FoamQuant_lf_radius
+   Jupy_FoamQuant_strain_stress
 
-* Image processing: from raw images to bubble-segmented images.
-
-* Image quantification: Liquid fraction & Bubble radius.
-
-* Image quantification: Strain & Stress fields.
-
-* Image quantification: Plastic event detection.
 
 
 Image processing: from raw images to bubble-segmented images
