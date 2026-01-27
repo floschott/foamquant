@@ -46,3 +46,22 @@ html_theme_options = {
     'style_external_links': True,
     'sticky_navigation': True,
 }
+
+# Show a download link for notebooks
+nbsphinx_allow_errors = True  # optional but common
+nbsphinx_execute = 'never'    # recommended for RTD
+
+nbsphinx_prolog = r"""
+{% if env.metadata['nbsphinx-link-target'] %}
+.. raw:: html
+
+   <div class="nb-download">
+     <a href="{{ env.metadata['nbsphinx-link-target'] }}"
+        download
+        class="btn btn-neutral">
+       ⬇ Download notebook
+     </a>
+   </div>
+
+{% endif %}
+"""
