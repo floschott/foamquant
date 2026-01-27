@@ -1,25 +1,17 @@
 Flowing liquid foam - Image processing
 ======================================
 
-In this tutorial you will learn to step-by-step process your raw images (flowing liquid foam sample) and how to obtain phase segmented and bubble segmented images.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this tutorial you will learn to step-by-step process your raw images
+(flowing liquid foam sample) and how to obtain phase segmented and
+bubble segmented images.
 
-The tutorial is divided in the following sections:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   A) Import libraries
-   B) Processing folders
-   C) Get familiar with the input data
-   D) Phase segmention
-   E) Cleaning the speckles
-   F) Bubble segmentation
-   G) Remove the edge bubbles 
-   H) Summary
+The tutorial is divided in the following sections: - Import libraries -
+Processing folders - Get familiar with the input data - Phase segmention
+- Cleaning the speckles - Bubble segmentation - Remove the edge bubbles
+- Summary
 
 A) Import libraries
-===================
+-------------------
 
 .. code:: ipython3
 
@@ -32,7 +24,7 @@ A) Import libraries
     from scipy import ndimage
 
 B) Processing folders
-=====================
+---------------------
 
 .. code:: ipython3
 
@@ -61,7 +53,7 @@ B) Processing folders
 
 
 C) Get familiar with the input data
-===================================
+-----------------------------------
 
 Read the first image of the time serie with the **tifffile** function
 **imread**
@@ -118,25 +110,28 @@ Now that we are a bit more familiar with what we are going to work with
 let’s start with the first step, the **phase segmentation**
 
 D) Phase segmentation
-=====================
+---------------------
 
 Here, our objective is to separate (indentify) the pixels that
 corresponds either to the liquid phase or the gas phase.
 Phase-segmentation means assigning to each pixel/voxel a phase-label:
 ‘0’ for the liquid continuous matrix, and ‘1’ for the gas bubbles
-volumes. ## Thresholding the image, a method adapted to our simple
-two-phase system They are many ways an image can be segmented. In our
-case, we are lucky. Liquid foam is made of only two phases (liquid and
-gas), and with two very distinct electron densities. This makes foam a
-faily easy stucture to segment with a simple threshold value. This means
-that we independently compare each individual pixel grey-value with a
-single threshold. If it is larger, we assign it to one phase (liquid),
-and on the other hand we assign it to the other phase (gas). This
-threholding method is very common and can be used to segment images
-having more than two phases.
+volumes.
 
-Little exercise: manual threshold the first image of our time-series
---------------------------------------------------------------------
+**Thresholding the image, a method adapted to our simple two-phase
+system**
+
+They are many ways an image can be segmented. In our case, we are lucky.
+Liquid foam is made of only two phases (liquid and gas), and with two
+very distinct electron densities. This makes foam a faily easy stucture
+to segment with a simple threshold value. This means that we
+independently compare each individual pixel grey-value with a single
+threshold. If it is larger, we assign it to one phase (liquid), and on
+the other hand we assign it to the other phase (gas). This threholding
+method is very common and can be used to segment images having more than
+two phases.
+
+**Little exercise: manual threshold the first image of our time-series**
 
 Let’s observe the gray-value distribution of our first image, and based
 on it, let’s try to manually threshold our first image. The following
@@ -201,8 +196,7 @@ why, one often perform sensitivity tests or compare methods in order to
 increase our confidence in the downstream quantifications. The most
 important is to be clear and transparent on your choices.
 
-The Otsu’s method
------------------
+**The Otsu’s method**
 
 One classical thresholding methods is called the Otsu’s method, named
 after Nobuyuki Otsu `Wikipedia - Otsu’s
@@ -336,7 +330,7 @@ segmentation method, and are often due to noise in the raw image. Can
 you see the slighty brighter voxels in the corresponding raw image?
 
 E) Cleaning the speckles
-========================
+------------------------
 
 In this section, we are going to clean our phase-segmented images from
 speckles artefacts. Black and white speckles are often refered as holes
@@ -509,7 +503,7 @@ We are now ready for the next step, another segmentation: the bubble
 segmentation.
 
 F) Bubble segmentation
-======================
+----------------------
 
 Liquid foam is made of gas bubbles in close contact, resulting
 effectively in a discontinuous gas phase dispersed inside a continuous
@@ -535,8 +529,8 @@ liquid-phase voxels (black region).
 Let’s start by performing this segmentation manually, step by step, to
 understand how it works.
 
-Little exercice: understading the step-by-step watershed segmentation on the first image of the series
-------------------------------------------------------------------------------------------------------
+**Little exercice: understading the step-by-step watershed segmentation
+on the first image of the series**
 
 Try to read though the following code-cell. Do not hesitate to modify
 parrameters and run again this cell to see what it changes in the
@@ -621,8 +615,7 @@ resulting bubble-segmented image.
 .. image:: Jupy_FoamQuant_Processing_files/Jupy_FoamQuant_Processing_24_1.png
 
 
-Run bubble-segmentation on the whole time-series
-------------------------------------------------
+**Run bubble-segmentation on the whole time-series**
 
 Now that we understand a bit more how the watershed segmentation works,
 and see which parrameters works well, we can go back to our time serie
@@ -726,7 +719,7 @@ next tutorials (Region properties and Tracking) how to disregard them.
 
 
 G) Remove the edge bubbles
-==========================
+--------------------------
 
 The bubbles at the edges of the images are irrelevant for further
 quantifications. They are “cut” so for exampe have a smaller volume than
@@ -794,7 +787,7 @@ image.
 
 
 H) Summary
-==========
+----------
 
 Let’s now quickly summarize the processing steps we have done and have
 by the same occasion a chek on the whole time-series.

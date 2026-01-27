@@ -1,25 +1,18 @@
 Flowing liquid foam - Liquid fraction & Bubble equivalent radius
 ================================================================
 
-In this tutorial you will learn to measure liquid fraction and individual bubble radius from respectively phase-segmented (cleaned) and bubble segmented (no-edge) images.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this tutorial you will learn to measure liquid fraction and
+individual bubble radius from respectively phase-segmented (cleaned) and
+bubble segmented (no-edge) images.
 
-The tutorial is divided in the following sections:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   A) Import libraries
-   B) Quantification folders
-   C) Get familiar with the input data
-   D) Liquid fraction
-   E) Get familiar with the input data
-   F) Individual bubble properties
-   G) Remove bubbles at the edges
-   H) Equivalent radius distribution
+The tutorial is divided in the following sections: - Import libraries -
+Quantification folders - Get familiar with the input data - Liquid
+fraction - Get familiar with the input data - Individual bubble
+properties - Remove bubbles at the edges - Equivalent radius
+distribution
 
 A) Import libraries
-===================
+-------------------
 
 .. code:: ipython3
 
@@ -32,7 +25,7 @@ A) Import libraries
     import pandas as pd
 
 B) Quantification folders
-=========================
+-------------------------
 
 .. code:: ipython3
 
@@ -56,7 +49,7 @@ B) Quantification folders
 
 
 C) Get familiar with the input data
-===================================
+-----------------------------------
 
 .. code:: ipython3
 
@@ -100,7 +93,7 @@ C) Get familiar with the input data
 
 
 D) Liquid fraction
-==================
+------------------
 
 The liquid fraction is an essential parrameter when studying liquid
 foam. It is quantified from the phase-segmented images, as the number of
@@ -114,8 +107,7 @@ volume:
 where :math:`N_l` and :math:`N_g` are the liquid and gas volumes
 respectively in number of voxels.
 
-Full-image liquid fraction
---------------------------
+**Full-image liquid fraction**
 
 Here we want to know how the full image liquid fraction evolves with
 time.
@@ -174,8 +166,7 @@ time.
      0.14275831 0.14482527 0.14253219 0.14275472]
 
 
-Liquid fraction along a cartesian grid
---------------------------------------
+**Liquid fraction along a cartesian grid**
 
 Now we want to know how the liquid fraction is distributed in space. We
 are going to use the same function but indicate that we want a cartesian
@@ -316,7 +307,7 @@ averages.
 
 
 E) Get familiar with the input data
-===================================
+-----------------------------------
 
 Let’s read the first bubble-segmented image of the series (with no
 bubble on the edges).
@@ -346,7 +337,7 @@ bubble on the edges).
 
 
 F) Individual bubble properties (RegProps)
-==========================================
+------------------------------------------
 
 We want here to extract from each bubble region, its equivalent radius.
 To do so we are going to use the **RegionProp_Batch** function. It is
@@ -384,7 +375,7 @@ essentially a wrapped of **regionprops** from scikit-image.
 
 
 G) Equivalent radius
-====================
+--------------------
 
 Let’s open the first saved bubble-properties table with **pandas**.
 

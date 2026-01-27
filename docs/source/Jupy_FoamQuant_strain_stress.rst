@@ -1,23 +1,16 @@
 Flowing liquid foam - Strain & Stress fields
 ============================================
 
-In this tutorial you will learn to measure liquid fraction and individual bubble radius from respectively phase-segmented (cleaned) and bubble segmented (no-edge) images.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this tutorial you will learn to measure liquid fraction and
+individual bubble radius from respectively phase-segmented (cleaned) and
+bubble segmented (no-edge) images.
 
-The tutorial is divided in the following sections:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   A) Import libraries
-   B) Quantification folders
-   C) Get familiar with the input data
-   D) Strain - Shape tensor
-   E) Strain - Texture tensor
-   F) Stress - Batchelor tensor
+The tutorial is divided in the following sections: - Import libraries -
+Quantification folders - Get familiar with the input data - Strain -
+Shape tensor - Strain - Texture tensor - Stress - Batchelor tensor
 
 A) Import libraries
-===================
+-------------------
 
 .. code:: ipython3
 
@@ -32,7 +25,7 @@ A) Import libraries
     import pandas as pd
 
 B) Quantification folders
-=========================
+-------------------------
 
 .. code:: ipython3
 
@@ -60,7 +53,7 @@ Let’s read the first bubble-segmented image of the series (with no
 bubble on the edges).
 
 C) Get familiar with the input data
-===================================
+-----------------------------------
 
 .. code:: ipython3
 
@@ -93,7 +86,7 @@ C) Get familiar with the input data
 
 
 D) Strain - Measured from the bubble region (shape tensor)
-==========================================================
+----------------------------------------------------------
 
 The shape strain tensor :math:`U_S` is computed from the shape tensor
 :math:`S`. Each bubble is represented by a set of coordinates
@@ -825,7 +818,7 @@ more along the whole volume.
 
 
 E) Strain - Measured from the distance between neighbooring bubbles (texture tensor)
-====================================================================================
+------------------------------------------------------------------------------------
 
 We can now do the exact same steps, extracting the strain field but
 working with the texture tensor.
@@ -1653,7 +1646,7 @@ Once again we can represent the obtained strain :math:`U_M` by using the
 
 
 F) Stress - Measured from the interface curvature (Batchelor stress tensor)
-===========================================================================
+---------------------------------------------------------------------------
 
 The last but maybe one of the most interesting tool.
 
