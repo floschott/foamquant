@@ -6,9 +6,6 @@ def region_surface_areas(regions, voxel_size=1, strel=None):
     r"""
     Extract the surface area of each region in a labeled image.
 
-    Optionally, it can also find the the interfacial area between all
-    adjoining regions.
-
     Parameters
     ----------
     regions : ndarray
@@ -30,12 +27,6 @@ def region_surface_areas(regions, voxel_size=1, strel=None):
     areas : list
         A list containing the surface area of each region, offset by 1, such
         that the surface area of region 1 is stored in element 0 of the list.
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/metrics/reference/region_surface_areas.html>`_
-    to view online example.
 
     """
     #logger.info('Finding surface area of each region')
