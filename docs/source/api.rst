@@ -8,22 +8,7 @@ Process
   
 .. automodule:: FoamQuant.Process
    :members:
-   :undoc-members:
-   :show-inheritance:
-   
-
-Python functions
-=============
-
-
-
-Process
--------------------------
-  
-.. automodule:: FoamQuant.Process
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   :private-members:
    
 
 FromBinary
