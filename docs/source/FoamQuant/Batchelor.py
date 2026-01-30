@@ -3,32 +3,24 @@
 # Function 1: Region surface areas - COPIED
 # Source: https://porespy.org/_modules/porespy/metrics/_meshtools.html#region_surface_areas
 def region_surface_areas(regions, voxel_size=1, strel=None): 
-    r"""
-    Extract the surface area of each region in a labeled image.
-
-    Parameters
-    ----------
-    regions : ndarray
-        An image of the pore space partitioned into individual pore regions.
-        Note that zeros in the image will not be considered for area
-        calculation.
-    voxel_size : scalar
-        The resolution of the image, expressed as the length of one side of a
-        voxel, so the volume of a voxel would be **voxel_size**-cubed.  The
-        default is 1.
-    strel : array_like
-        The structuring element used to blur the region.  If not provided,
-        then a spherical element (or disk) with radius 1 is used.  See the
-        docstring for ``mesh_region`` for more details, as this argument is
-        passed to there.
-
-    Returns
-    -------
-    areas : list
-        A list containing the surface area of each region, offset by 1, such
-        that the surface area of region 1 is stored in element 0 of the list.
-
     """
+    Compute the surface area of each labeled region in a 2D or 3D image.
+
+    Optionally computes interfacial areas by meshing each region
+    using the marching cubes algorithm.
+
+    :param regions: Labeled image where each integer label defines a region
+                    (label 0 is ignored)
+    :type regions: numpy.ndarray
+    :param voxel_size: Physical size of one voxel edge
+    :type voxel_size: float
+    :param strel: Structuring element used to blur the region prior to meshing
+    :type strel: numpy.ndarray or None
+
+    :return: Surface area of each region (index = label - 1)
+    :rtype: numpy.ndarray
+    """
+    
     #logger.info('Finding surface area of each region')
     im = regions
     if strel is None:
@@ -54,31 +46,20 @@ def region_surface_areas(regions, voxel_size=1, strel=None):
 # Function 2: ps_round - COPIED
 # Source: https://porespy.org/_modules/porespy/tools/_funcs.html#ps_round
 def ps_round(r, ndim, smooth=True):
-    r"""
-    Creates round structuring element with the given radius and dimensionality
-
-    Parameters
-    ----------
-    r : scalar
-        The desired radius of the structuring element
-    ndim : int
-        The dimensionality of the element, either 2 or 3.
-    smooth : boolean
-        Indicates whether the faces of the sphere should have the little
-        nibs (``True``) or not (``False``, default)
-
-    Returns
-    -------
-    strel : ndarray
-        A 3D numpy array of the structuring element
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/tools/reference/ps_round.html>`_
-    to view online example.
-
     """
+    Create a spherical (or circular) structuring element.
+
+    :param r: Radius of the structuring element
+    :type r: float
+    :param ndim: Dimensionality of the element (2 or 3)
+    :type ndim: int
+    :param smooth: If True, use smooth sphere faces
+    :type smooth: bool
+
+    :return: Structuring element
+    :rtype: numpy.ndarray
+    """
+    
     rad = int(np.ceil(r))
     other = np.ones([2*rad + 1 for i in range(ndim)], dtype=bool)
     other[tuple(rad for i in range(ndim))] = False
@@ -91,65 +72,20 @@ def ps_round(r, ndim, smooth=True):
 # Function 3: extend_slice - COPIED
 # Source: https://porespy.org/_modules/porespy/tools/_funcs.html#extend_slice
 def extend_slice(slices, shape, pad=1):
-    r"""
-    Adjust slice indices to include additional voxles around the slice.
-
-    This function does bounds checking to ensure the indices don't extend
-    outside the image.
-
-    Parameters
-    ----------
-    slices : list of slice objects
-         A list (or tuple) of N slice objects, where N is the number of
-         dimensions in the image.
-    shape : array_like
-        The shape of the image into which the slice objects apply.  This is
-        used to check the bounds to prevent indexing beyond the image.
-    pad : int or list of ints
-        The number of voxels to expand in each direction.
-
-    Returns
-    -------
-    slices : list of slice objects
-        A list slice of objects with the start and stop attributes respectively
-        incremented and decremented by 1, without extending beyond the image
-        boundaries.
-
-    Examples
-    --------
-    >>> from scipy.ndimage import label, find_objects
-    >>> from porespy.tools import extend_slice
-    >>> im = np.array([[1, 0, 0], [1, 0, 0], [0, 0, 1]])
-    >>> labels = label(im)[0]
-    >>> s = find_objects(labels)
-
-    Using the slices returned by ``find_objects``, set the first label to 3
-
-    >>> labels[s[0]] = 3
-    >>> print(labels)
-    [[3 0 0]
-     [3 0 0]
-     [0 0 2]]
-
-    Next extend the slice, and use it to set the values to 4
-
-    >>> s_ext = extend_slice(s[0], shape=im.shape, pad=1)
-    >>> labels[s_ext] = 4
-    >>> print(labels)
-    [[4 4 0]
-     [4 4 0]
-     [4 4 2]]
-
-    As can be seen by the location of the 4s, the slice was extended by 1, and
-    also handled the extension beyond the boundary correctly.
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/tools/reference/extend_slice.html>`_
-    to view online example.
-
     """
+    Extend slice indices by a fixed padding while respecting image bounds.
+
+    :param slices: Slice objects defining the region of interest
+    :type slices: tuple of slice
+    :param shape: Shape of the full image
+    :type shape: tuple or list
+    :param pad: Number of voxels to extend in each direction
+    :type pad: int or array-like
+
+    :return: Extended slice objects
+    :rtype: tuple of slice
+    """
+    
     shape = np.array(shape)
     pad = np.array(pad).astype(int)*(shape > 0)
     a = []
@@ -165,35 +101,18 @@ def extend_slice(slices, shape, pad=1):
 # Function 3: mesh_region - COPIED
 # Source: https://porespy.org/_modules/porespy/tools/_funcs.html#mesh_region
 def mesh_region(region: bool, strel=None):
-    r"""
-    Creates a tri-mesh of the provided region using the marching cubes
-    algorithm
-
-    Parameters
-    ----------
-    im : ndarray
-        A boolean image with ``True`` values indicating the region of interest
-    strel : ndarray
-        The structuring element to use when blurring the region.  The blur is
-        perfomed using a simple convolution filter.  The point is to create a
-        greyscale region to allow the marching cubes algorithm some freedom
-        to conform the mesh to the surface.  As the size of ``strel`` increases
-        the region will become increasingly blurred and inaccurate. The default
-        is a spherical element with a radius of 1.
-
-    Returns
-    -------
-    mesh : tuple
-        A named-tuple containing ``faces``, ``verts``, ``norm``, and ``val``
-        as returned by ``scikit-image.measure.marching_cubes`` function.
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/tools/reference/mesh_region.html>`_
-    to view online example.
-
     """
+    Generate a triangular surface mesh of a region using marching cubes.
+
+    :param region: Boolean image defining the region of interest
+    :type region: numpy.ndarray
+    :param strel: Structuring element used to blur the region prior to meshing
+    :type strel: numpy.ndarray or None
+
+    :return: Mesh object containing vertices, faces, normals and values
+    :rtype: Results
+    """
+    
     im = region
     _check_for_singleton_axes(im)
     if strel is None:
@@ -220,16 +139,15 @@ def mesh_region(region: bool, strel=None):
 # Function 4: _check_for_singleton_axes - COPIED
 # Source: https://porespy.org/_modules/porespy/tools/_funcs.html#mesh_region
 def _check_for_singleton_axes(im):  # pragma: no cover
-    r"""
-    Checks for whether the input image contains singleton axes and logs
-    a proper warning in case found.
-
-    Parameters
-    ----------
-    im : ndarray
-        Input image.
-
     """
+    Check for singleton dimensions in an image and issue a warning.
+
+    :param im: Input image
+    :type im: numpy.ndarray
+
+    :return: None
+    """
+    
     if im.ndim != im.squeeze().ndim:
         logger.warning("Input image conains a singleton axis. Reduce"
                        " dimensionality with np.squeeze(im) to avoid"
@@ -287,37 +205,18 @@ class Results:
 # Function 5: mesh_surface_area - COPIED
 # Source: https://porespy.org/_modules/porespy/metrics/_meshtools.html#mesh_surface_area
 def mesh_surface_area1(mesh=None, verts=None, faces=None):
-    r"""
-    Calculate the surface area of a meshed region
+    """
+    Compute the surface area of a triangular mesh.
 
-    Parameters
-    ----------
-    mesh : tuple
-        The tuple returned from the ``mesh_region`` function
-    verts : array
-        An N-by-ND array containing the coordinates of each mesh vertex
-    faces : array
-        An N-by-ND array indicating which elements in ``verts`` form a mesh
-        element.
+    :param mesh: Mesh object returned by ``mesh_region``
+    :type mesh: Results or None
+    :param verts: Mesh vertices
+    :type verts: numpy.ndarray or None
+    :param faces: Mesh faces
+    :type faces: numpy.ndarray or None
 
-    Returns
-    -------
-    surface_area : float
-        The surface area of the mesh, calculated by
-        ``skimage.measure.mesh_surface_area``
-
-    Notes
-    -----
-    This function simply calls ``scikit-image.measure.mesh_surface_area``, but
-    it allows for the passing of the ``mesh`` tuple returned by the
-    ``mesh_region`` function, entirely for convenience.
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/metrics/reference/mesh_surface_area.html>`_
-    to view online example.
-
+    :return: Surface area of the mesh
+    :rtype: float
     """
     if mesh:
         verts = mesh.verts
@@ -331,25 +230,14 @@ def mesh_surface_area1(mesh=None, verts=None, faces=None):
 # Function 6: show_mesh - COPIED
 # Source: https://porespy.org/_modules/porespy/visualization/_plots.html#show_mesh
 def show_mesh(mesh):  # pragma: no cover
-    r"""
-    Visualizes the mesh of a region as obtained by ``get_mesh`` function in
-    the ``metrics`` submodule.
+    """
+    Visualize a triangular surface mesh in 3D.
 
-    Parameters
-    ----------
-    mesh : tuple
-        A mesh returned by ``skimage.measure.marching_cubes``
+    :param mesh: Mesh object returned by ``marching_cubes`` or ``mesh_region``
+    :type mesh: Results
 
-    Returns
-    -------
-    fig : Matplotlib figure
-        A handle to a matplotlib 3D axis
-
-    Examples
-    --------
-    `Click here
-    <https://porespy.org/examples/visualization/reference/show_mesh.html>`_
-    to view online example.
+    :return: Matplotlib figure handle
+    :rtype: matplotlib.figure.Figure
     """
     try:
         verts = mesh.vertices
@@ -387,31 +275,20 @@ def show_mesh(mesh):  # pragma: no cover
 # Function 7: Region_surface_areas MODIFIED as region_Batchelor_tensors
 # Source: https://porespy.org/_modules/porespy/metrics/_meshtools.html#region_surface_areas
 def region_Batchelor_tensors(regions, voxel_size=1, strel=None):
-    r"""
-    Extract the Batchelor tensor of each region in a labeled image.
+    """
+    Compute the Batchelor tensor for each labeled region in an image.
 
-    Parameters
-    ----------
-    regions : ndarray
-        An image of the pore space partitioned into individual pore regions.
-        Note that zeros in the image will not be considered for area
-        calculation.
-    voxel_size : scalar
-        The resolution of the image, expressed as the length of one side of a
-        voxel, so the volume of a voxel would be **voxel_size**-cubed.  The
-        default is 1.
-    strel : array_like (NOT TESTED YET FOR BATCHELOR TENSOR!)
-        The structuring element used to blur the region.  If not provided,
-        then a spherical element (or disk) with radius 1 is used.  See the
-        docstring for ``mesh_region`` for more details, as this argument is
-        passed to there.
+    :param regions: Labeled image where each integer label defines a region
+    :type regions: numpy.ndarray
+    :param voxel_size: Physical voxel size
+    :type voxel_size: float
+    :param strel: Structuring element used to blur regions before meshing
+    :type strel: numpy.ndarray or None
 
-    Returns
-    -------
-    areas : list
-        A list containing the Batchelor tensor of each region, offset by 1, such
-        that the Batchelor tensor of region 1 is stored in element 0 of the list.
-
+    :return:
+        - Batchelor tensor for each region (N, 3, 3)
+        - Surface area of each region
+    :rtype: tuple (numpy.ndarray, numpy.ndarray)
     """
     from tqdm import tqdm
     im = regions
@@ -438,25 +315,20 @@ def region_Batchelor_tensors(regions, voxel_size=1, strel=None):
 # Function 8: mesh_surface_area1 MODIFIED as mesh_Batchelor_tensor
 # Source: https://porespy.org/_modules/porespy/metrics/_meshtools.html#region_surface_area
 def mesh_Batchelor_tensor(mesh=None, verts=None, faces=None):
-    r"""
-    Calculate the Batchelor tensor of a meshed region
+    """
+    Compute the Batchelor tensor from a surface mesh.
 
-    Parameters
-    ----------
-    mesh : tuple
-        The tuple returned from the ``mesh_region`` function
-    verts : array
-        An N-by-ND array containing the coordinates of each mesh vertex
-    faces : array
-        An N-by-ND array indicating which elements in ``verts`` form a mesh
-        element.
+    :param mesh: Mesh object returned by ``mesh_region``
+    :type mesh: Results or None
+    :param verts: Mesh vertices
+    :type verts: numpy.ndarray or None
+    :param faces: Mesh faces
+    :type faces: numpy.ndarray or None
 
-    Returns
-    -------
-    mesh_for_batchelor : float 3x3 tensor
-        The Batchelor tensor of the mesh, calculated by the modified
-        ``skimage.measure.mesh_surface_area`` function called mesh_batchelor
-
+    :return:
+        - Batchelor tensor (3x3)
+        - Surface area of the mesh
+    :rtype: tuple (numpy.ndarray, float)
     """
     if mesh:
         verts = mesh.verts
@@ -470,36 +342,18 @@ def mesh_Batchelor_tensor(mesh=None, verts=None, faces=None):
 # Function 9: skimage.measure.mesh_surface_area MODIFIED as mesh_batchelor
 # Source: https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.mesh_surface_area
 def mesh_batchelor(verts, faces):
-    """Compute Batchelor tensor, given vertices and triangular faces.
+    """
+    Compute the Batchelor tensor from triangular mesh geometry.
 
-    Parameters
-    ----------
-    verts : (V, 3) array of floats
-        Array containing (x, y, z) coordinates for V unique mesh vertices.
-    faces : (F, 3) array of ints
-        List of length-3 lists of integers, referencing vertex coordinates as
-        provided in `verts`.
+    :param verts: Vertex coordinates (V, 3)
+    :type verts: numpy.ndarray
+    :param faces: Triangle indices (F, 3)
+    :type faces: numpy.ndarray
 
-    Returns
-    -------
-    B : float 3x3 tensor
-        Batchelor tensor of mesh. Units now [coordinate units] ** 2.
-    area : float
-        Surface area of mesh. Units now [coordinate units] ** 2.
-
-    Notes
-    -----
-    The arguments expected by this function are the first two outputs from
-    `skimage.measure.marching_cubes`. For unit correct output, ensure correct
-    `spacing` was passed to `skimage.measure.marching_cubes`.
-
-    This algorithm works properly only if the ``faces`` provided are all
-    triangles.
-
-    See Also
-    --------
-    skimage.measure.marching_cubes
-
+    :return:
+        - Batchelor tensor (3x3)
+        - Surface area
+    :rtype: tuple (numpy.ndarray, float)
     """
     # Fancy indexing to define two vector arrays from triangle vertices
     actual_verts = verts[faces]
@@ -535,19 +389,29 @@ def mesh_batchelor(verts, faces):
 # Batch Batchelor .tsv saving ------------------------------
 def Batchelor_Batch(nameread, namesave, dirread, dirsave, imrange, verbose=False, endread='.tif', endsave='.tsv', n0=3):
     """
-    Run region_Batchelor_tensors function on a batch of images and save the outputs as .tsv
-    
-    :param readdir: Labeled images folder
-    :type readdir: str
-    :param readdir: folder to save the .tsv doc
-    :type readdir: str
-    :param readend: tiff image saving end, default is '.tiff'
-    :type readend: str
-    :param imrange: list of image indexes
-    :type imrange: int array
-    :param verbose: if True, print verbose including the number of labels
-    :type verbose: Bool
-    """   
+    Compute Batchelor tensors for a batch of labeled images and save to TSV.
+
+    :param nameread: Base name of input images
+    :type nameread: str
+    :param namesave: Base name for output files
+    :type namesave: str
+    :param dirread: Directory containing labeled images
+    :type dirread: str
+    :param dirsave: Directory to save TSV files
+    :type dirsave: str
+    :param imrange: Image indices to process
+    :type imrange: list or array
+    :param verbose: Print progress information
+    :type verbose: bool
+    :param endread: Input image file extension
+    :type endread: str
+    :param endsave: Output file extension
+    :type endsave: str
+    :param n0: Zero-padding for image indices
+    :type n0: int
+
+    :return: None
+    """ 
     
     import numpy as np 
     from tifffile import imread
@@ -596,21 +460,30 @@ def Batchelor_Batch(nameread, namesave, dirread, dirsave, imrange, verbose=False
 #-------------------------------------------------------------
 def Read_Batchelor(nameread, dirread, imrange, verbose=False, endread='.tsv', n0=3, normalised=True):        
     """
-    Read the saved files generated by the .tsv Batchelor_Batch function on a batch of images
-    
-    :param nameread: file name (without the ending number)
+    Read Batchelor tensor TSV files generated by ``Batchelor_Batch``.
+
+    :param nameread: Base file name
     :type nameread: str
-    :param dirread: folder directory
+    :param dirread: Directory containing TSV files
     :type dirread: str
-    :param imrange: list of image indexes
-    :type imrange: int array
-    :param verbose: if True, print the image number
-    :type verbose: Bool
-    :param readend: ending
-    :type readend: str
-    :param n0: number of 0 in the indexing
+    :param imrange: Image indices to read
+    :type imrange: list or array
+    :param verbose: Print progress information
+    :type verbose: bool
+    :param endread: File extension
+    :type endread: str
+    :param n0: Zero-padding for image indices
     :type n0: int
-    :return: label, Coordinates, volume, mesh_area, Batchelor_tensor
+    :param normalised: If True, return volume-normalized tensors
+    :type normalised: bool
+
+    :return:
+        - Labels
+        - Coordinates
+        - Volumes
+        - Mesh surface areas
+        - Batchelor tensors
+    :rtype: tuple of lists
     """
     
     import numpy as np 
