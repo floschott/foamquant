@@ -176,6 +176,50 @@ def Proj3D(image, nameaxes=None, cmap='gray', interpolation=None, figblocksize=5
     
 # Tensor----------------
 def CutTensor3D(Grids, Coord, US, Count, zcut=False, ycut=False, xcut=False, scale_factor = 1,figblocksize=7, vmin=-1, vmax=1, Countmin=5, showscale=False, nameaxes=None, DeviatoricType=2,colorbarlab=None):
+    """
+    Plot 2D cuts of a 3D tensor field with eigen-ellipse representation.
+
+    Three orthogonal cuts (z, y, x) are displayed, showing the in-plane
+    deviatoric tensor components as ellipses, overlaid on a scalar
+    background field.
+
+    :param Grids: Grid coordinates [Z, Y, X]
+    :type Grids: list of numpy.ndarray
+    :param Coord: Grid coordinate tensor (Nz, Ny, Nx, 3, 3)
+    :type Coord: numpy.ndarray
+    :param US: 3D tensor field (Nz, Ny, Nx, 3, 3)
+    :type US: numpy.ndarray
+    :param Count: Number of samples per voxel (Nz, Ny, Nx)
+    :type Count: numpy.ndarray
+    :param zcut: Index of z-cut (False selects mid-plane)
+    :type zcut: int or False
+    :param ycut: Index of y-cut (False selects mid-plane)
+    :type ycut: int or False
+    :param xcut: Index of x-cut (False selects mid-plane)
+    :type xcut: int or False
+    :param scale_factor: Scaling factor for tensor glyphs
+    :type scale_factor: float
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+    :param vmin: Minimum scalar value for colormap
+    :type vmin: float
+    :param vmax: Maximum scalar value for colormap
+    :type vmax: float
+    :param Countmin: Minimum count threshold for plotting
+    :type Countmin: int
+    :param showscale: Radii used to display reference scale ellipses
+    :type showscale: list or False
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+    :param DeviatoricType: Tensor reduction type
+                           (0: none, 1: deviatoric,
+                            2: log-deviatoric, 3: half-log)
+    :type DeviatoricType: int
+    :param colorbarlab: Label for the colorbar
+    :type colorbarlab: str or None
+
+    :return: None
+    """
     
     import numpy as np
     import matplotlib.pyplot as plt
@@ -476,6 +520,51 @@ def CutTensor3D(Grids, Coord, US, Count, zcut=False, ycut=False, xcut=False, sca
         
         
 def ProjTensor3D(Grids, Coord, US, Count, scale_factor = 1,figblocksize=7, vmin=-1, vmax=1, Countmin=5, showscale=False, nameaxes=None, returnfig=None, dirsave=None, dpi=200, formt='jpeg', alpha=0.3, DeviatoricType=2,colorbarlab=None):
+    """
+    Project a 3D tensor field onto three orthogonal mean planes.
+
+    The tensor field is averaged along each axis and visualized using
+    eigen-ellipse glyphs overlaid on scalar background projections.
+
+    :param Grids: Grid coordinates [Z, Y, X]
+    :type Grids: list of numpy.ndarray
+    :param Coord: Grid coordinate tensor (Nz, Ny, Nx, 3, 3)
+    :type Coord: numpy.ndarray
+    :param US: 3D tensor field (Nz, Ny, Nx, 3, 3)
+    :type US: numpy.ndarray
+    :param Count: Number of samples per voxel (Nz, Ny, Nx)
+    :type Count: numpy.ndarray
+    :param scale_factor: Scaling factor for tensor glyphs
+    :type scale_factor: float
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+    :param vmin: Minimum scalar value for colormap
+    :type vmin: float
+    :param vmax: Maximum scalar value for colormap
+    :type vmax: float
+    :param Countmin: Minimum count threshold for plotting
+    :type Countmin: int
+    :param showscale: Radii used to display reference scale ellipses
+    :type showscale: list or False
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+    :param returnfig: Existing (fig, ax) to draw into
+    :type returnfig: tuple or None
+    :param dirsave: Output path (without extension) for saving figures
+    :type dirsave: str or None
+    :param dpi: Output figure resolution
+    :type dpi: int
+    :param formt: Output file format
+    :type formt: str
+    :param alpha: Transparency of scalar background
+    :type alpha: float
+    :param DeviatoricType: Tensor reduction type
+    :type DeviatoricType: int
+    :param colorbarlab: Label for the colorbar
+    :type colorbarlab: str or None
+
+    :return: Figure if returnfig is not None
+    """
     
     import numpy as np
     import matplotlib.pyplot as plt
@@ -802,6 +891,18 @@ def ProjTensor3D(Grids, Coord, US, Count, scale_factor = 1,figblocksize=7, vmin=
         cbar.set_label(colorbarlab)
 
 def USfromS(S):
+    """
+    Compute the logarithmic strain tensor from a shape tensor.
+
+    The isotropic part is removed using the geometric mean of eigenvalues.
+
+    :param S: Symmetric shape tensor (3,3)
+    :type S: numpy.ndarray
+
+    :return: Log strain tensor (3,3)
+    :rtype: numpy.ndarray
+    """
+    
     import numpy as np
     
     Val, Vect = np.linalg.eig(S)
@@ -821,6 +922,18 @@ def USfromS(S):
     return US
 
 def UMfromM(M):
+    """
+    Compute the logarithmic strain tensor from a texture tensor.
+
+    The isotropic part is removed using the geometric mean of eigenvalues.
+
+    :param M: Symmetric texture tensor (3,3)
+    :type M: numpy.ndarray
+
+    :return: Log strain tensor (3,3)
+    :rtype: numpy.ndarray
+    """
+    
     import numpy as np
     
     Val, Vect = np.linalg.eig(M)
@@ -840,6 +953,16 @@ def UMfromM(M):
     return UM
 
 def SigdevfromSig(B):
+    """
+    Compute the deviatoric part of a symmetric stress tensor by trace removal.
+
+    :param B: Stress tensor (3,3)
+    :type B: numpy.ndarray
+
+    :return: Deviatoric stress tensor (3,3)
+    :rtype: numpy.ndarray
+    """
+    
     import numpy as np
     
     Val, Vect = np.linalg.eig(B)
@@ -866,6 +989,34 @@ def SigdevfromSig(B):
 
 # Scalar----------------
 def CutScalar3D(Grids, Scalar, zcut=False, ycut=False, xcut=False, figblocksize=7, vmin=0, vmax=1, cmap='jet', alpha=1, nameaxes=None):
+    """
+    Display orthogonal cuts of a 3D scalar field.
+
+    :param Grids: Grid coordinates [Z, Y, X]
+    :type Grids: list of numpy.ndarray
+    :param Scalar: Scalar field (Nz, Ny, Nx)
+    :type Scalar: numpy.ndarray
+    :param zcut: Index of z-cut (False selects mid-plane)
+    :type zcut: int or False
+    :param ycut: Index of y-cut (False selects mid-plane)
+    :type ycut: int or False
+    :param xcut: Index of x-cut (False selects mid-plane)
+    :type xcut: int or False
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+    :param vmin: Minimum scalar value for colormap
+    :type vmin: float
+    :param vmax: Maximum scalar value for colormap
+    :type vmax: float
+    :param cmap: Colormap
+    :type cmap: str
+    :param alpha: Transparency
+    :type alpha: float
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+
+    :return: None
+    """
     
     import numpy as np
     import matplotlib.pyplot as plt
@@ -901,6 +1052,32 @@ def CutScalar3D(Grids, Scalar, zcut=False, ycut=False, xcut=False, figblocksize=
 
 
 def ProjScalar3D(Grids, Scalar, figblocksize=7, vmin=0, vmax=1, cmap='jet', alpha=1, sumproj=False, nameaxes=None):
+    """
+    Project a 3D scalar field onto orthogonal planes.
+
+    The projection is either a sum or a mean along each axis.
+
+    :param Grids: Grid coordinates [Z, Y, X]
+    :type Grids: list of numpy.ndarray
+    :param Scalar: Scalar field (Nz, Ny, Nx)
+    :type Scalar: numpy.ndarray
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+    :param vmin: Minimum scalar value for colormap
+    :type vmin: float
+    :param vmax: Maximum scalar value for colormap
+    :type vmax: float
+    :param cmap: Colormap
+    :type cmap: str
+    :param alpha: Transparency
+    :type alpha: float
+    :param sumproj: If True use sum projection, else mean projection
+    :type sumproj: bool
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+
+    :return: None
+    """
     
     import numpy as np
     import matplotlib.pyplot as plt
@@ -937,6 +1114,31 @@ def ProjScalar3D(Grids, Scalar, figblocksize=7, vmin=0, vmax=1, cmap='jet', alph
 # PLot contacts
 
 def PlotContact(Ctc,color='k',marker='o',markersize=5,linestyle='-', linewidth=2,nameaxes=None, ax=None,figblocksize=5):
+    """
+    Plot 3D contact segments projected onto three orthogonal planes.
+
+    :param Ctc: Contact dictionary containing endpoints
+    :type Ctc: dict
+    :param color: Line color
+    :type color: str
+    :param marker: Marker style
+    :type marker: str
+    :param markersize: Marker size
+    :type markersize: float
+    :param linestyle: Line style
+    :type linestyle: str
+    :param linewidth: Line width
+    :type linewidth: float
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+    :param ax: Existing axes array
+    :type ax: matplotlib axes or None
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+
+    :return: None
+    """
+    
     import numpy as np
     if len(np.shape(ax))==0:
         fig, ax = plt.subplots(1,3, figsize = (figblocksize*3, figblocksize), constrained_layout=True)
@@ -953,6 +1155,35 @@ def PlotContact(Ctc,color='k',marker='o',markersize=5,linestyle='-', linewidth=2
         ax[2].set_xlabel(nameaxes[1]); ax[2].set_ylabel(nameaxes[0])
 
 def PlotT1(Ctc,color=['r','g'],marker='o',markersize=5,linestyle='-', linewidth=2,nameaxes=None, ax=None,figblocksize=5,cat = 1):
+    """
+    Plot T1 topological events projected onto orthogonal planes.
+
+    Lost and new contact configurations are shown with different colors.
+
+    :param Ctc: T1 event data structure
+    :type Ctc: list or dict
+    :param color: Colors for lost and new contacts
+    :type color: list or str
+    :param marker: Marker style
+    :type marker: str
+    :param markersize: Marker size
+    :type markersize: float
+    :param linestyle: Line style
+    :type linestyle: str
+    :param linewidth: Line width
+    :type linewidth: float
+    :param nameaxes: Axis labels [z, y, x]
+    :type nameaxes: list of str or None
+    :param ax: Existing axes array
+    :type ax: matplotlib axes or None
+    :param figblocksize: Size of each subplot (inches)
+    :type figblocksize: float
+    :param cat: Event category to plot
+    :type cat: int
+
+    :return: None
+    """
+    
     import numpy as np
     
     if len(np.shape(ax))==0:
