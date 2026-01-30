@@ -30,8 +30,7 @@ def Cut3D(image, zcut=False, ycut=False, xcut=False, showcuts=False, nameaxes=No
     :param printminmax: Optional, print min and max for the whole image and the three projections
     :type printminmax: Bool
     :return: None or fig type
-    """    
-    
+    """
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -135,7 +134,6 @@ def Proj3D(image, nameaxes=None, cmap='gray', interpolation=None, figblocksize=5
     :type printminmax: Bool
     :return: None or fig
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt    
     
@@ -220,7 +218,6 @@ def CutTensor3D(Grids, Coord, US, Count, zcut=False, ycut=False, xcut=False, sca
 
     :return: None
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -565,7 +562,6 @@ def ProjTensor3D(Grids, Coord, US, Count, scale_factor = 1,figblocksize=7, vmin=
 
     :return: Figure if returnfig is not None
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -902,7 +898,6 @@ def USfromS(S):
     :return: Log strain tensor (3,3)
     :rtype: numpy.ndarray
     """
-    
     import numpy as np
     
     Val, Vect = np.linalg.eig(S)
@@ -933,7 +928,6 @@ def UMfromM(M):
     :return: Log strain tensor (3,3)
     :rtype: numpy.ndarray
     """
-    
     import numpy as np
     
     Val, Vect = np.linalg.eig(M)
@@ -962,7 +956,6 @@ def SigdevfromSig(B):
     :return: Deviatoric stress tensor (3,3)
     :rtype: numpy.ndarray
     """
-    
     import numpy as np
     
     Val, Vect = np.linalg.eig(B)
@@ -1017,7 +1010,6 @@ def CutScalar3D(Grids, Scalar, zcut=False, ycut=False, xcut=False, figblocksize=
 
     :return: None
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -1078,7 +1070,6 @@ def ProjScalar3D(Grids, Scalar, figblocksize=7, vmin=0, vmax=1, cmap='jet', alph
 
     :return: None
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -1138,7 +1129,6 @@ def PlotContact(Ctc,color='k',marker='o',markersize=5,linestyle='-', linewidth=2
 
     :return: None
     """
-    
     import numpy as np
     if len(np.shape(ax))==0:
         fig, ax = plt.subplots(1,3, figsize = (figblocksize*3, figblocksize), constrained_layout=True)
@@ -1183,7 +1173,6 @@ def PlotT1(Ctc,color=['r','g'],marker='o',markersize=5,linestyle='-', linewidth=
 
     :return: None
     """
-    
     import numpy as np
     
     if len(np.shape(ax))==0:
@@ -1268,7 +1257,6 @@ def Histogram(image, histtitle=False):
     :type image: numpy array
     :return: None
     """
-    
     import numpy as np
     import matplotlib.pyplot as plt
     import skimage.exposure
@@ -1301,7 +1289,6 @@ def RandomCmap(nlabels, type='bright', first_color_black=True, last_color_black=
     :type verbose: Bool
     :return: matplotlib colormap
     """
-    
     from matplotlib.colors import LinearSegmentedColormap
     import colorsys
     import numpy as np
@@ -1410,7 +1397,6 @@ def LinCmap(vmin=0,vmax=10, first_color="b", last_color="r", verbose=True):
     :type verbose: Bool
     :return: matplotlib colormap
     """
-    
     import matplotlib.colors as mcol
     import matplotlib.cm as cm
     
@@ -1461,7 +1447,6 @@ def CutSerie(directory, name, imrange, cutzyx = [0,None], nameaxes=['z','y','x']
 
     :return: None
     """
-     
     import numpy as np
     import matplotlib.pyplot as plt
     from tifffile import imread
@@ -1554,7 +1539,6 @@ def ProjVec3D(LCoord, Lv, cmap = 'viridis', colorbarlab=None, nameaxes=['z','y',
 
     :return: None
     """
-     
     from matplotlib.colors import Normalize
     import numpy as np
     import matplotlib.pyplot as plt
