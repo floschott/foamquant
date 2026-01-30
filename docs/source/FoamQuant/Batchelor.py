@@ -1,21 +1,3 @@
-# Import dependencies
-import logging
-import numpy as np
-import scipy.ndimage as spim
-from scipy.special import erfc
-from skimage.segmentation import relabel_sequential
-from edt import edt
-from skimage.morphology import ball, disk
-try:
-    from skimage.measure import marching_cubes
-except ImportError:
-    from skimage.measure import marching_cubes_lewiner as marching_cubes
-import inspect
-import time
-from skimage import measure
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-
-
 # COPIED and MODIFIED FUNCTIONS FROM PoreSpy and SCIKIT-IMAGE
 
 # Function 1: Region surface areas - COPIED
