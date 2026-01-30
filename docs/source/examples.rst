@@ -9,9 +9,6 @@ Gallery
    Jupy_FoamQuant_T1_detection
    Jupy_Bread
 
-Download
-==================
-
 .. container:: sphx-glr-download sphx-glr-download-jupyter
 
    :download:`Download Jupyter notebook: Jupy_FoamQuant_Processing.ipynb <Jupy_FoamQuant_Processing.ipynb>`
@@ -42,7 +39,7 @@ Download
    :download:`Download Jupyter notebook: Jupy_Bread.ipynb <Jupy_Bread.ipynb>`
 
 
-Tutorials
+Binder tutorials
 ==================
 
 New Version
