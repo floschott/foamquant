@@ -9,7 +9,7 @@ Gallery
    Jupy_FoamQuant_T1_detection
    Jupy_Bread
 
-Download notebooks
+Download
 ==================
 
 .. container:: sphx-glr-download sphx-glr-download-jupyter
