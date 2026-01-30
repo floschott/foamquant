@@ -1,4 +1,5 @@
 def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, binvalue=1, verbose=False, EndName='_CutMovie_'):
+    
     import numpy as np
     from tifffile import imsave, imread
     from spam.DIC.deform import binning
@@ -45,6 +46,7 @@ def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, b
             print(imi, ': done')
             
 def CylMovie(imrange, dirread, dirsave, nameread, namesave, CylRadius, binvalue=1, verbose=False,endread='.tiff',endsave='.tiff'):
+    
     import numpy as np
     from tifffile import imwrite, imread
     from spam.DIC.deform import binning
@@ -92,6 +94,7 @@ def CylMovie(imrange, dirread, dirsave, nameread, namesave, CylRadius, binvalue=
             
             
 def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False, nearest=False):
+    
     import numpy as np
     from scipy.interpolate import RectBivariateSpline, NearestNDInterpolator
     import matplotlib.pyplot as plt
@@ -134,6 +137,7 @@ def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False, neare
     return interpolated
 
 def AssembleMovie(imrange, dirread, dirsave, nameread, namesave,endread='.tiff',endsave='.tiff'):
+    
     import numpy as np
     from tifffile import imwrite, imread
     
