@@ -65,3 +65,7 @@ nbsphinx_prolog = r"""
 
 {% endif %}
 """
+
+sphinx_gallery_conf = {
+    "download_all_examples": True,
+}
