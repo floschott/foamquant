@@ -103,7 +103,6 @@ def CylMovie(imrange, dirread, dirsave, nameread, namesave, CylRadius, binvalue=
 
     :return: None
     """
-    
     import numpy as np
     from tifffile import imwrite, imread
     from spam.DIC.deform import binning
@@ -174,7 +173,6 @@ def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False, neare
         - Optional matplotlib figure (if plotfigure=True)
     :rtype: numpy.ndarray or (numpy.ndarray, matplotlib.figure.Figure)
     """
-    
     import numpy as np
     from scipy.interpolate import RectBivariateSpline, NearestNDInterpolator
     import matplotlib.pyplot as plt
@@ -240,7 +238,6 @@ def AssembleMovie(imrange, dirread, dirsave, nameread, namesave,endread='.tiff',
 
     :return: None
     """
-    
     import numpy as np
     from tifffile import imwrite, imread
     
