@@ -2,7 +2,7 @@
 import numpy as np
 
 # Importing sub-packages
-from FoamQuant.Process import *
+from Process import *
 from FoamQuant.FromBinary import *
 from FoamQuant.FromLabelled import *
 from FoamQuant.FromContact import *
