@@ -1,257 +1,266 @@
-def CutMovie(series, imrange, readdir, savedir,
-             zcut=None, ycut=None, xcut=None,
-             binvalue=1, verbose=False, EndName='_CutMovie_'):
+def CutMovie(series, imrange, readdir, savedir, zcut=None,ycut=None,xcut=None, binvalue=1, verbose=False, EndName='_CutMovie_'):
+     """
+    Extract and save 2D cut-planes from a 3D image sequence.
+
+    For each image index, a single slice is extracted along one direction
+    (z, y, or x) and saved as a separate image, forming a movie.
+
+    :param series: Image series name
+    :type series: str
+    :param imrange: List of image indices to process
+    :type imrange: list or numpy.ndarray
+    :param readdir: Root directory containing the images
+    :type readdir: str
+    :param savedir: Directory where cut images are saved
+    :type savedir: str
+    :param zcut: Index of z-slice to extract (use -1 for mid-plane)
+    :type zcut: int or None
+    :param ycut: Index of y-slice to extract (use -1 for mid-plane)
+    :type ycut: int or None
+    :param xcut: Index of x-slice to extract (use -1 for mid-plane)
+    :type xcut: int or None
+    :param binvalue: Spatial binning factor applied before slicing
+    :type binvalue: int
+    :param verbose: If True, print progress information
+    :type verbose: bool
+    :param EndName: String appended to output file names
+    :type EndName: str
+
+    :return: None
     """
-    CutMovie
-    --------
-    Extracts 2D slices from a 3D image sequence and saves them as individual images
-    (movie frames).
-
-    Parameters
-    ----------
-    series : str
-        Name of the image series.
-    imrange : iterable of int
-        Image indices to process.
-    readdir : str
-        Directory containing the input images.
-    savedir : str
-        Directory where the cut images will be saved.
-    zcut : int or None, optional
-        Z index for slicing. If -1, the mid-plane is selected.
-    ycut : int or None, optional
-        Y index for slicing. If -1, the mid-plane is selected.
-    xcut : int or None, optional
-        X index for slicing. If -1, the mid-plane is selected.
-    binvalue : int, optional
-        Binning factor applied before slicing.
-    verbose : bool, optional
-        If True, prints progress information.
-    EndName : str, optional
-        Suffix added to the output filenames.
-
-    Outputs
-    -------
-    None
-        Saves one TIFF image per input image.
-    """
-
     import numpy as np
     from tifffile import imsave, imread
     from spam.DIC.deform import binning
+    
+    from Package.Basic.RangeList import RangeList
     import spam
-
+    
     for imi in imrange:
+        # image string index
         imistr = str(imi)
-        imifordir = (3 - len(imistr)) * '0' + imistr
+        imistrlen = len(imistr)
+        imifordir = (3-imistrlen)*'0'+imistr
 
-        if binvalue > 1:
-            image = spam.DIC.deform.binning(
-                imread(readdir + '/2_RemoveBackground/' + series + '/' +
-                       series + '_RemoveBackground_' + imifordir + '.tif'),
-                binvalue
-            )
+        # read image
+        if binvalue>1:
+            image = spam.DIC.deform.binning(imread(readdir + '/2_RemoveBackground/' + series + '/' + series+'_RemoveBackground_'+imifordir+'.tif'),binvalue)
         else:
-            image = imread(readdir + '/2_RemoveBackground/' + series + '/' +
-                           series + '_RemoveBackground_' + imifordir + '.tif')
-
-        Z, Y, X = image.shape
-
+            image = imread(readdir + '/2_RemoveBackground/' + series + '/' + series+'_RemoveBackground_'+imifordir+'.tif')
+            
+        # Check case of mid cut: =-1
         if zcut == -1:
-            cutim = image[Z // 2, :, :]
+            zcut=Z//2
+            cutim=image[zcut,:,:]
         elif ycut == -1:
-            cutim = image[:, Y // 2, :]
+            ycut=Y//2
+            cutim=image[:,ycut,:]
         elif xcut == -1:
-            cutim = image[:, :, X // 2]
-        elif zcut is not None:
-            cutim = image[zcut, :, :]
-        elif ycut is not None:
-            cutim = image[:, ycut, :]
-        elif xcut is not None:
-            cutim = image[:, :, xcut]
+            xcut=X//2
+            cutim=image[:,:,xcut]
 
-        imsave(savedir + series + EndName + str(imi) + '.tif',
-               cutim, bigtiff=True)
-
+        # Check which cut direction
+        elif zcut != None:
+            cutim=image[zcut,:,:]
+        elif ycut != None:
+            cutim=image[:,ycut,:]
+        elif xcut != None:
+            cutim=image[:,:,xcut]
+        
+        # save movie, image per image
+        imsave(series+EndName+ str(imi) + '.tif', cutim, bigtiff=True)
+        
+        #Verbose
         if verbose:
             print(imi, ': done')
-
-def CylMovie(imrange, dirread, dirsave,
-             nameread, namesave,
-             CylRadius, binvalue=1,
-             verbose=False, endread='.tiff', endsave='.tiff'):
+            
+def CylMovie(imrange, dirread, dirsave, nameread, namesave, CylRadius, binvalue=1, verbose=False,endread='.tiff',endsave='.tiff'):
     """
-    CylMovie
-    --------
-    Generates a cylindrical projection movie from a sequence of 3D images.
+    Generate a cylindrical projection movie from a sequence of 3D images.
 
-    Parameters
-    ----------
-    imrange : iterable of int
-        Image indices to process.
-    dirread : str
-        Directory containing the input images.
-    dirsave : str
-        Directory where the output images will be saved.
-    nameread : str
-        Base name of the input images.
-    namesave : str
-        Base name of the output images.
-    CylRadius : float
-        Radius of the cylinder used for interpolation.
-    binvalue : int, optional
-        Binning factor applied before interpolation.
-    verbose : bool, optional
-        If True, prints progress information.
-    endread : str, optional
-        File extension of input images.
-    endsave : str, optional
-        File extension of output images.
+    Each image is interpolated along a cylindrical path of fixed radius
+    centered in the image, producing a 2D (Z × angle) representation.
 
-    Outputs
-    -------
-    None
-        Saves one interpolated cylindrical image per input image.
+    :param imrange: List of image indices to process
+    :type imrange: list or numpy.ndarray
+    :param dirread: Directory containing input images
+    :type dirread: str
+    :param dirsave: Directory where output images are saved
+    :type dirsave: str
+    :param nameread: Base name of input images
+    :type nameread: str
+    :param namesave: Base name of output images
+    :type namesave: str
+    :param CylRadius: Radius of the cylindrical interpolation
+    :type CylRadius: float
+    :param binvalue: Spatial binning factor applied before interpolation
+    :type binvalue: int
+    :param verbose: If True, print progress information
+    :type verbose: bool
+    :param endread: Input image file extension
+    :type endread: str
+    :param endsave: Output image file extension
+    :type endsave: str
+
+    :return: None
     """
-
+    
     import numpy as np
     from tifffile import imwrite, imread
     from spam.DIC.deform import binning
+    
+    #from Package.Basic.RangeList import RangeList
+    #from Package.Basic.InterpolateCylinder import InterpolateCylinder
     import spam
 
+    # image string index
+    imistr = str(imrange[0])
+    imistrlen = len(imistr)
+    imifordir = (3-imistrlen)*'0'+imistr
+    
+    # read first image
+    if binvalue>1:
+        image = spam.DIC.deform.binning(imread(dirread + nameread + imifordir+endread),binvalue)
+    else:
+        image = imread(dirread + nameread + imifordir+endread)
+
+    Z,Y,X = np.shape(image)
+    Npoint = np.int(2*np.pi*CylRadius)
+
     for imi in imrange:
-        imistr = str(imi)
-        imifordir = (3 - len(imistr)) * '0' + imistr
-
-        if binvalue > 1:
-            image = spam.DIC.deform.binning(
-                imread(dirread + nameread + imifordir + endread),
-                binvalue
-            )
-        else:
-            image = imread(dirread + nameread + imifordir + endread)
-
+        if imi > imrange[0]:
+            # image string index
+            imistr = str(imi)
+            imistrlen = len(imistr)
+            imifordir = (3-imistrlen)*'0'+imistr
+            
+            # read image
+            if binvalue>1:
+                image = spam.DIC.deform.binning(imread(dirread + nameread + imifordir+endread),binvalue)
+            else:
+                image = imread(dirread + nameread + imifordir+endread)
+        
+        #Cylindrical interpolation
         interpolated = InterpolateCylinder(image, CylRadius, verbose=True)
 
-        imwrite(dirsave + namesave + imifordir + endsave,
-                interpolated, bigtiff=True)
-
+        # save movie image per image
+        imwrite(dirsave + namesave + imifordir+endsave, interpolated, bigtiff=True)
+        
+        #Verbose
         if verbose:
             print(imi, ': done')
-
-def InterpolateCylinder(image, CylRadius,
-                        verbose=False, plotfigure=False, nearest=False):
+            
+            
+def InterpolateCylinder(image, CylRadius, verbose=False, plotfigure=False, nearest=False):
     """
-    InterpolateCylinder
-    -------------------
-    Interpolates a 3D image onto a cylindrical surface.
+    Interpolate a 3D image onto a cylindrical surface.
 
-    Parameters
-    ----------
-    image : ndarray (Z, Y, X)
-        Input 3D image.
-    CylRadius : float
-        Radius of the cylinder.
-    verbose : bool, optional
-        If True, prints progress information.
-    plotfigure : bool, optional
-        If True, returns a matplotlib figure showing the interpolation.
-    nearest : bool, optional
-        If True, uses nearest-neighbor interpolation instead of spline.
+    For each z-slice, values are sampled along a circular path centered
+    in the image, producing a cylindrical (Z × angle) representation.
 
-    Outputs
-    -------
-    interpolated : ndarray (Z, N)
-        Cylindrical interpolated image.
-    fig : matplotlib.figure.Figure, optional
-        Returned only if plotfigure=True.
+    :param image: Input 3D image (Z, Y, X)
+    :type image: numpy.ndarray
+    :param CylRadius: Radius of the cylindrical interpolation
+    :type CylRadius: float
+    :param verbose: If True, print interpolation progress
+    :type verbose: bool
+    :param plotfigure: If True, return a diagnostic figure
+    :type plotfigure: bool
+    :param nearest: If True, use nearest-neighbor interpolation
+                    (else spline interpolation)
+    :type nearest: bool
+
+    :return:
+        - Interpolated cylindrical image (Z, Nangle)
+        - Optional matplotlib figure (if plotfigure=True)
+    :rtype: numpy.ndarray or (numpy.ndarray, matplotlib.figure.Figure)
     """
-
+    
     import numpy as np
     from scipy.interpolate import RectBivariateSpline, NearestNDInterpolator
     import matplotlib.pyplot as plt
 
-    Z, Y, X = image.shape
-    Npoint = np.int32(2 * np.pi * CylRadius)
+    Z,Y,X = image.shape
+    # Position of the simulation data
+    Npoint = np.int32(2*np.pi*CylRadius)
+    angles = np.linspace(0, 2*np.pi, Npoint)
+    x = X//2 + np.cos(angles)*CylRadius
+    y = Y//2 + np.sin(angles)*CylRadius
 
-    angles = np.linspace(0, 2 * np.pi, Npoint)
-    x = X // 2 + np.cos(angles) * CylRadius
-    y = Y // 2 + np.sin(angles) * CylRadius
-
-    interpolated = np.zeros((Z, Npoint))
-
+    interpolated=np.zeros((Z, Npoint))
+    verbi=0
     for zi in range(Z):
-        if nearest:
-            MeshY, MeshX = np.meshgrid(range(Y), range(X))
-            points = np.column_stack((MeshY.ravel(), MeshX.ravel()))
-            values = image[zi].ravel()
-            interp = NearestNDInterpolator(points, values)
-            interpolated[zi] = interp(np.column_stack((y, x)))
-        else:
-            spline = RectBivariateSpline(np.arange(Y),
-                                         np.arange(X),
-                                         image[zi])
+        if nearest: # if nearest intepolation
+            MeshY,MeshX = np.meshgrid(range(Y),range(X))
+            points = np.asarray(list(zip(np.reshape(MeshY, (X*Y)), np.reshape(MeshX, (X*Y)))))
+            value = np.reshape(image[zi], (X*Y))
+            spline = NearestNDInterpolator(points, value)
+            interpolated_list = spline(np.asarray(list(zip(y, x))))
+            interpolated[zi] = interpolated_list
+        else: # if spline interpolation
+            spline = RectBivariateSpline(np.arange(Y), np.arange(X), image[zi])
             interpolated[zi] = spline(y, x, grid=False)
-
-        if verbose and zi % 10 == 0:
-            print(np.round(zi / Z * 100), '%')
-
+        verbi+=1
+        
+    if verbose and verbi == 10:
+        print(np.round(zi/Z*100), '%')
+        verbi=0
+    
     if plotfigure:
-        fig, ax = plt.subplots(1, 2, figsize=(20, 20))
-        ax[0].imshow(interpolated, cmap='bone')
-        ax[1].imshow(image[Z // 2], cmap='bone')
-        ax[1].plot(y, x, 'r')
-        ax[1].plot(Y // 2, X // 2, 'xr', markersize=20)
+        fig, ax = plt.subplots(1,2, figsize = (20, 20))
+        ax[0].imshow(interpolated, 'bone')
+        ax[1].imshow(image[Z//2,:,:], 'bone')
+        ax[1].plot(y,x, 'r')
+        ax[1].plot(Y//2,X//2, 'xr', markersize=20)
+        
         return interpolated, fig
-
+    
     return interpolated
 
-def AssembleMovie(imrange, dirread, dirsave,
-                  nameread, namesave,
-                  endread='.tiff', endsave='.tiff'):
+def AssembleMovie(imrange, dirread, dirsave, nameread, namesave,endread='.tiff',endsave='.tiff'):
     """
-    AssembleMovie
-    -------------
-    Assembles a sequence of 2D images into a 3D movie stack.
+    Assemble a sequence of 2D images into a 3D movie stack.
 
-    Parameters
-    ----------
-    imrange : iterable of int
-        Image indices to assemble.
-    dirread : str
-        Directory containing the input images.
-    dirsave : str
-        Directory where the movie will be saved.
-    nameread : str
-        Base name of the input images.
-    namesave : str
-        Base name of the output movie.
-    endread : str, optional
-        File extension of input images.
-    endsave : str, optional
-        File extension of output movie.
+    Images are read sequentially and stacked along the first dimension
+    to form a (T, Y, X) array.
 
-    Outputs
-    -------
-    None
-        Saves a 3D TIFF stack (movie).
+    :param imrange: List of image indices to assemble
+    :type imrange: list or numpy.ndarray
+    :param dirread: Directory containing input images
+    :type dirread: str
+    :param dirsave: Directory where the movie is saved
+    :type dirsave: str
+    :param nameread: Base name of input images
+    :type nameread: str
+    :param namesave: Base name of output movie
+    :type namesave: str
+    :param endread: Input image file extension
+    :type endread: str
+    :param endsave: Output movie file extension
+    :type endsave: str
+
+    :return: None
     """
-
+    
     import numpy as np
     from tifffile import imwrite, imread
-
+    
+    # image string index
     imistr = str(imrange[0])
-    imifordir = (3 - len(imistr)) * '0' + imistr
-    image = imread(dirread + nameread + imifordir + endread)
+    imistrlen = len(imistr)
+    imifordir = (3-imistrlen)*'0'+imistr
+    image = imread(dirread+nameread+ imifordir + endread)
+    Y,X = np.shape(image)
+    
+    Movie=np.zeros((len(imrange),Y,X))
 
-    Y, X = image.shape
-    Movie = np.zeros((len(imrange), Y, X))
+    for i in range(len(imrange)):
+        
+        # image string index
+        imistr = str(imrange[i])
+        imistrlen = len(imistr)
+        imifordir = (3-imistrlen)*'0'+imistr
+        
+        Movie[i] = imread(dirread+nameread+ imifordir + endread)
+        print('Image',i,': done')
 
-    for i, imi in enumerate(imrange):
-        imistr = str(imi)
-        imifordir = (3 - len(imistr)) * '0' + imistr
-        Movie[i] = imread(dirread + nameread + imifordir + endread)
-        print('Image', i, ': done')
-
-    imwrite(dirsave + namesave + imifordir + endsave,
-            Movie, bigtiff=True)
+    imwrite(dirsave+namesave+ imifordir + endsave, Movie, bigtiff=True)
