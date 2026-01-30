@@ -1,4 +1,4 @@
-Example gallery
+Gallery
 ==================
 
 .. nbgallery::
@@ -9,11 +9,16 @@ Example gallery
    Jupy_FoamQuant_T1_detection
    Jupy_Bread
 
+Download notebooks
+==================
 
-Binder
+.. container:: sphx-glr-download sphx-glr-download-jupyter
+   :download:`Download Jupyter notebook: Jupy_FoamQuant_Processing.ipynb <Jupy_FoamQuant_Processing.ipynb>`
+
+Tutorials
 ==================
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/floschott/FoamQuant_All_Binders/HEAD
+   :target: https://mybinder.org/v2/gh/floschott/FoamQuant_All_Binders/HEAD
 
    
