@@ -13,12 +13,20 @@ Download notebooks
 ==================
 
 .. container:: sphx-glr-download sphx-glr-download-jupyter
+
    :download:`Download Jupyter notebook: Jupy_FoamQuant_Processing.ipynb <Jupy_FoamQuant_Processing.ipynb>`
 
 Tutorials
 ==================
 
+New
+---
+
 .. image:: https://mybinder.org/badge_logo.svg
    :target: https://mybinder.org/v2/gh/floschott/FoamQuant_All_Binders/HEAD
 
-   
+Old
+---
+
+.. image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/floschott/FoamQuant_binder/HEAD
