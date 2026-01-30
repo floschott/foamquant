@@ -45,14 +45,12 @@ Download
 Tutorials
 ==================
 
-New
----
+New Version
 
 .. image:: https://mybinder.org/badge_logo.svg
    :target: https://mybinder.org/v2/gh/floschott/FoamQuant_All_Binders/HEAD
 
-Old
----
+Old Version
 
 .. image:: https://mybinder.org/badge_logo.svg
    :target: https://mybinder.org/v2/gh/floschott/FoamQuant_binder/HEAD
